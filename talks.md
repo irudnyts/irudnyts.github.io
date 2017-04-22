@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Talks
+permalink: /talks/
 ---
 
 * Impact of Catastrophe Eventseaj on Non-life Insurance Companies’ Market Valuation – an Event Study Analysis, *3rd European Actuarial Journal (EAJ) Conference, 6 – 8 September 2016, Lyon*
