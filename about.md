@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Intro
 
-I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), and I don't like long introduction. Check out my contributions below in order to figure out who I am.
+I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), and I don't like long introductions. Check out my contributions below in order to figure out who I am.
 
 ----
 
@@ -14,21 +14,29 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ### on-Campus
 
-* UNIL
+* Master of Science in Actuarial Science, *University of Lausanne*, 2013-2015
 
-* Coursera
+* Master of Science in Applied Mathematics, *V.N. Karazin Kharkiv National University*, 2012-2013
 
-* DataCamp
+* Bachelor of Science in Applied Mathematics, *National Technical University "Kharkiv Polytechnic Institute"*, 2008-2012
 
 ### Distance
 
-* TU Dortmund
+* Course in Intelligent Multimedia Systems, *Linnaeus University*, 2011
 
-* Lineas Uni
+### Summer schools
 
-* KhPI
+* International Summer School of the Swiss Association of Actuaris, *University of Lausanne*, 2016
 
-* KhNU
+* International Summer School of the Swiss Association of Actuaris, *University of Lausanne*, 2015
+
+* International Summer Program, *Technical University of Dortmund*, 2013
+
+### On-line
+
+* Intro to Python for Data Science, *DataCamp*, 2017
+
+* The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis, *Coursera*, 2014
 
 ----
 
@@ -75,5 +83,3 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 * Simulation Methods in Finance and Insurance (exercise sessions), Teaching Assistant to Joël Wagner, UNIL, Master level, Spring 2016, Spring 2017
 
 * Web-scale Analytics (lecture/exercise sessions), Teaching Assistant to Periklis Andritsos, UNIL, Master level, Fall 2014
-
-----
