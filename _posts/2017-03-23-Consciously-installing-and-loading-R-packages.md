@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Consciously installing and loading R packages
+title: Consciously&#58; installing and loading R packages
 ---
 
 One reason of R popularity is an ocean of packages. Even though it is pretty straightforward to manage packages, there are a couple of tricks, do’s and don’ts, and other things which require a care.
@@ -40,7 +40,7 @@ library(ggplot2) # or
 library("ggplot2")
 ```
 
-The latter is possible thanks (or not thanks) to [http://adv-r.had.co.nz/Computing-on-the-language.html](non-standard evaluation) (NSE). I strongly recommend avoid NSE by using the one with quotes, which would save you from situations as follows (only God knows what kind of pervert would write this):
+The latter is possible thanks (or not thanks) to [non-standard evaluation](http://adv-r.had.co.nz/Computing-on-the-language.html) (NSE). I strongly recommend avoid NSE by using the one with quotes, which would save you from situations as follows (only God knows what kind of pervert would write this):
 
 ```r
 ggplo2 <- "pryr"
