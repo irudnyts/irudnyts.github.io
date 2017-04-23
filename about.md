@@ -58,13 +58,13 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ## Talks
 
-* Impact of Catastrophe Events on Non-life Insurance Companies’ Market Valuation – an Event Study Analysis, *3rd European Actuarial Journal (EAJ) Conference, 6 – 8 September 2016, Lyon*
+* [Impact of Catastrophe Events on Non-life Insurance Companies’ Market Valuation – an Event Study Analysis](irudnyts.github.io/pdf/eaj.pdf), 3rd European Actuarial Journal (EAJ) Conference, 6 – 8 September 2016, Lyon
 
-* estudy2: an R package for the event study in insurance, *satRday #1 Conference, 3 September 2016, Budapest*
+* [estudy2: an R package for the event study in insurance](irudnyts.github.io/pdf/satrday.pdf), satRday #1 Conference, 3 September 2016, Budapest
 
-* estudy2: an R package for the event study in insurance, *R in Insurance, 11 June 2016, London*
+* [estudy2: an R package for the event study in insurance](irudnyts.github.io/pdf/rinins.pdf), R in Insurance, 11 June 2016, London
 
-* Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis, *Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 10 – 11 March 2016, Vienna*
+* [Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis]( irudnyts.github.io/pdf/dvfvw.pdf ), Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 10 – 11 March 2016, Vienna
 
 ----
 
