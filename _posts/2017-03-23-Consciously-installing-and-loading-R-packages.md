@@ -5,7 +5,7 @@ title: Consciously&#58; installing and loading R packages
 
 One reason of R popularity is an ocean of packages. Even though it is pretty straightforward to manage packages, there are a couple of tricks, do’s and don’ts, and other things which require a care.
 
-# Installing
+## Installing
 
 The standard built-in function works perfectly:
 
@@ -29,7 +29,7 @@ devtools::install_version(package = "ggplot2",
 ```
 Finally, in order to see all installed packages I use more frequently `library()` instead of `installed.packages()`, which is an overkill in a way.
 
-# Loading and using
+## Loading and using
 
 Two functions could be used for loading packages, namely `require()` and `library()`. The *latter* is a little bit more *preferable*, because it throws an error if the package does not exist. `require()` only returns `FALSE` and generates a warning.
 
@@ -50,6 +50,7 @@ library(ggplot2)
 There is also a nice trick how to load a several packages at once.
 
 ```r
+x <- c("ggplot2", "copula", "rvest")
 lapply(x, library, character.only = TRUE)
 ```
 
