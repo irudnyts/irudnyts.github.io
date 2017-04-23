@@ -47,7 +47,7 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 ### R packages
 
 
-* (pkgspell)[https://github.com/irudnyts/pkgspell]
+* [pkgspell](https://github.com/irudnyts/pkgspell)
 
 * estudy2 (available upon request)
 
@@ -65,6 +65,8 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 * estudy2: an R package for the event study in insurance, *R in Insurance, 11 June 2016, London*
 
 * Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis, *Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 10 – 11 March 2016, Vienna*
+
+----
 
 ## Teaching
 
