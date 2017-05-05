@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Dortmund real estate market analysis
+title: 5 min data science&#58; Dortmund real estate market analysis
 ---
 
-Back to 2013 I spent two amazing months of my life in Dortmund. Taking into account that a number of my friends who moved (are moving) to Germany is increasing, I thought it would be nice to get an insight of the [last imperfect market](http://www.bbc.com/news/business-34531638) of real estate in Dortmund.
+Back in 2013 I spent two amazing months of my life in Dortmund. Taking into account that a number of my friends who moved (are moving) to Germany is increasing, I thought it would be nice to get an insight of the [last imperfect market](http://www.bbc.com/news/business-34531638) of real estate in Dortmund.
 
 ![](http://static4.businessinsider.com/image/54c26cf9eab8ead5409e2908-1190-625/80-things-you-probably-dont-know-about-the-monopoly-board-game.jpg)
 
-The largest listnings of property in Germany is [immobilienscout24](https://www.immobilienscout24.de), which is used as a data source. By utilizing the power of [rvest](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/) package and [SelectorGadget](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) (I extremely recommend to check out these easy-readable links), it is possible to scrap the data from immobilienscout24. The following code simply loads packages, defines a funciton that checks whether or not lengths of its arguments are the same. We will need this function later on. Then, `urls` are defined by pasting numbers of pages between the first and second parts of urls. Furthemore, we define the data frame `property` where the data will be stored.
+The largest listning of property in Germany is [immobilienscout24](https://www.immobilienscout24.de), which is used as a data source. By utilizing the power of [rvest](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/) package and [SelectorGadget](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) (I totally recommend to check out these easy-readable links), it is possible to scrap the data from immobilienscout24. The following code simply loads packages, defines a funciton that checks whether or not the lengths of its arguments are the same. We will need this function later on. Then, `urls` are defined by pasting numbers of pages between the first and second parts of urls. Furthemore, we define the data frame `property` where the data will be stored.
 
 ```r
 options(stringsAsFactors = FALSE)
@@ -35,9 +35,9 @@ property <- data.frame(price = character(),
                        
 ```
 
-At this step it seems natural to use a `for` loop, and go over each link. Unfortunately, guys from immobilienscout24 use rate limiting (I am not an expert, but it seems like). Thus, I figured out that we need to download the data in `while` loop instead, for which the condition to stop would be the length of urls equals to 0. Inside the loop each page is parsed, and we extract the following information about entries: `price`, `area` (living space), `rooms`, and `address`. If the rate limiting is triggered, than a part of data is lost, and therefore, the lengths of these variables will be different. Conditioning on the length equality, the content of variables is copied to `property`, and the processed url is removed from `urls`.
+At this step it seems natural to use a `for` loop, and go over each link. Unfortunately, guys from immobilienscout24 use rate limiting (I am not an expert, but it seems like). Thus, I figured out that we need to download the data in `while` loop instead, for which the condition to stop would be the length of urls equals to 0. Inside the loop each page is parsed, and we extract the following information about entries: `price`, `area` (living space), `rooms`, and `address`. If the rate limiting is triggered, then a part of data is lost, and therefore, the lengths of these variables will be different. Conditioning on the length equality, the content of variables is copied to `property`, and the processed url is removed from `urls`.
 
-The `rvest` package was designed to work in conjuntion with `magrittr` package, allowing for usage of so-called [pipe](https://www.r-bloggers.com/why-bother-with-magrittr/) (also worth reading).
+The `rvest` package was designed to work in conjuntion with `magrittr` package, allowing for usage of the so-called [pipe](https://www.r-bloggers.com/why-bother-with-magrittr/) (also worth reading).
 
 ```r
 
@@ -77,7 +77,7 @@ while(length(urls) > 0) {
 
 ```
 
-After the data had been collected, we need to tidy it. The desired values are wrapped into ugly strings of spaces and slashes. By using the fucntion `str_match` of `stringr` package and regular expressions we squeeze desired values and coerce them from characters to numerics (also changing `,` to `.` for decimal point):
+Having collected all the required data, we need to tidy it. The desired values are wrapped into ugly strings of spaces and slashes. By using the fucntion `str_match` of `stringr` package and regular expressions we squeeze desired values and coerce them from characters to numerics (also changing `,` to `.` for decimal point):
 
 ```r
 property$price <- str_match(string = property$price,
@@ -96,7 +96,7 @@ property$rooms <- str_match(string = property$rooms,
     as.numeric()
 ```
 
-Addresses do not have such a problem. It is reasonable to split objects into disctricts of Dortmund in order to use them as categorical predictors. Fortunatelly, addresses already contain the district name, the only thing remained to do was to cut the city and the street on each side:
+There is no such a complication with addresses. It is reasonable to split objects into disctricts of Dortmund in order to use them as categorical predictors. Fortunatelly, addresses already contain the district name, the only thing remained to do was to cut the city and the street on each side:
 
 ```r
 property$part <- str_match(string = property$address,
@@ -193,8 +193,10 @@ Residual standard error: 209.2 on 494 degrees of freedom
 Multiple R-squared:  0.1822,	Adjusted R-squared:  0.08127 
 F-statistic: 1.805 on 61 and 494 DF,  p-value: 0.0003824
 ```
-What can we outline from regression analysis? Well, not much. Only around 18 % of the variance is explained by such variables, based on value of R-squared. The intercept is significant and has a value around 443 euros, that is a kind of base price for apartments. The positive and significant value of the coefficeint for `rooms` coincides with intuition: with additional room we have to pay 65 euros more (even thoug, from my taste, it is rather low). What I do not like is the `area` coefficient, which significant and negative, which means with one square meter increase, an apartment is 1.6 euro cheaper to rent. The vast majority of district levels are negative, which also seem strange.
+What can be outlined from regression analysis? Well, not much. Only around 18 % of the variance is explained by such variables, based on value of R-squared. The intercept is significant and has a value around 443 euros, that is a kind of base price for apartments. The positive and significant value of the coefficeint for `rooms` coincides with intuition: with additional room we have to pay 65 euros more (even though, from my view, it is rather low). What I do not like is the `area` coefficient, which significant and negative, which means with one square meter increase, an apartment is 1.6 euro cheaper to rent. The vast majority of district levels are negative, which also seem strange.
 
 To dive deeper I suggest to use `glm` assuming non-Gaussian residuals. Furthermore, there are dozens of other features that drive the price, like a floor, when an apartment was renovated etc. 
 
 The source file is available at my [gist](https://gist.github.com/irudnyts/9919fd110dabeea41c12894f2275adf9).
+
+Update: how could I miss that immobilienscout24 has an [API](https://api.immobilienscout24.de/)? 
