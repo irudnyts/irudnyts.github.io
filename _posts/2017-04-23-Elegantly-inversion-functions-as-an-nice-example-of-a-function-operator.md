@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Elegantly&#58; inversion functions as an nice example of a function operator
+title: Elegantly&#58; function inversion as a nice example of a function operator
 ---
 
 In the course I assist this spring ([Simulation Methods in Finance and Insurance](https://hec.unil.ch/hec/syllabus/descriptif/2015?dyn_lang=en)), there are plenty of places where one has to inverse a function.
