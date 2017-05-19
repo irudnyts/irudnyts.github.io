@@ -34,7 +34,7 @@ It is possible to depict immediately the frequency of student's action.
 ggplot(data = log_alm) + geom_bar(aes(x = date))
 ```
 
-![](https://irudnyts.github.io/images/freq1.jpg)
+![](https://irudnyts.github.io/images/freq1.jpeg)
 
 Note that if a student logins two times on the same day, these events are considered as distinct. Thus, this plot is not very helpful, 'cause we need to figure out how many different students attend the web-page during the day. The possible way how to aggregate the data is shown below (even though, it is not the most elegant one):
 
