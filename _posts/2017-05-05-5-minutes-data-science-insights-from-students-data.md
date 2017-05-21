@@ -169,3 +169,5 @@ Why all these are useful? Well, that's why:
 * By looking at frequecny, it's possible to judge which topics are difficult, or for instance, the overload of students, or even of the interest. This is a really true feedback.
 
 * Grouping students allows identifying those, who need an extra help and those who are a little bit more interested in the topic. 
+
+The source file is available at my [gist](https://gist.github.com/irudnyts/53b25b8405ac3fb2289e20eb15d17860).
