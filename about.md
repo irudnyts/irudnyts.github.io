@@ -77,17 +77,20 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ## Talks
 
+* [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/rinins17.pdf) <br />
+R in Insurance, 2017 June 8, Paris
+
 * [Impact of Catastrophe Events on Non-life Insurance Companies’ Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/eaj.pdf) <br />
-3rd European Actuarial Journal (EAJ) Conference, 6 – 8 September 2016, Lyon
+3rd European Actuarial Journal (EAJ) Conference, 2016 September 6 – 8, Lyon
 
 * [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/satrday.pdf) <br />
-satRday #1 Conference, 3 September 2016, Budapest
+satRday #1 Conference, 2016 September 3, Budapest
 
 * [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/rinins.pdf) <br />
-R in Insurance, 11 June 2016, London
+R in Insurance, 2016 June 11, London
 
 * [Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/dvfvw.pdf) <br />
-Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 10 – 11 March 2016, Vienna
+Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna
 
 ----
 
