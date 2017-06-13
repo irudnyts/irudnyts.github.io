@@ -31,9 +31,15 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 ### Summer schools
 
 * International Summer School of the Swiss Association of Actuaris <br />
+Insurance Management: Trends, Challenges and Solutions <br />
+*University of Lausanne*, 2017
+
+* International Summer School of the Swiss Association of Actuaris <br />
+Quantative Risk Management: Concepts, Techniques and Tools <br />
 *University of Lausanne*, 2016
 
 * International Summer School of the Swiss Association of Actuaris <br />
+Reinsurance: Actuarial and Statistical Aspects <br />
 *University of Lausanne*, 2015
 
 * International Summer Program <br />
