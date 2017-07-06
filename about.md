@@ -83,6 +83,9 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ## Talks
 
+* [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/ime.pdf) <br />
+21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna
+
 * [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/rinins17.pdf) <br />
 R in Insurance, 2017 June 8, Paris
 
