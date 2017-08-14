@@ -3,7 +3,7 @@ layout: post
 title: 5-minutel data science&#58; insurance-linked securities' data
 ---
 
-As a part of my PhD program I have to attend the [summer school](http://saa-iss.ch) organized by our department. During this summer school Prof. Braun (one of speakers) a super nice [resource](http://www.artemis.bm/) of catastrophe bonds (cat bonds) & insurance-linked securities (ILS). It provides the information, such as the size, the trigger etc. about most of ILS.
+As a part of my PhD program I have to attend the [summer school](http://saa-iss.ch) organized by our department. During this summer school Prof. Braun (one of speakers) mentioned a super nice [resource](http://www.artemis.bm/) of catastrophe bonds (cat bonds) & insurance-linked securities (ILS). It provides the information, such as the size, the trigger etc. about most of ILS.
 
 Apart from the information in the [large table](http://www.artemis.bm/deal_directory/), the column "Issuer" contains clicable elemtents, from where one can get an extended information about one or the other ILS. The script conceptually is orginized quite simply: (1) get all links from the table, and (2) go over each link and extranct a contract's data. As in post about [Dortmund real estate](https://irudnyts.github.io/Dortmund-real-estate-market-analysis/) we use the `rvest` package for web-scrapping (read that post if you are not very familiar with web-scrappling).
 
