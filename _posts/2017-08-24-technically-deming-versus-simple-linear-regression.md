@@ -9,11 +9,11 @@ $$y \approx \beta_0 + \beta_1 x$$
 
 Then typically a professor of a course leads to idea of minimizing the distances between observed variables and the fitted ones, i.e.:
 
-$$\sum_i=1^n(y_i - (\beta_0 + \beta_1 x_i))$$
+$$\sum_{i=1}^n(y_i - (\beta_0 + \beta_1 x_i))$$
 
 But those distances might be both positive or negative. Instead, we can use the absolute values, but squaring those distances leads to much nicer properties for optimization:
 
-$$\sum_i=1^n(y_i - (\beta_0 + \beta_1 x_i))^2$$
+$$\sum_{i=1}^n(y_i - (\beta_0 + \beta_1 x_i))^2$$
 
 Minimizing this term yields so-called linear or more commonly ordinary least squares (OLS) estimates.
 
@@ -25,6 +25,6 @@ Since we know the theoretical distribution of $y$ and have a sample, we can use 
 
 So far so good, but let's step back for a second and check ourselves. Minimizing the distances between observed variables and the fitted ones sounds very good, but wait a second... That's how the vertical distance defined, not the orthogonal. The minimal distance between a point and a line is actually orthogonal distance, not the vertical one. It means that OLS minimizes vertical distances instead of orthogonal, which is illustrated below.
 
-![](https://irudnyts.github.io/images/v_vs_o.jpeg)
+![](https://irudnyts.github.io/images/v_vs_o.png)
 
 Minimizing the square orthogonal distances yields so-called Deming regression estimates, which is identical to MLE of errors-in-variables model with $\sigma = 1$. This model is used mostly in clinical chemistry. 
