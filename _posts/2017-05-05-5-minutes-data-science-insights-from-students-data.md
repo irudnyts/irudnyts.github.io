@@ -34,7 +34,7 @@ It is possible to depict immediately the frequency of student's action.
 ggplot(data = log_alm) + geom_bar(aes(x = date))
 ```
 
-![](https://irudnyts.github.io/images/freq1.jpeg)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/freq1.png)
 
 Note that if a student logins two times on the same day, these events are considered as distinct. Thus, this plot is not very helpful, 'cause we need to figure out how many different students attend the web-page during the day. The possible way how to aggregate the data is shown below (even though, it is not the most elegant one):
 
@@ -61,7 +61,7 @@ ggplot(data = smr, mapping = aes(x = date, y = n_logins)) +
     geom_bar(aes(fill = class), stat="identity")
 ```
 
-![](https://irudnyts.github.io/images/freq2.jpeg)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/freq2.png)
 
 The plot is a bit more illustrative that the previous one:
 
@@ -80,7 +80,7 @@ ggplot(data = smr, mapping = aes(x = date, y = n_logins)) +
     stat_smooth(method ="auto", level = 0.95, span = 0.4)
 ```
 
-![](https://irudnyts.github.io/images/line1.jpeg)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/line1.pnd)
 
 This figure shows that the trend is quite linear, with two peaks of the first exercise and the midterm. After the midterm the line is even more stable and predictable.
 
@@ -143,7 +143,7 @@ ggplot(data = info,
     geom_point(size = 3)
 ```
 
-![](https://irudnyts.github.io/images/cl1.jpeg)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/cl1.png)
 
 So far so good, but I am not very happy with such a result. The clusters are strongly dependent on the number of logins, but not on the midterm grade. Standardization of the values must solve this issue:
 
@@ -160,7 +160,7 @@ ggplot(data = info,
     geom_point(size = 3)
 ```
 
-![](https://irudnyts.github.io/images/cl2.jpeg)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/cl2.png)
 
 This chart looks nicer. Indeed, students are devided into three groups, namely: low (low number of logins and grades, middle number of logins and grades, high number of logins and grades).
 

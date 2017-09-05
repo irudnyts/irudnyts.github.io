@@ -5,7 +5,7 @@ title: Briefly&#58; notes from R in insurance 2017
 
 This year the fifth [*R in insurance*](https://rininsurance17.sciencesconf.org) conference was in ENSAE, Paris. The first impression was: "Wow, that's a lot of people. Much more than the last year", and I hope my estimation is not biased. Thanks to organizers that was, indeed, a true pleasure to be on both sides, as a presenter, as well as a speaker. I really love that unique atmosphere and mixed audience: not many conferences offer the feedback from the academic and industry perspective at the same time.
 
-![](https://irudnyts.github.io/images/rinins.png)
+![](https://irudnyts.github.io/images/posts/2017-06-14-r-in-insurance-17/rinins.png)
 
 Writing this post I had fair options: either to cover the whole conference or one particular talk. I prefer the second case, as a most efficient, from my view. The first plenary talk was given by Julie Seguela (Covea). She shared with us her experience with textual analysis of expert reports to increase knowledge of technological risks. Well, the last sentence I copied form the official conference page, so let me describe it in simple words. 
 

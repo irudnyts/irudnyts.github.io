@@ -5,7 +5,7 @@ title: 5-minutes data science&#58; Dortmund real estate market analysis
 
 Back in 2013 I spent two amazing months of my life in Dortmund. Taking into account that a number of my friends who moved (are moving) to Germany is increasing, I thought it would be nice to get an insight of the [last imperfect market](http://www.bbc.com/news/business-34531638) of real estate in Dortmund.
 
-![](http://static4.businessinsider.com/image/54c26cf9eab8ead5409e2908-1190-625/80-things-you-probably-dont-know-about-the-monopoly-board-game.jpg)
+![](https://irudnyts.github.io/images/posts/2017-04-25-Dortmund-real-estate-market-analysis/monopoly.png)
 
 The largest listning of property in Germany is [immobilienscout24](https://www.immobilienscout24.de), which is used as a data source. By utilizing the power of [rvest](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/) package and [SelectorGadget](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) (I totally recommend to check out these easy-readable links), it is possible to scrap the data from immobilienscout24. The following code simply loads packages, defines a funciton that checks whether or not the lengths of its arguments are the same. We will need this function later on. Then, `urls` are defined by pasting numbers of pages between the first and second parts of urls. Furthemore, we define the data frame `property` where the data will be stored.
 
