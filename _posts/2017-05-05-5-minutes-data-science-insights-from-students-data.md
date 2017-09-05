@@ -80,7 +80,7 @@ ggplot(data = smr, mapping = aes(x = date, y = n_logins)) +
     stat_smooth(method ="auto", level = 0.95, span = 0.4)
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/line1.pnd)
+![](https://irudnyts.github.io/images/posts/2017-05-05-5-minutes-data-science-insights-from-students-data/line1.png)
 
 This figure shows that the trend is quite linear, with two peaks of the first exercise and the midterm. After the midterm the line is even more stable and predictable.
 
