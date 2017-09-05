@@ -10,7 +10,7 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ----
 
-## Education :mortar_board:
+## :mortar_board: Education 
 
 ### on-Campus
 
@@ -55,7 +55,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Papers :newspaper:
+## :memo: Papers 
 
 ### Working papers
 
@@ -67,7 +67,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Software :computer:
+## :computer: Software 
 
 ### R packages
 
@@ -81,7 +81,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Talks :chart_with_upwards_trend:
+## :chart_with_upwards_trend: Talks 
 
 * [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/ime.pdf) <br />
 21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna
@@ -103,7 +103,7 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 
 ----
 
-## Teaching :eyeglasses:
+## :eyeglasses: Teaching 
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
 Teaching Assistant to Joël Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016
