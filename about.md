@@ -4,13 +4,13 @@ title: About
 permalink: /about/
 ---
 
-## Intro
+## Intro 
 
 I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), and I don't like long introductions. Check out my contributions below in order to figure out who I am.
 
 ----
 
-## Education
+## Education :mortar_board:
 
 ### on-Campus
 
@@ -55,9 +55,9 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Papers
+## Papers :newspaper:
 
-### Working papers:
+### Working papers
 
 * Stochastic Programming for Asset Allocation in Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -67,7 +67,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Software
+## Software :computer:
 
 ### R packages
 
@@ -81,7 +81,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## Talks
+## Talks :chart_with_upwards_trend:
 
 * [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/ime.pdf) <br />
 21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna
@@ -103,7 +103,7 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 
 ----
 
-## Teaching
+## Teaching :eyeglasses:
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
 Teaching Assistant to Joël Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016
