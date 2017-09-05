@@ -1,5 +1,5 @@
 
-**Iegor Rudnytskyi** personal web-page and blog powered by [Jekyll](https://jekyllrb.com) [(Now)](https://github.com/barryclark/jekyll-now) and hosted by :octocat: (GitHub Pages)[https://pages.github.com].
+**Iegor Rudnytskyi** personal web-page and blog powered by [Jekyll](https://jekyllrb.com) [(Now)](https://github.com/barryclark/jekyll-now) and hosted by :octocat: [GitHub Pages](https://pages.github.com).
 
 The blog covers various topics in data science :bar_chart:, R programming :notebook:, statistics :mortar_board:, and actuarial science :moneybag:.
 
@@ -23,5 +23,5 @@ Contents of the following directories are Copyright Iegor Rudnytskyi:
 - images/posts/
 - _drafts/
 
-All the rest contents, according to Jekyll Now, is under the MIT License (see LICENSE file). :metal: :four_leaf_clover:
+All the rest contents, according to Jekyll Now, is under the MIT License (see LICENSE file) :metal: :four_leaf_clover:.
 
