@@ -80,13 +80,13 @@ Having collected all the required data, we need to tidy it and coerce to appropr
 
 ```r
 property$price <- property$price %>% 
-    gsub(pattern = " ", replacement = "", fixed = TRUE) %>%
+    gsub(pattern = " \u20AC", replacement = "", fixed = TRUE) %>%
     gsub(pattern = ".", replacement = "", fixed = TRUE) %>% 
     gsub(pattern = ",", replacement = ".", fixed = TRUE) %>%
     as.numeric()
 
 property$area <- property$area %>%
-    gsub(pattern = " ", replacement = "", fixed = TRUE) %>%
+    gsub(pattern = " m\u00B2", replacement = "", fixed = TRUE) %>%
     gsub(pattern = ",", replacement = ".", fixed = TRUE) %>%
     as.numeric()
 
