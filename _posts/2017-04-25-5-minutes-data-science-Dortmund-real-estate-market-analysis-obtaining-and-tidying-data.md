@@ -23,21 +23,19 @@ equal_lengths <- function(...) {
 
 url_part1 <- "https://www.immobilienscout24.de/Suche/S-T/P-"
 url_part2 <- "/Wohnung-Miete/Nordrhein-Westfalen/Dortmund?pagerReporting=true"
-pages <- 1:44
+pages <- 1:45
 
 urls <- paste0(url_part1, pages, url_part2)
 
 property <- data.frame(price = character(),
                        area = character(),
-                       rooms = character())
-                       
+                       rooms = character(),
+                       address = character())
 ```
 
 At this step it seems natural to use a `for` loop, and go over each link. Unfortunately, guys from immobilienscout24 use rate limiting (I am not an expert, but it seems like). Thus, I figured out that we need to download the data in `while` loop instead, for which the condition to stop would be the length of urls equals to 0. Inside the loop each page is parsed, and we extract the following information about entries: `price`, `area` (living space), `rooms`, and `address`. If the rate limiting is triggered, then a part of data is lost, and therefore, the lengths of these variables will be different. Conditioning on the length equality, the content of variables is copied to `property`, and the processed url is removed from `urls`.
 
 The `rvest` package was designed to work in conjunction with `magrittr` package, allowing for usage of the so-called [pipe](https://www.r-bloggers.com/why-bother-with-magrittr/) (also worth reading).
-
-In this post we won't use the address variable for simplification. Of course, prices of rents strongly depend on the district, which will be a subject of further posts later on. Now we can enjoy smooth code with commented parts for addresses. 
 
 ```r
 while(length(urls) > 0) {
@@ -63,20 +61,20 @@ while(length(urls) > 0) {
     #     html_nodes(".margin-bottom-xs") %>%
     #     html_text()
     
-    # address <- immo %>% 
-    #     html_nodes("#resultListItems .link-underline") %>%
-    #     html_text()
+    address <- immo %>%
+        html_nodes("#listings .link-underline") %>%
+        html_text()
     
-    if(equal_lengths(price, area, rooms)) {
+    if(equal_lengths(price, area, rooms, address)) {
         property <- rbind(property, 
-                          data.frame(price, area, rooms))
+                          data.frame(price, area, rooms, address))
         urls <- urls[-1]
         
     }
 }
 ```
 
-Having collected all the required data, we need to tidy it and coerce to appropriate formats. The desired strings contain in the end units (e.g. euro currency sign or square meter signs). We get rid of them using built-in function `gsub`. Also we need to drop `.` as thousands separator, and replace `,` with `.` for a decimal point. Finally, we can convert characters to numerics.
+Having collected all the required data, we need to tidy it and coerce to appropriate formats. For numeric data things are quite simple. Desired characters, `price` and `area`, contain in the end units (e.g. euro currency sign or square meter signs). We get rid of them using built-in function `gsub`. Further, we need to drop `.` as thousands separator, and replace `,` with `.` for a decimal point (including `rooms` variable). Finally, we can convert characters to numerics.
 
 ```r
 property$price <- property$price %>% 
@@ -95,12 +93,32 @@ property$rooms <- property$rooms %>%
     as.numeric()
 ```
 
-Finally, removing `NA`s yields nice and clean data, on which we will calibrate our models in further post.
+
+With addresses it's a little bit trickier. We will focus on the district treating it as categorical variable for further regression models. However, not all entries has the nice and full address. Some of them contain only the district and city name. First off, we extract the district from full address observations, and then extract the district from the rest of entries: 
 
 ```r
-property <- property[complete.cases(property), ]
-
+property$part <- str_match(string = property$address,
+                           pattern = "(?<=, )(.+?),")[, 2]
+property$part[is.na(property$part)] <- 
+    gsub(pattern = ", Dortmund", "", property$address[is.na(property$part)])
 ```
+
+Finally, removing `NA`s and throwing away duplicated rows yield nice and clean data, on which we will calibrate our models in the further post.
+
+```r
+nrow(property)
+# > 900
+nrow(unique(property))
+# > 889
+sum(complete.cases(property))
+# > 889
+property <- property[!duplicated(property) & complete.cases(property), ]
+nrow(property)
+# > 888
+```
+As result of these code snippets we obtained the nice real estate data set of 888 rows including such columns as `price`, `area`, `rooms`, `address`, and `part`. The data is free from missed values and duplicated rows. So, Set a course for regression, full speed ahead!
+
+Please, note, that with a bit of pain in neck it's possible to get more detailed info, like the level of building, balcony, cellar, etc. But for a time being it's reasonable to operate with available data.
 
 The source file is available at my [gist](https://gist.github.com/irudnyts/9919fd110dabeea41c12894f2275adf9) together with [data file](https://gist.github.com/irudnyts/ec2a2af812d7b23b26294b01181d8791) downloaded on 2017 September 8.
 
