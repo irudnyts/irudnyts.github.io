@@ -76,7 +76,7 @@ while(length(urls) > 0) {
 }
 ```
 
-Having collected all the required data, we need to tidy it and coerce to appropriate formats. The desired strings contain in the end units (e.g. &euro or square meter signs). We get rid of them using built-in function `gsub`. Also we need to drop `.` as thousands separator, and replace `,` with `.` for a decimal point. Finally, we can convert characters to numerics.
+Having collected all the required data, we need to tidy it and coerce to appropriate formats. The desired strings contain in the end units (e.g. euro currency sign or square meter signs). We get rid of them using built-in function `gsub`. Also we need to drop `.` as thousands separator, and replace `,` with `.` for a decimal point. Finally, we can convert characters to numerics.
 
 ```r
 property$price <- property$price %>% 
