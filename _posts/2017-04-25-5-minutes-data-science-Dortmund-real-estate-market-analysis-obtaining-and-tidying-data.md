@@ -102,6 +102,6 @@ property <- property[complete.cases(property), ]
 
 ```
 
-The source file is available at my [gist](https://gist.github.com/irudnyts/9919fd110dabeea41c12894f2275adf9) and [data](https://gist.github.com/irudnyts/ec2a2af812d7b23b26294b01181d8791) downloaded on 2017 September 8.
+The source file is available at my [gist](https://gist.github.com/irudnyts/9919fd110dabeea41c12894f2275adf9) together with [data file](https://gist.github.com/irudnyts/ec2a2af812d7b23b26294b01181d8791) downloaded on 2017 September 8.
 
 Update: how could I miss that immobilienscout24 has an [API](https://api.immobilienscout24.de/)? However, it's not yet clear whether the time spent learning API would take less than writing this code.
