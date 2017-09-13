@@ -44,11 +44,11 @@ Multiple R-squared:  0.7855,	Adjusted R-squared:  0.785
 F-statistic:  1620 on 2 and 885 DF,  p-value: < 2.2e-16
 ```
 
-All coefficients are significant. The intercept tells not much in this case: what's the price of the apartment with no rooms and 0-area? The positive value of `area` coefficient is the price of additional square meter keeping all other variables (actually only the number of rooms) constant. It's interesting to see the negative sign of `rooms` coefficient. The interpretation is as follows: given, for instance, an apartment of 50 squre meters, one-room apartment would cost to rent 67 euros more expensive than two-rooms apartment. Suprisingly, it goes along with intuition: apartments with larger rooms have higer rent, and we will exploit this fact later on. This model explains around 78% of the price variance. Let's see if we can improve our predictions using other linear regression models that are the simplest models can be used. We try to exctract from them everything we can.
+All coefficients are significant. The intercept tells not much in this case: what's the price of the apartment with no rooms and 0-area? The positive value of `area` coefficient is the price of additional square meter keeping all other variables (actually only the number of rooms) constant. It's interesting to see the negative sign of `rooms` coefficient. The interpretation is as follows: given, for instance, an apartment of 50 square meters, one-room apartment would cost to rent 67 euros more expensive than two-rooms apartment. Surprisingly, it goes along with intuition: apartments with larger rooms have higher rent, and we will exploit this fact later on. This model explains around 78% of the price variance. Let's see if we can improve our predictions using other linear regression models that are the simplest models can be used. We try to extract from them everything we can.
 
 ## Model selection 
 
-What variables should be included in the model? The standard procedure in R `step()` is an implementation of stepwise regression. This technique is havily [critisized](http://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf) in recent years. For instance, it is well-known, the more predictors are included in the model, the higher $R^2$. Furthermore, it make no sense to apply stepwise regression if one has only two regressor, like in our case. We focus on ANOVA and AIC tests, but first we explore the relation between covariates:
+What variables should be included in the model? The standard procedure in R `step()` is an implementation of stepwise regression. This technique is heavily [criticized](http://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf) in recent years. For instance, it is well-known, the more predictors are included in the model, the higher $R^2$. Furthermore, it make no sense to apply stepwise regression if one has only two regressor, like in our case. We focus on ANOVA and AIC tests, but first we explore the relation between covariates:
 
 ```r
 cor(property$area, property$rooms)
@@ -62,7 +62,7 @@ ggplot(data = property) +
 
 ![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/area_rooms.png)
 
-Variables `area` and `rooms` are positively correlated (which is not a big surprise), but definetely have non-linear relation. Now we must investigate if `price` can be predicted better by only one of these variables. Also it is necessary to check if the interaction (`area * rooms`) term is needed. Remember it was mentioned in the beggining, that it is reasonable to assume that the area per room might be relevant? Thus, we include this variable (`area / rooms`) as well. Then, why not include the oposite ratio (`rooms / area`)? We calibrate ten models with different sets of regressors and compare RMSE (root mean square error), $R^2$, AIC, and run ANOVA test.
+Variables `area` and `rooms` are positively correlated (which is not a big surprise), but definitely have non-linear relation. Now we must investigate if `price` can be predicted better by only one of these variables. Also it is necessary to check if the interaction (`area * rooms`) term is needed. Remember it was mentioned in the beginning, that it is reasonable to assume that the area per room might be relevant? Thus, we include this variable (`area / rooms`) as well. Then, why not include the opposite ratio (`rooms / area`)? We calibrate ten models with different sets of regressors and compare RMSE (root mean square error), $R^2$, AIC, and run ANOVA test.
 
 ```r 
 models <- list(
@@ -111,7 +111,7 @@ Model 5: price ~ area + rooms + I(rooms/area) + I(area * rooms) + I(area/rooms)
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
 
-According to all criteria the model that includes only `area` significantly outperforms the model with only `rooms`. Adding the variable `rooms` to the model with only `area` tangibly improves the model. Then, surely, we could add different covariates and pairwisely compare models, but we focus on AIC instead, which penalize those models with too many covariates. The model that includes `area`, `rooms`, and the interaction term `rooms / area` shows the smallest AIC, competitive $R^2$, and among the smallest RMSE. Furthermore, ANOVA test shows that adding `area * rooms` and `area / rooms` does not improve the model significantly. As long as we want to avoid overfitting, we use the model selected by AIC, i.e. with both variables (`area` and `rooms`) and the interation term `rooms / area` as reference model.
+According to all criteria the model that includes only `area` significantly outperforms the model with only `rooms`. Adding the variable `rooms` to the model with only `area` tangibly improves the model. Then, surely, we could add different covariates and pair-wisely compare models, but we focus on AIC instead, which penalize those models with too many covariates. The model that includes `area`, `rooms`, and the interaction term `rooms / area` shows the smallest AIC, competitive $R^2$, and among the smallest RMSE. Furthermore, ANOVA test shows that adding `area * rooms` and `area / rooms` does not improve the model significantly. As long as we want to avoid overfitting, we use the model selected by AIC, i.e. with both variables (`area` and `rooms`) and the interaction term `rooms / area` as reference model.
 
 ## Residuals and outliers diagnostics
 
@@ -136,7 +136,7 @@ sort(abs(ref_model$residuals), decreasing = TRUE)[1:5]
 #       52      141      126      563      843 
 # 893.6243 735.4020 587.2990 558.2192 534.7874
 ```
-It is also possible to compare these points with points of largest `hatvalues` and `cooks.distance`. The former measures the leverage, and the later meausres overall change in the coefficietns when the point is not used for estimation:
+It is also possible to compare these points with points of largest `hatvalues` and `cooks.distance`. The former measures the leverage, and the later measures overall change in the coefficients when the point is not used for estimation:
 
 ```r
 sort(hatvalues(ref_model), decreasing = TRUE)[1:5]
@@ -179,7 +179,7 @@ property[order(property$area, decreasing = TRUE), 1:3] %>% head()
 # 409  1450  183     5
 ```
 
-We fit the model without such outliers. Unfortunatelly, AIC cannot be used for choosing the best model, since models are calibrated on different sets of data. Fitting data without outliers slightly decreases $R^2$ and increases RMSE. RMSE is also based on data without outliers, and, thus, also biased measurment. Therefore, in further analysis we keep outliers.
+We fit the model without such outliers. Unfortunately, AIC cannot be used for choosing the best model, since models are calibrated on different sets of data. Fitting data without outliers slightly decreases $R^2$ and increases RMSE. RMSE is also based on data without outliers, and, thus, also biased measurement. Therefore, in further analysis we keep outliers.
 
 ```r
 unb_model <- lm(price ~ area + rooms + I(area / rooms),
@@ -198,7 +198,7 @@ sapply(list(unb_model, ref_model), rmse, data = property[!property$is_outlier, ]
 
 ## Transformation of response variable
 
-The multiple linear regression model assumes the normality of the error terms, therefore, assuming normality of the dependent variable. Obviously prices are not normal, since they are only positive values and the distribution is skewd. In this case, typically `log` transformation is applied to the dependent variable.
+The multiple linear regression model assumes the normality of the error terms, therefore, assuming normality of the dependent variable. Obviously prices are not normal, since they are only positive values and the distribution is skewed. In this case, typically `log` transformation is applied to the dependent variable.
 
 ```r
 property$norm <- dnorm(property$price, 
@@ -223,7 +223,7 @@ property$norm_log <- NULL
 
 ![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/density.png)
 
-We agin quickly perform model selection. This time we chose the model with both variables and the multiplicative interaction term (`area * rooms`), as one with smallest AIC. The interation term became significant due to the nature of logarithm transform.
+We agin quickly perform model selection. This time we chose the model with both variables and the multiplicative interaction term (`area * rooms`), as one with smallest AIC. The interaction term became significant due to the nature of logarithm transform.
 
 ```r
 log_models <- list(
@@ -290,11 +290,11 @@ c(((predict(ref_model) - property$price) / property$price) ^ 2 %>%
 # [1] 0.2410944 0.2222028
 ```
 
-The log-transformed model returns higher RMSE when compared to the initial reference model, and a bit better RMSRE. In general, log-transformed model is preffered one, since it never returns negative values, even though it has larger RMSE. 
+The log-transformed model returns higher RMSE when compared to the initial reference model, and a bit better RMSRE. In general, log-transformed model is preferred one, since it never returns negative values, even though it has larger RMSE. 
 
 ## Cross-validation 
 
-Finally, two models (reference and log-transformed) should be validated (tested on overfiting). For this we use k-fold cross validation techniques:
+Finally, two models (reference and log-transformed) should be validated (tested on overfitting). For this we use k-fold cross validation techniques:
 
 ```r
 property$simple_pred <- NULL
