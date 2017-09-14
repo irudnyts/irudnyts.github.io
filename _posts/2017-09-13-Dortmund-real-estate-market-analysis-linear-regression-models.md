@@ -182,18 +182,18 @@ property[order(property$area, decreasing = TRUE), 1:3] %>% head()
 We fit the model without such outliers. Unfortunately, AIC cannot be used for choosing the best model, since models are calibrated on different sets of data. Fitting data without outliers slightly decreases $R^2$ and increases RMSE. RMSE is also based on data without outliers, and, thus, also biased measurement. Therefore, in further analysis we keep outliers.
 
 ```r
-unb_model <- lm(price ~ area + rooms + I(area / rooms),
+unb_model <- lm(price ~ area + rooms + I(rooms / area),
                 property[!property$is_outlier, ])
 coef(unb_model); coef(ref_model)
-# (Intercept)          area         rooms I(area/rooms) 
-#  122.426543     12.789750   -126.918008     -5.746875 
-# (Intercept)          area         rooms I(rooms/area) 
+# (Intercept)          area         rooms I(rooms/area)  
+#  -300.01637      13.88343    -159.22218    6929.05469  
+# (Intercept)          area         rooms I(rooms/area)  
 #  -263.14824      13.38995    -147.71802    6109.04617 
 sapply(list(unb_model, ref_model),
        function(x) summary(x)$r.squared)
-# [1] 0.7844617 0.7929940
+# [1] 0.7919386 0.7929940
 sapply(list(unb_model, ref_model), rmse, data = property[!property$is_outlier, ])
-# [1] 145.0289 142.5783
+# [1] 142.4912 142.5783
 ```
 
 ## Transformation of response variable
