@@ -327,5 +327,7 @@ c(((property$price - property$simple_pred) / property$price) ^ 2 %>%
       mean() %>% sqrt())
 # [1] 0.2436167 0.2301364
 ```
+It seems that the reference model is not overfitted, since the out-of-sample RMSE is very close to in-sample one (`147.6181` and `148.2719`, respectively). The same concerns to RMSRE (`0.2410944` and `0.2436167`). However, log-transformed model has slightly larger RMSE on test data (`198.9451` against `171.7737`), and more or less similar RMSRE (`0.2301364` and `0.2222028`).
 
-Our reference model outperform the log-transformed model in terms of RMSE, and slightly underperform RMSRE. 
+Depending on which measure (RMSE or RMSRE) is used, one or another model is preferred. Of course, one can argue that for the reference model it's easier to interpret coefficients. However, the log-transformed model returns only non-negative prices, which makes sense in the given context. In further posts, we will utilize the power of GLM, GAM, and tree-based methods.
+
