@@ -45,9 +45,9 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * International Summer Program <br />
 *Technical University of Dortmund*, 2013
 
-### On-line
+### MOOC
 
-* Intro to Python for Data Science, Supervised Learning in R: Regression <br />
+* Intro to Python for Data Science, Supervised Learning in R: Regression, Machine Learning Toolbox <br />
 *DataCamp*, 2017
 
 * The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis <br />
