@@ -46,9 +46,7 @@ property_dens <- property_dens %>%
 ggplot(property, aes(x = price)) + 
     geom_density() +
     geom_line(data = property_dens,
-              aes(x = price, y = dens, colour = distr)) + 
-    theme_bw() +
-    theme(text = element_text(size = 24))
+              aes(x = price, y = dens, colour = distr))
 ```
 
 ![](https://irudnyts.github.io/images/posts/2017-09-23-Dortmund-real-estate-market-analysis-glm-gam/dens.png)
