@@ -14,6 +14,9 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ### on-Campus
 
+* Doctor of Philosophy in Actuarial Science <br />
+*University of Lausanne*, 2015-Now
+
 * Master of Science in Actuarial Science <br />
 *University of Lausanne*, 2013-2015
 
