@@ -33,15 +33,15 @@ I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), an
 
 ### Summer schools
 
-* International Summer School of the Swiss Association of Actuaris <br />
+* International Summer School of the Swiss Association of Actuaries <br />
 Insurance Management: Trends, Challenges and Solutions <br />
 *University of Lausanne*, 2017
 
-* International Summer School of the Swiss Association of Actuaris <br />
+* International Summer School of the Swiss Association of Actuaries <br />
 Quantative Risk Management: Concepts, Techniques and Tools <br />
 *University of Lausanne*, 2016
 
-* International Summer School of the Swiss Association of Actuaris <br />
+* International Summer School of the Swiss Association of Actuaries <br />
 Reinsurance: Actuarial and Statistical Aspects <br />
 *University of Lausanne*, 2015
 
@@ -65,7 +65,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * Stochastic Programming for Asset Allocation in Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
 
-* Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis <br />
+* Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis <br />
 *M. Kreutzer, I. Rudnytskyi, J. Wagner*
 
 ----
@@ -92,7 +92,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/rinins17.pdf) <br />
 R in Insurance, 2017 June 8, Paris
 
-* [Impact of Catastrophe Events on Non-life Insurance Companies’ Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/eaj.pdf) <br />
+* [Impact of Catastrophe Events on Non-life Insurance Companies' Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/eaj.pdf) <br />
 3rd European Actuarial Journal (EAJ) Conference, 2016 September 6 – 8, Lyon
 
 * [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/satrday.pdf) <br />
@@ -101,7 +101,7 @@ satRday #1 Conference, 2016 September 3, Budapest
 * [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/rinins.pdf) <br />
 R in Insurance, 2016 June 11, London
 
-* [Impact of Catastrophe Events on Insurance Companies’ Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/dvfvw.pdf) <br />
+* [Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/dvfvw.pdf) <br />
 Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna
 
 ----
@@ -109,10 +109,10 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 ## :eyeglasses: Teaching 
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
-Teaching Assistant to Joël Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016
 
 * Simulation Methods in Finance and Insurance (exercise sessions) <br />
-Teaching Assistant to Joël Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
 
 * Web-scale Analytics (lecture/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014
