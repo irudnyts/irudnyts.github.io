@@ -3,7 +3,9 @@ layout: post
 title: Custom set up of keras and TensorFlow for R and Python
 ---
 
-About a month ago RStudio [introduced](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google. 
+About a month ago RStudio [introduced](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google.
+
+![](https://irudnyts.github.io/images/posts/2017-10-20-Custom-set-up-of-keras-and-TensorFlow-for-R-and-Python/r_python.png)
 
 Even though RStudio is not the first who developed such an interface (see [kerasR](https://cran.r-project.org/web/packages/kerasR/index.html)), they usually build robust and stable tools and software. Official [documentation](https://keras.rstudio.com) shows a pretty straight-forward way how to install and use the package. However, the installation procedure assumes to use Python 2.7 (default Python on macOS). As long as I also use Python and prefer to use 3.6 I decided to write a little guide for installation all the data science tools related to Python.
 
@@ -46,8 +48,6 @@ python3 --version
 ```
 which should return a version of Python. Nice thing that Homebrew installs `pip3` (a package manager for Python libraries) automatically.
 
-Sources: [1](http://docs.python-guide.org/en/latest/starting/install3/osx/), [2](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos#step-6-—-creating-a-simple-program), [3](http://www.marinamele.com/2014/07/install-python3-on-mac-os-x-and-use-virtualenv-and-virtualenvwrapper.html)
-
 ## 2. Install TensorFlow
 
 I personally prefer to install TensorFlow with "native" pip approach instead of virtualenv, since I do not have many projects relying on different packages' versions. Thus, to install TensorFlow it's enough to 
@@ -55,7 +55,6 @@ I personally prefer to install TensorFlow with "native" pip approach instead of 
 ```shell
 pip3 install tensorflow
 ```
-Source: [1](https://www.tensorflow.org/install/install_mac)
 
 ## 3. Install keras
 
@@ -66,8 +65,6 @@ pip3 install keras
 ```
 
 should do the trick. 
-
-Source: [1](https://keras.io)
 
 ## 3. Bonus: Install Rodeo IDE
 
@@ -96,3 +93,6 @@ use_python("/usr/local/bin/python3")
 ```
 to specify a path to Python 3. Restart RStudio. Load `keras` library and get your hands dirty. Voil&agrave;! Unless you screwed up somewhere (which is usually the case for me), everything should work nicely.
 
+Sources: [1](http://docs.python-guide.org/en/latest/starting/install3/osx/), [2](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos#step-6-—-creating-a-simple-program), [3](http://www.marinamele.com/2014/07/install-python3-on-mac-os-x-and-use-virtualenv-and-virtualenvwrapper.html), [4](https://www.tensorflow.org/install/install_mac), [5](https://keras.io)
+
+Picture by [Statistical Statistics Memes](https://www.facebook.com/statsmemes/)
