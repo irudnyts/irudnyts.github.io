@@ -102,6 +102,20 @@ sapply(ig_models, function(x) rmse_glm(x))
 For IG GLM, both AIC and RMSE suggest to use model with `price`, `rooms` and interaction `rooms * area`. Note that IG returns much larger RMSE, and from this perspective gamma GLM is preferred. However, before stepping further let's see models perform with out-of-sample prediction. We again use cross-validation techniques.
 
 ```r
+
+cv_rmse <- function(folds, fit_function, fit_formula, fit_data, fit_family) {
+    pred <- rep(NA, nrow(fit_data))
+    for(fold in folds) {
+        fit_model <- fit_function(data = fit_data[fold$train, ],
+                           formula = fit_formula,
+                           family = fit_family)
+        pred[fold$app] <- predict(fit_model,
+                                  fit_data[fold$app, ],
+                                  type = "response")
+    }
+    (fit_data[, all.vars(fit_formula)[1]] - pred) ^ 2 %>% mean() %>% sqrt()
+}
+
 set.seed(3)
 folds <- kWayCrossValidation(nRows = nrow(property), nSplits = 3)
 
