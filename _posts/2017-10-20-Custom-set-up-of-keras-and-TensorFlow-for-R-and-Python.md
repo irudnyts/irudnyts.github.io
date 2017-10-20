@@ -71,7 +71,7 @@ Source: [1](https://keras.io)
 
 ## 3. Bonus: Install Rodeo IDE
 
-I am addicted to sweet RStudio IDE. I had several attempts to try Python, but I was always disappointed and pissed off by ugly IDE. Until I discovered Rodeo. Alright, maybe it's a bit buggy, but at least it does not look like Windows XP-ish retired lady Spyder. Guys, let's have a bit of a taste :innocent:
+I am addicted to sweet RStudio IDE. I had several attempts of trying Python, but I was always disappointed and pissed off by ugly IDE. Until I discovered Rodeo. Alright, maybe it's a bit buggy, but at least it does not look like Windows XP-ish retired lady Spyder. Guys, let's have a bit of a taste :innocent:
 
 The easiest way to install Rodeo is to download and install it from `.dmg` file. During the first start-up Rodeo probably will ask to install several required packages. Since we did not install Anaconda distribution, we need to do it manually:
 
