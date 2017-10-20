@@ -50,7 +50,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### MOOC
 
-* Intro to Python for Data Science, Intermediate Python for Data Science, Supervised Learning in R: Regression, Multiple and Logistic Regression, Machine Learning Toolbox <br />
+* Intro to Python for Data Science, Intermediate Python for Data Science, Deep Learning in Python, Supervised Learning in R: Regression, Multiple and Logistic Regression, Machine Learning Toolbox <br />
 *DataCamp*, 2017
 
 * The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis <br />
