@@ -3,7 +3,7 @@ layout: post
 title: Custom set up of keras and TensorFlow for R and Python
 ---
 
-About a month ago RStudio [introduced](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google.
+About a month ago RStudio [published on CRAN](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google.
 
 ![](https://irudnyts.github.io/images/posts/2017-10-20-Custom-set-up-of-keras-and-TensorFlow-for-R-and-Python/r_python.png)
 

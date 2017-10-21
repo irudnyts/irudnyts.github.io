@@ -167,7 +167,7 @@ cv_rmse(folds = folds,
         fit_family = inverse.gaussian(link = "log"))
 # [1] 138.4663
 ```
-The model with Gamma distribution returns higher out-of-sample RMSE than IG. This fact and my personal gut feeling are in favor of IG GAM. But more importantly, GAM IG shows substantially lower RMSE than all other previous models.
+The model with Gamma distribution returns higher out-of-sample RMSE than IG. Furthermore, for Gamma out-of-sample RMSE is considerably larger than in-sample, which a signal of overfitting risk. IG model in- and out-of-sample RMSE are comparable. This fact and my personal gut feeling are in favor of IG GAM. But more importantly, GAM IG shows substantially lower RMSE than all other previous models.
 
 As summary, GLM are not always better than simple linear regression, even if the distribution of outcome variable is non-normal. In our particular case GAM significantly improves RMSE. 
 
