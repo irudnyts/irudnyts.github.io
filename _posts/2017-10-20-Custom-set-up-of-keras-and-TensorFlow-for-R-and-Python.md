@@ -66,7 +66,7 @@ pip3 install keras
 
 should do the trick. 
 
-## 3. Bonus: Install Rodeo IDE
+## 3.1. Bonus: Install Rodeo IDE
 
 I am addicted to sweet RStudio IDE. I had several attempts of trying Python, but I was always disappointed and pissed off by ugly IDE. Until I discovered Rodeo. Alright, maybe it's a bit buggy, but at least it does not look like Windows XP-ish retired lady Spyder. Guys, let's have a bit of a taste :innocent:
 
