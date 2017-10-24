@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#127795; Dortmund real estate market analysis&#58; tree-based methods
+title: "&#127795; Dortmund real estate market analysis&#58; tree-based methods"
 ---
 
 In pervious posts traditional regression models were fitted to real estate data. In this post tree-based models, namely random forests and gradient boosting, are trained to predict prices of the rent. These methods typically outperform traditional regression models yielding smaller errors. Furthermore, tree-based methods are much more robust to overfitting, which makes them superior in terms of prediction. However, the main disadvantage (and the reason why there is no love in insurance industry) is difficulties with interpretability.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#127866; Dortmund real estate market analysis&#58; linear regression models
+title: "&#127866; Dortmund real estate market analysis&#58; linear regression models"
 ---
 
 In this post we use various linear regression models to describe the real estate market in Dortmund. The process of tidying and obtaining data can be found in [previous post](https://irudnyts.github.io/5-minutes-data-science-Dortmund-real-estate-market-analysis-obtaining-and-tidying-data/), while the data can be downloaded from [gist](https://gist.github.com/irudnyts/ec2a2af812d7b23b26294b01181d8791).

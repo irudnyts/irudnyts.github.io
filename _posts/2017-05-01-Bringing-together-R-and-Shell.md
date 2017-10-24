@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#128187; Bringing together R and Shell
+title: "&#128187; Bringing together R and Shell"
 ---
 
 I believe in our era of RStudio and interactive data analysis, R scripts rarely needed to be run from Shell. The same applies to the opposite: executing Shell commands from R is quite uncommon. However, some cases exist for which this is necessary.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#128230; Installing and loading R packages
+title: "&#128230; Installing and loading R packages"
 ---
 
 One reason of R popularity is an ocean of packages. Even though it is pretty straightforward to manage packages, there are a couple of tricks, do’s and don’ts, and other things which require a care.

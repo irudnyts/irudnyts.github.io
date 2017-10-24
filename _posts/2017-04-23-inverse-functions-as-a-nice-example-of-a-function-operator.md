@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#128200; Inverse functions as a nice example of a function operator
+title: "&#128200; Inverse functions as a nice example of a function operator"
 ---
 
 In the course I assist this spring ([Simulation Methods in Finance and Insurance](https://hec.unil.ch/hec/syllabus/descriptif/2015?dyn_lang=en)), there are plenty of places where one has to inverse a function.

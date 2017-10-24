@@ -1,6 +1,6 @@
 ---
 layout: post
-title: &#128208; Deming versus simple linear regression
+title: "&#128208; Deming versus simple linear regression"
 ---
 
 All courses that somehow covered regression models were starting almost in the same way: given bunch of $y$'s and $x$'s points, one needs to predict a value of $y$ for a certain $x$. Sounds quite easy. Without utilizing any statistical assumptions, we can just find the line, which is in a way closest to those points (best fit line). So the model is as follows:
