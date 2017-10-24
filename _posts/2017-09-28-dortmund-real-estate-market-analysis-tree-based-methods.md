@@ -69,7 +69,7 @@ which.min(xg$evaluation_log$test_rmse_mean)
 ggplot(data = xg$evaluation_log) + geom_line(aes(x = iter, y = test_rmse_mean))
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-09-28-Dortmund-real-estate-market-analysis-tree-based-methods/iter.png)
+![](https://irudnyts.github.io/images/posts/2017-09-28-dortmund-real-estate-market-analysis-tree-based-methods/iter.png)
 
 The minimum out-of-sample RMSE is showed by the model with `nrounds = 32`. This value is approximate and depends on a seed. We use `nrounds = 40`. Let's calculate RMSE for the optimal model and then out-of sample RMSE:
 

@@ -5,7 +5,7 @@ title: "&#128013; Custom set up of keras and TensorFlow for R and Python"
 
 About a month ago RStudio [published on CRAN](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google.
 
-![](https://irudnyts.github.io/images/posts/2017-10-20-Custom-set-up-of-keras-and-TensorFlow-for-R-and-Python/r_python.png)
+![](https://irudnyts.github.io/images/posts/2017-10-20-custom-set-up-of-keras-and-tensorflow-for-r-and-python/r_python.png)
 
 Even though RStudio is not the first who developed such an interface (see [kerasR](https://cran.r-project.org/web/packages/kerasR/index.html)), they usually build robust and stable tools and software. Official [documentation](https://keras.rstudio.com) shows a pretty straight-forward way how to install and use the package. However, the installation procedure assumes to use Python 2.7 (default Python on macOS). As long as I also use Python and prefer to use 3.6 I decided to write a little guide for installation all the data science tools related to Python.
 

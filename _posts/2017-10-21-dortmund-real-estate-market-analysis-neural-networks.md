@@ -5,7 +5,7 @@ title: "&#128300; Dortmund real estate market analysis&#58; neural networks"
 
 At every turn in a non-technical post about AI for broader audience an author deems their duty to mention a deep learning as panacea for all woes. Well, it's not. Deep learning is just one of various models, which might or might not perform better then the other techniques. At the end of the day, in a nutshell, it's just regular neural networks with multiple hidden layers between the input and output layers (well, it's rather a oversimplification, but you got it right). In this post I am curious whether it's possible for neural networks approach to beat our best model so far (GAM with response's inverse Gaussian distribution).
 
-![](https://irudnyts.github.io/images/posts/2017-10-21-Dortmund-real-estate-market-analysis-neural-networks/neuron.png)
+![](https://irudnyts.github.io/images/posts/2017-10-21-dortmund-real-estate-market-analysis-neural-networks/neuron.png)
 
 The nice thing about neural networks is it allows for interactions between variables. Remember we included several interaction terms to our simple linear, GLM and GAM models? The construction of neural networks' model assumes much more complicated interactions, we do not have to worry about that. The more hidden layers we use the more complex these interactions can be.
 

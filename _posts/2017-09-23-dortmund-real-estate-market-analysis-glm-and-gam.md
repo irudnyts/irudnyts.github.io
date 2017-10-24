@@ -49,7 +49,7 @@ ggplot(property, aes(x = price)) +
               aes(x = price, y = dens, colour = distr))
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-09-23-Dortmund-real-estate-market-analysis-glm-gam/dens.png)
+![](https://irudnyts.github.io/images/posts/2017-09-23-dortmund-real-estate-market-analysis-glm-and-gam/dens.png)
 
 The plot indicates better fit of IG distribution. However, one should notice that the fit ignores the effect of explanatory variables, and does not fully reflect the goodness-of-fit of final regression models.
 

@@ -25,7 +25,7 @@ Imposing assumptions on $\epsilon$ the theoretical distribution of $y$ is known.
 
 So far so good, but let's step back for a second and check ourselves. Minimizing the distances between observed variables and the fitted ones sounds very good, but wait a second... That's how the vertical distance defined, not the orthogonal. By definition, the shortest distance between a point and a line is actually orthogonal distance, not the vertical one, which is minimized by the OLS (see illustration below).
 
-![](https://irudnyts.github.io/images/posts/2017-08-24-technically-deming-versus-simple-linear-regression/v_vs_o.png)
+![](https://irudnyts.github.io/images/posts/2017-08-24-deming-versus-simple-linear-regression/v_vs_o.png)
 
 What if we minimize the orthogonal distances instead? It turns out that such model exists and is called *Deming regression* (even though the model was proposed by Adcock R. J. in 1878, and later being mainstreamed by Deming W.E.). The model is extremely popular in clinical chemistry nowadays.
 
@@ -95,7 +95,7 @@ ggplot(data.frame(x = x, y = y)) +
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-08-24-technically-deming-versus-simple-linear-regression/ols_vs_deming.png)
+![](https://irudnyts.github.io/images/posts/2017-08-24-deming-versus-simple-linear-regression/ols_vs_deming.png)
 
 However, until now we worked only with one sample. The following code generates $100$ samples, fits $200$ regressions and returns data frames, which contain the relative errors of estimates for both regressions (basically we copy-pasted the old code in `for` loop).
 

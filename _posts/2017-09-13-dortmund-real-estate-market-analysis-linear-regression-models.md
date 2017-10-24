@@ -60,7 +60,7 @@ ggplot(data = property) +
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/area_rooms.png)
+![](https://irudnyts.github.io/images/posts/2017-09-13-dortmund-real-estate-market-analysis-linear-regression-models/area_rooms.png)
 
 Variables `area` and `rooms` are positively correlated (which is not a big surprise), but definitely have non-linear relation. Now we must investigate if `price` can be predicted better by only one of these variables. Also it is necessary to check if the interaction (`area * rooms`) term is needed. Remember it was mentioned in the beginning, that it is reasonable to assume that the area per room might be relevant? Thus, we include this variable (`area / rooms`) as well. Then, why not include the opposite ratio (`rooms / area`)? We calibrate ten models with different sets of regressors and compare RMSE (root mean square error), $R^2$, AIC, and run ANOVA test.
 
@@ -127,7 +127,7 @@ ggplot(data = data.frame(n = 1:888, r = ref_model$residuals)) +
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/resid.png)
+![](https://irudnyts.github.io/images/posts/2017-09-13-dortmund-real-estate-market-analysis-linear-regression-models/resid.png)
 
 Everything looks quite smooth except two points with largest residuals, which are selected by the following code:
 
@@ -166,7 +166,7 @@ grid.arrange(
     ncol = 2
 )
 ```
-![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/is_outlier.png)
+![](https://irudnyts.github.io/images/posts/2017-09-13-dortmund-real-estate-market-analysis-linear-regression-models/is_outlier.png)
 
 ```r
 property[order(property$area, decreasing = TRUE), 1:3] %>% head()
@@ -221,7 +221,7 @@ property$norm <- NULL
 property$norm_log <- NULL
 ```
 
-![](https://irudnyts.github.io/images/posts/2017-09-13-Dortmund-real-estate-market-analysis-linear-regression-models/density.png)
+![](https://irudnyts.github.io/images/posts/2017-09-13-dortmund-real-estate-market-analysis-linear-regression-models/density.png)
 
 We agin quickly perform model selection. This time we chose the model with both variables and the multiplicative interaction term (`area * rooms`), as one with smallest AIC. The interaction term became significant due to the nature of logarithm transform.
 
