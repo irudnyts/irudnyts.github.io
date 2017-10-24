@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "&#127467; Notes from R in insurance 2017"
+title: "&#128227; Notes from R in insurance 2017"
 ---
 
 This year the fifth [*R in insurance*](https://rininsurance17.sciencesconf.org) conference was in ENSAE, Paris. The first impression was: "Wow, that's a lot of people. Much more than the last year", and I hope my estimation is not biased. Thanks to organizers that was, indeed, a true pleasure to be on both sides, as a presenter, as well as a speaker. I really love that unique atmosphere and mixed audience: not many conferences offer the feedback from the academic and industry perspective at the same time.
