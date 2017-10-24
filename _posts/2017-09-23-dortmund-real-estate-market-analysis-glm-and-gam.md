@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5-minutes data science&#58; Dortmund real estate market analysis &#40GLM and GAM&#41
+title: &#127968; Dortmund real estate market analysis&#58; GLM and GAM
 ---
 
 This post is dedicated to model prices of real estate by an area and a number of rooms using generalized linear model (GLM) and generalized additive model (GAM). Previous [post](https://irudnyts.github.io/5-minutes-data-science-Dortmund-real-estate-market-analysis-obtaining-and-tidying-data/) shows how data was obtained, while in the other [post](https://irudnyts.github.io/Dortmund-real-estate-market-analysis-linear-regression-models/) the linear model is fitted to the data. 

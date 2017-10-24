@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5-minutel data science&#58; insurance-linked securities' data
+title: &#128184; Insurance-linked securities' data
 ---
 
 As a part of my PhD program I have to attend the [summer school](http://saa-iss.ch) organized by our department. During this summer school Prof. Braun (one of speakers) mentioned a super nice [resource](http://www.artemis.bm/) of catastrophe bonds (cat bonds) & insurance-linked securities (ILS). It provides the information, such as the size, the trigger etc. about most of ILS.

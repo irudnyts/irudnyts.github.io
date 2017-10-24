@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5-minutes data science&#58; insights from students data
+title: &#127891; Insights from students data
 ---
 
 Recently (well, a month ago) I had a discussion with a friend of mine about the modern tools and approaches in education. He is currently involed to the edX platform startup, and given that I am assistant at the university, we had several points to discuss.

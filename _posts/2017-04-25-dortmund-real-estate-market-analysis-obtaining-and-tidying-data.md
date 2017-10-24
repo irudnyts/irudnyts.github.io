@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5-minutes data science&#58; Dortmund real estate market analysis &#40obtaining and tidying data&#41
+title: &#127465; Dortmund real estate market analysis&#58; obtaining and tidying data
 ---
 
 Back in 2013 I spent two amazing months of my life in Dortmund. Taking into account that a number of my friends who moved (are moving) to Germany is increasing, I thought it would be nice to get an insight of the [last imperfect market](http://www.bbc.com/news/business-34531638) of real estate in Dortmund.
