@@ -62,6 +62,9 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Working papers
 
+* Key Drivers of Long-Term Care Needs in Europe <br />
+*M. Fuino, I. Rudnytskyi, J. Wagner*
+
 * Stochastic Programming for Asset Allocation in Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
 
@@ -74,13 +77,11 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### R packages
 
+* [estudy2](https://github.com/irudnyts/estudy2)
+
+* [udiscr](https://github.com/irudnyts/udiscr)
 
 * [pkgspell](https://github.com/irudnyts/pkgspell)
-
-* estudy2 (available upon request)
-
-* udiscr (available upon request)
-
 
 ----
 
@@ -109,10 +110,14 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 ## :eyeglasses: Teaching 
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
-Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017
 
 * Simulation Methods in Finance and Insurance (exercise sessions) <br />
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
+
+* Intro to R (as a part of Computational Tools for Actuaries) <br />
+University of Lausanne, Master level, Fall 2016
+
 
 * Web-scale Analytics (lecture/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014
