@@ -87,23 +87,34 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ## :chart_with_upwards_trend: Talks 
 
-* [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/ime.pdf) <br />
-21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna
+* Key Drivers of Long-Term Care Needs in Europe: An Empirical Study <br />
+Research & Storytelling: A showcase of PhD research at HEC, 2017 December 14, Lausanne <br />
+[[slides](https://irudnyts.github.io/pdf/rs.pdf), [video](https://youtu.be/kLf6SVEMd94)]
 
-* [Stochastic programming for asset allocation in pension funds](https://irudnyts.github.io/pdf/rinins17.pdf) <br />
-R in Insurance, 2017 June 8, Paris
+* Stochastic programming for asset allocation in pension funds <br />
+21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna <br />
+[[slides](https://irudnyts.github.io/pdf/ime.pdf)]
 
-* [Impact of Catastrophe Events on Non-life Insurance Companies' Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/eaj.pdf) <br />
-3rd European Actuarial Journal (EAJ) Conference, 2016 September 6 – 8, Lyon
 
-* [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/satrday.pdf) <br />
-satRday #1 Conference, 2016 September 3, Budapest
+* Stochastic programming for asset allocation in pension funds <br />
+R in Insurance, 2017 June 8, Paris <br />
+[[slides](https://irudnyts.github.io/pdf/rinins17.pdf)]
 
-* [estudy2: an R package for the event study in insurance](https://irudnyts.github.io/pdf/rinins.pdf) <br />
-R in Insurance, 2016 June 11, London
+* Impact of Catastrophe Events on Non-life Insurance Companies' Market Valuation – an Event Study Analysis <br />
+3rd European Actuarial Journal (EAJ) Conference, 2016 September 6 – 8, Lyon <br />
+[[slides](https://irudnyts.github.io/pdf/eaj.pdf)]
 
-* [Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis](https://irudnyts.github.io/pdf/dvfvw.pdf) <br />
-Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna
+* estudy2: an R package for the event study in insurance <br />
+satRday #1 Conference, 2016 September 3, Budapest <br />
+[[slides](https://irudnyts.github.io/pdf/satrday.pdf), [video](https://www.youtube.com/watch?v=aWIDa4d60GQ)]
+
+* estudy2: an R package for the event study in insurance <br />
+R in Insurance, 2016 June 11, London <br />
+[[slides](https://irudnyts.github.io/pdf/rinins.pdf)]
+
+* Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis <br />
+Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna <br />
+[[slides](https://irudnyts.github.io/pdf/dvfvw.pdf)]
 
 ----
 
@@ -116,7 +127,8 @@ Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fa
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
 
 * Intro to R (as a part of Computational Tools for Actuaries) <br />
-University of Lausanne, Master level, Fall 2016
+University of Lausanne, Master level, Fall 2016, Fall 2017 <br />
+[[slides](http://htmlpreview.github.io/?https://github.com/irudnyts/introR/blob/master/slides/introR_formal.html#1)]
 
 
 * Web-scale Analytics (lecture/exercise sessions) <br />
