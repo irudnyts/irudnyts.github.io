@@ -7,11 +7,11 @@ In my current project on [Long-term care](https://www.youtube.com/watch?v=kLf6SV
 
 We can distinguish two types of multinominal responses, namely nominal and ordinal. For nominal response a variable can possess a value from predifined finite set and these values are not oredered. For instance a variable `color` can be either `green` or `blue` or `green`. In machine learnin the problem is often referred to as a classification. In contrast to nominal case, for ordinal reponse variable the set of values has the relative ordereing. For example, a variable `size` can be `small < middle < large`. Furthermore, depending on a link function we can have logit or probit models.
 
-# Nominal response models
+## Nominal response models
 
 According to Agresti (2002) we can the problem can be formulated by two similar approaches: through baseline-category logits or multivariate GLM. In general, these two approaches are equiualent with identical maximum-likelihood estimates, the only thing which is different is the formula representation. 
 
-## Baseline-category logits (multinomial logit model)
+### Baseline-category logits (multinomial logit model)
 
 The baseline-category logits is implemented as a function in three distinct packages, namely `nnet::multinom()` (referred as to log-linear model), `mlogit::mlogit`, `mnlogit::mnlogit` (claims to be more efficient implementation than `mlogit`, see [comparison of perfomances of these packages](https://www.r-bloggers.com/comparing-mnlogit-and-mlogit-for-discrete-choice-models/)).
 
@@ -82,7 +82,7 @@ matrix(fit_mnlogit$coefficients, ncol = 2, byrow = TRUE)
 
 Even though the latter package is very efficient and customizable, there are several points I am not a big fan of. First off, `mnlogit` works *only* with long data instead of common and familiar for regression wide. That's why we had to use `mlogit.data` to convert the data. Second, the formula's syntax is too confusing despite its customizability (yes, this word exists in English).
 
-## Multinomial logit model as multivariate GLM
+### Multinomial logit model as multivariate GLM
 
 For this model instead of treating the response variable as a scalar we set to be a vector of $J-1$ elements ($J$-th is redundant). Then, $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$ and $\boldsymbol{\mu}_i = (p_{i,1}, ..., p_{i, J-1})'$, Therefore,
 
@@ -107,7 +107,7 @@ matrix(fit_vgam@coefficients, ncol = 2)
 # [3,] -6.753157  0.099334560
 ```
 
-# Ordinal response model: proportional odds model
+## Ordinal response model: proportional odds model
 
 For orinal response variable the model is slightly different. Let $Y$ be a categorical response variable with $J$ categories whic are ordered $1<...<J$. Therefore, it is possible to define cumulative probabilities as
 
