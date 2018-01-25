@@ -3,23 +3,23 @@ layout: post
 title: "&#128202; Multinomial regression in R"
 ---
 
-In my current project on [Long-term care](https://www.youtube.com/watch?v=kLf6SVEMd94) at some point we were required to use a regression model with multinomial responses. I was very surprised that in contrast to well-covered binomial GLM for binary response case, multinomial case is poorly described. Surely, there are half-dozen packages overplapping each other, however, there is no sound tutorial or vignette. Hopefully, my post will improve the current state.
+In my current project on [Long-term care](https://www.youtube.com/watch?v=kLf6SVEMd94) at some point we were required to use a regression model with multinomial responses. I was very surprised that in contrast to well-covered binomial GLM for binary response case, multinomial case is poorly described. Surely, there are half-dozen packages overlapping each other, however, there is no sound tutorial or vignette. Hopefully, my post will improve the current state.
 
-We can distinguish two types of multinominal responses, namely nominal and ordinal. For nominal response a variable can possess a value from predifined finite set and these values are not oredered. For instance a variable `color` can be either `green` or `blue` or `green`. In machine learnin the problem is often referred to as a classification. In contrast to nominal case, for ordinal reponse variable the set of values has the relative ordereing. For example, a variable `size` can be `small < middle < large`. Furthermore, depending on a link function we can have logit or probit models.
+We can distinguish two types of multinominal responses, namely nominal and ordinal. For nominal response a variable can possess a value from predefined finite set and these values are not ordered. For instance a variable `color` can be either `green` or `blue` or `green`. In machine learning the problem is often referred to as a classification. In contrast to nominal case, for ordinal repose variable the set of values has the relative ordering. For example, a variable `size` can be `small < middle < large`. Furthermore, depending on a link function we can have logit or probit models.
 
 ## Nominal response models
 
-According to Agresti (2002) we can the problem can be formulated by two similar approaches: through baseline-category logits or multivariate GLM. In general, these two approaches are equiualent with identical maximum-likelihood estimates, the only thing which is different is the formula representation. 
+According to Agresti (2002) we can the problem can be formulated by two similar approaches: through baseline-category logits or multivariate GLM. In general, these two approaches are equivalent with identical maximum-likelihood estimates, the only thing which is different is the formula representation. 
 
 ### Baseline-category logits (multinomial logit model)
 
 The baseline-category logits is implemented as a function in three distinct packages, namely `nnet::multinom()` (referred as to log-linear model), `mlogit::mlogit`, `mnlogit::mnlogit` (claims to be more efficient implementation than `mlogit`, see [comparison of perfomances of these packages](https://www.r-bloggers.com/comparing-mnlogit-and-mlogit-for-discrete-choice-models/)).
 
-Let $p_j = \mathbb{P}(Y = j \mid \boldsymbol{x})$ is a probability of dependent variable $Y$ to have value $j$ given a vector of explaratory variables' values $\boldsymbol{x}$. In total, there are $J$ categories, and obviously, due to second axiom of probability $\sum_j p_j = 1$. We fix a baseline category at level $J$ (or at any other level), and the model is as follows:
+Let $p_j = \mathbb{P}(Y = j \mid \boldsymbol{x})$ is a probability of dependent variable $Y$ to have value $j$ given a vector of explanatory variables' values $\boldsymbol{x}$. In total, there are $J$ categories, and obviously, due to second axiom of probability $\sum_j p_j = 1$. We fix a baseline category at level $J$ (or at any other level), and the model is as follows:
 
 $$\log \frac{p_j}{p_J} = \alpha_j + \boldsymbol{\beta}'_j \boldsymbol{x}, \quad j = 1, ..., J - 1,$$
 
-describing the effects of exlporatory $\boldsymbol{x}$ on logits of odds between a level $j$ and baseline level. Of course, using these $J-1$ equiations and the second axiom it's possible to come back to probabilities (which is a nice exercise, by the way): 
+describing the effects of explanatory $\boldsymbol{x}$ on logits of odds between a level $j$ and baseline level. Of course, using these $J-1$ equations and the second axiom it's possible to come back to probabilities (which is a nice exercise, by the way): 
 
 $$ p_j = \frac{\exp(\alpha_j + \boldsymbol{\beta}'_j \boldsymbol{x})}{1 + \sum_{h = 1}^{J-1}\exp(\alpha_h + \boldsymbol{\beta}'_h \boldsymbol{x})}$$
 
@@ -80,7 +80,7 @@ matrix(fit_mnlogit$coefficients, ncol = 2, byrow = TRUE)
 # [3,] -6.753157  0.099334560
 ```
 
-Even though the latter package is very efficient and customizable, there are several points I am not a big fan of. First off, `mnlogit` works *only* with long data instead of common and familiar for regression wide. That's why we had to use `mlogit.data` to convert the data. Second, the formula's syntax is too confusing despite its customizability (yes, this word exists in English).
+Even though the latter package is very efficient and customization, there are several points I am not a big fan of. First off, `mnlogit` works *only* with long data instead of common and familiar for regression wide. That's why we had to use `mlogit.data` to convert the data. Second, the formula's syntax is too confusing despite its customizability (yes, this word exists in English). Of course, the list is not exhaustive, other packages exists, e.g. [brglm2](https://cran.r-project.org/web/packages/brglm2/vignettes/multinomial.html).
 
 ### Multinomial logit model as multivariate GLM
 
@@ -94,7 +94,7 @@ $$\boldsymbol{g}(\boldsymbol{\mu}_i) = \boldsymbol{X}_i \boldsymbol{\beta}$$
 
 where $\boldsymbol{g}$ is a vector of link functions.
 
-The package `vgam` deals exactly with cases of multivariate GLM and GAM. Let's compute estimates for this model, which sould coincide with previously calculated ones:
+The package `vgam` deals exactly with cases of multivariate GLM and GAM. Let's compute estimates for this model, which should coincide with previously calculated ones:
 
 ```r
 library(VGAM)
@@ -109,7 +109,7 @@ matrix(fit_vgam@coefficients, ncol = 2)
 
 ## Ordinal response model: proportional odds model
 
-For orinal response variable the model is slightly different. Let $Y$ be a categorical response variable with $J$ categories whic are ordered $1<...<J$. Therefore, it is possible to define cumulative probabilities as
+For ordinal response variable the model is slightly different. Let $Y$ be a categorical response variable with $J$ categories which are ordered $1<...<J$. Therefore, it is possible to define cumulative probabilities as
 
 $$\mathbb{P}(Y \leq j \mid \boldsymbol{x}) = p_1 + ... + p_j, \quad j = 1, ..., J$$
 
@@ -121,7 +121,7 @@ Let's now define the cumulative logits and exploratory variables $\boldsymbol{x}
 
 $$\text{logit}(\mathbb{P}(Y \leq j \mid \boldsymbol{x})) = \alpha_j + \boldsymbol{\beta}' \boldsymbol{x}, \quad j = 1, ..., J-1$$
 
-Note that $\boldsymbol{\beta}$ are the same for each logit. However, intercepts can be different and necesseraly are non-decreasing.
+Note that $\boldsymbol{\beta}$ are the same for each logit. However, intercepts can be different and necessarily are non-decreasing.
 
 The model got its name from its property:
 
@@ -215,7 +215,7 @@ as.matrix(fit_lrm$coefficients)
 # age              -0.0641711
 ```
 
-This function was rather instable. Adding more exploratory variable have thrown an error a couple of times.
+This function was rather unstable. Adding more exploratory variable have thrown an error a couple of times.
 
 Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good.
 
