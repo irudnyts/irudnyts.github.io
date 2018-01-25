@@ -196,6 +196,8 @@ as.matrix(fit_clm$coefficients)
 # age                        -0.0641711
 ```
 
+Nice thing about this package is that it allows for using different link functions, i.e. `"logit"`, `"probit"`, `"cloglog"`, `"loglog"`, and `"cauchit"`. To my regret I know only `"logit"` and `"probit"` from this list.
+
 - Package `rms`
 
 ```r
@@ -213,7 +215,9 @@ as.matrix(fit_lrm$coefficients)
 # age              -0.0641711
 ```
 
-Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good. 
+This function was rather instable. Adding more exploratory variable have thrown an error a couple of times.
+
+Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good.
 
 Perhaps, now you have a question which package to use? Well, I do not know, just choose one and stick to it. I will use probably `VGAM`, as long as it covers various models and seems like nicely documented.
 
