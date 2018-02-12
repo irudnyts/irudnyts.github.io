@@ -80,11 +80,11 @@ matrix(fit_mnlogit$coefficients, ncol = 2, byrow = TRUE)
 # [3,] -6.753157  0.099334560
 ```
 
-Even though the latter package is very efficient and customization, there are several points I am not a big fan of. First off, `mnlogit` works *only* with long data instead of common and familiar for regression wide. That's why we had to use `mlogit.data` to convert the data. Second, the formula's syntax is too confusing despite its customizability (yes, this word exists in English). Of course, the list is not exhaustive, other packages exists, e.g. [brglm2](https://cran.r-project.org/web/packages/brglm2/vignettes/multinomial.html).
+Even though the latter package is very efficient and customizable, there are several points I am not a big fan of. First off, `mnlogit` works *only* with long data instead of common and familiar for regression wide. That's why we had to use `mlogit.data` to convert the data. Second, the formula's syntax is too confusing despite its customizability. Of course, the list is not exhaustive, other packages exists, e.g. [brglm2](https://cran.r-project.org/web/packages/brglm2/vignettes/multinomial.html).
 
 ### Multinomial logit model as multivariate GLM
 
-For this model instead of treating the response variable as a scalar we set to be a vector of $J-1$ elements ($J$-th is redundant). Then, $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$ and $\boldsymbol{\mu}_i = (p_{i,1}, ..., p_{i, J-1})'$, Therefore,
+For this model instead of treating the response variable as a scalar we set to be a vector of $J-1$ elements ($J$-th is redundant). Then, $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$ and $\boldsymbol{\mu}_i = (p_{i,1}, ..., p_{i, J-1})'$. Therefore,
 
 $$g_j(\boldsymbol{\mu}_i) = \log \frac{\mu_{i,j}}{1 - (\mu_{i,1}+...+\mu_{i, J-1})}$$
 
@@ -217,9 +217,9 @@ as.matrix(fit_lrm$coefficients)
 
 This function was rather unstable. Adding more exploratory variable have thrown an error a couple of times.
 
-Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good.
+Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good. $(y_{i,1}, ..., y_{i, J-1})$
 
-Perhaps, now you have a question which package to use? Well, I do not know, just choose one and stick to it. I will use probably `VGAM`, as long as it covers various models and seems like nicely documented.
+Perhaps, now you have a question which package to use? Well, I do not know, just choose one and stick to it. I will use probably `VGAM`, as long as it covers various models and seems like nicely documented. $\boldsymbol{y}_i =$
 
 References:
 
