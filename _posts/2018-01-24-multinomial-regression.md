@@ -235,8 +235,9 @@ b $\boldsymbol{y}_i = 9(y_{i,1}, ..., y_{i, J-1})'$ b,
 
 b $\boldsymbol{y} = (y_{i,1}, ..., y_{i, J-1})'$ b,
 
-b $y = (y_{i,1}, ..., y_{i, J-1})'$ b.
+b $\boldsymbol{\alpha}_i = (y_{i,1}, ..., y_{i, J-1})'$ b,
 
-b $(y_{i,1}, ..., y_{i, J-1})'$ b.
 
-b $\boldsymbol{y} = ($ b. 
+b $\boldsymbol{y_i} = (y_{i,1}, ..., y_{i, J-1})'$ b,
+
+b $\boldsymbol{y} _i = (y_{i,1}, ..., y_{i, J-1})'$ b,
