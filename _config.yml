@@ -77,7 +77,6 @@ gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jemoji # add emoji
-  - jekyll-feed # add Atom (RSS) feed
 
 # Exclude these files from your production _site
 exclude:
