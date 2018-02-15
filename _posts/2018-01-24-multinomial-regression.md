@@ -84,7 +84,7 @@ Even though the latter package is very efficient and customizable, there are sev
 
 ### Multinomial logit model as multivariate GLM
 
-For this model instead of treating the response variable as a scalar we set to be a vector of $J-1$ elements ($J$-th is redundant). Then, $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$ and $\boldsymbol{\mu}_i = (p_{i,1}, ..., p_{i, J-1})'$. Therefore,
+For this model instead of treating the response variable as a scalar we set to be a vector of $J-1$ elements ($J$-th is redundant). Then, $\boldsymbol{y_i} = (y_{i,1}, ..., y_{i, J-1})'$ and $\boldsymbol{\mu_i} = (p_{i,1}, ..., p_{i, J-1})'$. Therefore,
 
 $$g_j(\boldsymbol{\mu}_i) = \log \frac{\mu_{i,j}}{1 - (\mu_{i,1}+...+\mu_{i, J-1})}$$
 
@@ -225,19 +225,3 @@ References:
 
 - Agresti, A. (2002) Categorical Data, Second edition, Wiley
 - [STAT504](https://onlinecourses.science.psu.edu/stat504/node/176)
-
-
-b $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$ b,
-
-b $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})$ b,
-
-b $\boldsymbol{y}_i = 9(y_{i,1}, ..., y_{i, J-1})'$ b,
-
-b $\boldsymbol{y} = (y_{i,1}, ..., y_{i, J-1})'$ b,
-
-b $\boldsymbol{\alpha}_i = (y_{i,1}, ..., y_{i, J-1})'$ b,
-
-
-b $\boldsymbol{y_i} = (y_{i,1}, ..., y_{i, J-1})'$ b,
-
-b $\boldsymbol{y}_{i} = (y_{i,1}, ..., y_{i, J-1})'$ b,
