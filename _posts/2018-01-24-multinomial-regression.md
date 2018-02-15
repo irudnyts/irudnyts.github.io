@@ -217,11 +217,18 @@ as.matrix(fit_lrm$coefficients)
 
 This function was rather unstable. Adding more exploratory variable have thrown an error a couple of times.
 
-Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good. $\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$
+Coefficients are consistent (difference in signs are explained by $\mathbb{P}(Y \leq j)$ and $\mathbb{P}(Y \geq j)$), which is good.
 
-Perhaps, now you have a question which package to use? Well, I do not know, just choose one and stick to it. I will use probably `VGAM`, as long as it covers various models and seems like nicely documented. $\boldsymbol{y}_i = $
+Perhaps, now you have a question which package to use? Well, I do not know, just choose one and stick to it. I will use probably `VGAM`, as long as it covers various models and seems like nicely documented.
 
-References:$\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$
+References:
 
 - Agresti, A. (2002) Categorical Data, Second edition, Wiley
 - [STAT504](https://onlinecourses.science.psu.edu/stat504/node/176)
+
+
+$\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})'$
+$\boldsymbol{y}_i = (y_{i,1}, ..., y_{i, J-1})$
+$\boldsymbol{y}_i = 9(y_{i,1}, ..., y_{i, J-1})'$
+$\boldsymbol{y} = (y_{i,1}, ..., y_{i, J-1})'$
+$y = (y_{i,1}, ..., y_{i, J-1})'$
