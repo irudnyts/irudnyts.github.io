@@ -77,11 +77,11 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### R packages
 
-* [estudy2](https://github.com/irudnyts/estudy2)
+* estudy2 [[github](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html)]
 
-* [udiscr](https://github.com/irudnyts/udiscr)
+* udiscr [[github](https://github.com/irudnyts/udiscr)]
 
-* [pkgspell](https://github.com/irudnyts/pkgspell)
+* pkgspell [[github](https://github.com/irudnyts/pkgspell)]
 
 ----
 
