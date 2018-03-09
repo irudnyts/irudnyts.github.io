@@ -146,7 +146,7 @@ rbind(data.frame(n = 1:n, mean = means1, method = "1"),
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process/с1.png)
+![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process/c1.png)
 
 Indeed, visually the estimation of expected value convergence approximately with the same speed. However, I had problems with probabilities, and below I performed the same procedure but for the probability of a path to be below ten. 
 
@@ -173,6 +173,6 @@ rbind(data.frame(n = 1:n, prob = probs1, method = "1"),
     theme_bw() + 
     theme(text = element_text(size = 24))
 ```
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process/с2.png)
+![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process/c2.png)
 
 Again, methods seem to have the same performance. This is a good sign, because now I can compare methods for slightly more complicated models not being affraid that differences might be due to Poisson process simulation algorithms.
