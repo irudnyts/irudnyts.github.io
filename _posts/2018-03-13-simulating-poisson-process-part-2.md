@@ -26,7 +26,7 @@ For Gerber-Shui function we need to simulate a path until the ruin. It means tha
 
 Things are slightly more complicated when the model includes positive jumps. If both positive and negative jumps' times were known to us, then it would be possible to sort them, and add to a path in ascending order, as in an illustration below. 
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/order.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/order.png)
 
 However, we do not know the arrival times of jumps, as they should be simulated. Also it would be naive to add a jump of one type at an iteration and then of another type in the next iteration, because underlying Possion process can have different rates (and, therefore, there is no garantee that one type jump follows the other type). The approach I propose here is very similar to a playground game ["tag"](https://en.wikipedia.org/wiki/Tag_(game)). We generate arrival jump's time for both types. Then, for one that occurred earlier (A), we need to catch up with the opposite type's (B) time, that is generate more jumps of type (A) until the time of the later type (B) is achieved.
 
@@ -59,23 +59,23 @@ Algorithm:
 
 Let me illustrate a couple of iterations to give a feeling of the algorithm. We simulate positive and negative jumps' arrival: 
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/1.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/1.png)
 
 Positive jump occurs later, therefore, we need to catch up with negative jumps. We simulate next negative arrival...
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/2.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/2.png)
 
 And next negative arrival...
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/3.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/3.png)
 
 One more...
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/4.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/4.png)
 
 And finally the negative jumps over positive and now we need to catch up with positve ones...
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/5.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/5.png)
 
 
 And so forth and so on. In the algorithm above `stopping condition` could be anythin, for instance, a maximum number of jumps is attained, the maximum number of iterations is attained, the maximum time span is attained, the path is ruined, etc. Below, I propose an implementation with stopping time that uses a maximum time span.
@@ -376,7 +376,7 @@ ggplot(means) +
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/mean.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/mean.png)
 
 From the plot it seems that both methods converge with the same speed to the correct value. Huray! How about probabilities?
 
@@ -409,6 +409,6 @@ ggplot(probs) +
     theme(text = element_text(size = 24))
 ```
 
-![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-2/prob.png)
+![](https://irudnyts.github.io/images/posts/2018-03-13-simulating-poisson-process-part-2/prob.png)
 
 Again, the probabilites converge to the correct value with approximately the same speed. It means that there are no bias in neither methods, and we can continue extending the function of simulating ruin processes.
