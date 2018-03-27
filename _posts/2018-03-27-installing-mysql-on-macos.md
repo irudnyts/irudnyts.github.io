@@ -85,6 +85,6 @@ I find Sequel Pro a quite useful and beautiful IDE for MySQL. To install it one 
 
 To connect to a local MySQL one has choose Socket in menu and fill in a username (default "root") and the password that we changes in the previous step. 
 
-![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/sys_pref.png)
+![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/sql_pro.png)
 
 Enjoy!
