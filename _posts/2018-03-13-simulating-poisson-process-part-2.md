@@ -183,7 +183,7 @@ sim_p1 <- function(lambda_p = 1, lambda_n = 1, t = 100) {
     
     # dropping last step to be before t 
     indices <- path[, 1] <= t
-    path <- path[indices, ]
+    path <- path[indices, , drop = FALSE]
     path <- rbind(path,
                   c(t, path[nrow(path), 2]))
     
@@ -344,7 +344,7 @@ Finally, we want visually check if the estimatros are non-biased, and how fast t
 n <- 1000
 
 paths1 <- replicate(n = n, expr = sim_p1(), simplify = FALSE)
-paths2 <- replicate(n = 1000, expr = sim_p2(), simplify = FALSE)
+paths2 <- replicate(n = n, expr = sim_p2(), simplify = FALSE)
 ```
 
 First, we look at the expected value, which sould be zero given both lambdas equal one:
@@ -358,7 +358,7 @@ means1 <- sapply(
 )
 
 means2 <- sapply(
-    1:1000,
+    1:n,
     function(x) {
         mean(sapply(paths2[1:x], function(y) y$path[nrow(y$path), 2]))
     }
@@ -391,7 +391,7 @@ probs1 <- sapply(
 )
 
 probs2 <- sapply(
-    1:1000,
+    1:n,
     function(x) {
         mean(sapply(paths2[1:x], function(y) y$path[nrow(y$path), 2] <= 10))
     }

@@ -56,6 +56,14 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis <br />
 *Coursera*, 2014
 
+### Workshops and tutorials
+
+* Mastering the Art of Public Speaking, 2017 December 
+
+* Academic English Workshop, 2018 February-March
+
+* Teaching Development Seminar, 2018 March
+
 ----
 
 ## :memo: Papers 
