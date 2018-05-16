@@ -4,12 +4,6 @@ title: About
 permalink: /about/
 ---
 
-## Intro 
-
-I am a PhD student in Jo&euml;l Wagner Research Group (HEC Lausanne at UNIL), and I don't like long introductions. Check out my contributions below in order to figure out who I am.
-
-----
-
 ## :mortar_board: Education 
 
 ### on-Campus
@@ -91,6 +85,8 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 * pkgspell [[github](https://github.com/irudnyts/pkgspell)]
 
+* GerberShiu [[github](https://github.com/irudnyts/GerberShiu)]
+
 ----
 
 ## :chart_with_upwards_trend: Talks 
@@ -137,7 +133,6 @@ Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Sp
 * Intro to R (as a part of Computational Tools for Actuaries) <br />
 University of Lausanne, Master level, Fall 2016, Fall 2017 <br />
 [[slides](http://htmlpreview.github.io/?https://github.com/irudnyts/introR/blob/master/slides/introR_formal.html#1)]
-
 
 * Web-scale Analytics (lecture/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014

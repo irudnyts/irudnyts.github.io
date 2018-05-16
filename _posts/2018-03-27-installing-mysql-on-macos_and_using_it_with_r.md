@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "&#128190; Installing MySQL on MacOS"
+title: "&#128190; Installing MySQL on MacOS (and using it with R)"
 ---
 
-A couple of days ago I was asked to install MySQL on MacOS 10.13, and I was surprised that it was not a one-click installation, as in case of R. Unfortunately, even for me a documentation was a bit confusing, and I think it might be useful to have a guide of installation. 
+A couple of days ago I was asked to install MySQL on MacOS 10.13, and I was surprised that it was not a one-click installation, as in case of R. Unfortunately, even for me a documentation was a bit confusing, and I think it might be useful to have a guide of the installation process. 
 
 ## 1. Download .dmg file and install MySQL
 
-One has to download .dmg file from [here](https://dev.mysql.com/downloads/mysql/). The app should be installed like a regular Mac app and the procedure is well covered [here](https://dev.mysql.com/doc/refman/5.6/en/osx-installation-pkg.html).
+One has to download .dmg file from [here](https://dev.mysql.com/downloads/mysql/). The app should be installed like a regular Mac app, and the procedure is well covered [here](https://dev.mysql.com/doc/refman/5.6/en/osx-installation-pkg.html).
 
 
-At the end of installation, when one has reached a summary, a separate windows will pop up with temporary password (as in a screenshot below). This password should be kept somewhere.
+At the end of the installation, when one has reached a summary, a separate windows will pop up with a temporary password (as in a screenshot below). This password should be kept somewhere.
 
 ![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/key.png)
 
@@ -37,7 +37,7 @@ or in System Preferences...
 
 ![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/sys_pref.png)
 
-... by clicking on "Start "
+... by clicking on "Start".
 
 ![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/start.png)
 
@@ -67,13 +67,13 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> 
 ```
 
-To change the password we simply calling this command, where "MyNewPass" as you already guessed is a new password:
+To change the password we simply call this command, where "MyNewPass" as you already guessed is a new password:
 
 ```sql
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
 ```
 
-And then quite MySQL: 
+And then quit MySQL: 
 
 ```sql
 QUIT
@@ -86,5 +86,27 @@ I find Sequel Pro a quite useful and beautiful IDE for MySQL. To install it one 
 To connect to a local MySQL one has choose Socket in menu and fill in a username (default "root") and the password that we changes in the previous step. 
 
 ![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/sql_pro.png)
+
+## 6. Use MySQL in conjuntion with R
+
+![RMySQL](https://cran.r-project.org/web/packages/RMySQL/index.html) provides a full interface for connecting R to MySQL. There are dozens of tutorials on how to use this package, and one can easily google them. We just want to ensure that everything works smoothly. First off, MySQL Server should be launched (as in Step 3). Then, we install and load the package, and finally, using user/password pair connect to a certain database.
+
+```r
+install.packages("RMySQL")
+library(RMySQL)
+
+install.packages("RMySQL")
+library(RMySQL)
+
+con <- dbConnect(MySQL(),
+                 user="root", password="1111",
+                 dbname="test", host="localhost")
+                 
+dbListTables(con)
+# [1] "CalendarMonths"
+
+dbDisconnect(con)
+# [1] TRUE
+```
 
 Enjoy!
