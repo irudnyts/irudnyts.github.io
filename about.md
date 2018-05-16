@@ -137,6 +137,8 @@ University of Lausanne, Master level, Fall 2016, Fall 2017 <br />
 * Web-scale Analytics (lecture/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014
 
+----
+
 ## :link: Links 
 
 * [R-bloggers](http://r-bloggers.com/)
