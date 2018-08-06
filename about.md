@@ -81,7 +81,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 * estudy2 [[github](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html)]
 
-* ruin [[github](https://github.com/irudnyts/ruin)], [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
+* ruin [[github](https://github.com/irudnyts/ruin), [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
 
 * udiscr [[github](https://github.com/irudnyts/udiscr)]
 
