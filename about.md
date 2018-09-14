@@ -29,7 +29,7 @@ permalink: /about/
 
 * International Summer School of the Swiss Association of Actuaries <br />
 Insurance Analytics, a Primer <br />
-(the winner of Pricing Game)
+The winner of the Pricing Game <br />
 *University of Lausanne*, 2018
 
 
@@ -99,7 +99,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ## :chart_with_upwards_trend: Talks 
 
-* On the Socio-demographic and Medical Drivers \\ of Long-Term Care Needs in Europe <br />
+* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
 European Actuarial Journal Conference 2018, 2018 September 9-11, Leuven <br />
 [[slides](https://irudnyts.github.io/pdf/eaj18.pdf)]
 
