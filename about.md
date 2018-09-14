@@ -28,6 +28,12 @@ permalink: /about/
 ### Summer schools
 
 * International Summer School of the Swiss Association of Actuaries <br />
+Insurance Analytics, a Primer <br />
+(the winner of Pricing Game)
+*University of Lausanne*, 2018
+
+
+* International Summer School of the Swiss Association of Actuaries <br />
 Insurance Management: Trends, Challenges and Solutions <br />
 *University of Lausanne*, 2017
 
@@ -64,7 +70,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Working papers
 
-* Key Drivers of Long-Term Care Needs in Europe <br />
+* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
 *M. Fuino, I. Rudnytskyi, J. Wagner*
 
 * Stochastic Programming for Asset Allocation in Pension Funds <br />
@@ -93,6 +99,10 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ## :chart_with_upwards_trend: Talks 
 
+* On the Socio-demographic and Medical Drivers \\ of Long-Term Care Needs in Europe <br />
+European Actuarial Journal Conference 2018, 2018 September 9-11, Leuven <br />
+[[slides](https://irudnyts.github.io/pdf/eaj18.pdf)]
+
 * Key Drivers of Long-Term Care Needs in Europe: An Empirical Study <br />
 Research & Storytelling: A showcase of PhD research at HEC, 2017 December 14, Lausanne <br />
 [[slides](https://irudnyts.github.io/pdf/rs.pdf), [video](https://youtu.be/kLf6SVEMd94)]
@@ -100,7 +110,6 @@ Research & Storytelling: A showcase of PhD research at HEC, 2017 December 14, La
 * Stochastic programming for asset allocation in pension funds <br />
 21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna <br />
 [[slides](https://irudnyts.github.io/pdf/ime.pdf)]
-
 
 * Stochastic programming for asset allocation in pension funds <br />
 R in Insurance, 2017 June 8, Paris <br />
@@ -127,7 +136,13 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 ## :eyeglasses: Teaching 
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
-Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017, Fall 2018
+
+* Machine Learning in Business Analytics (exercise sessions/tutorials) <br />
+Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, Fall 2018
+
+* Programming Tools in Data Science (exercise sessions/tutorials) <br />
+Teaching Assistant to Samuel Orso, University of Lausanne, Master level, Fall 2018
 
 * Simulation Methods in Finance and Insurance (exercise sessions) <br />
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
@@ -136,7 +151,7 @@ Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Sp
 University of Lausanne, Master level, Fall 2016, Fall 2017 <br />
 [[slides](http://htmlpreview.github.io/?https://github.com/irudnyts/introR/blob/master/slides/introR_formal.html#1)]
 
-* Web-scale Analytics (lecture/exercise sessions) <br />
+* Web-scale Analytics (lectures/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014
 
 ----
