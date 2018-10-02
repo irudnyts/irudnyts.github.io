@@ -158,4 +158,5 @@ Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, 
 
 ## :link: Links 
 
-* [R-bloggers](http://r-bloggers.com/)
+* [R-bloggers](https://www.r-bloggers.com)
+* [R-users](https://www.r-users.com)
