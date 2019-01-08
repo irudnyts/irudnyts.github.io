@@ -3,11 +3,7 @@ layout: post
 title: "&#128193; Project-oriented workflow"
 ---
 
-Be honest with yourself, how many times have you wanted to restart an on-going project from scratch throwing away the current folder? Or how many times have you had to rename files and adjust folder structure to make your project simple and clear? Not to mention, all these thousands of versions of your scripts that are dangling around in your mail box. Tired of this? Then, get on board and read my comments on how to make your project:
-
-- reproducible
-- portable 
-- self-contained
+Be honest with yourself, how many times have you wanted to restart an on-going project from scratch throwing away the current folder? Or how many times have you had to rename files and adjust folder structure to make your project simple and clear? Not to mention, all these thousands of versions of your scripts that are dangling around in your mail box. Tired of this? Then, get on board and read my comments on how to make your project *reproducible*, *portable*, and *self-contained*.
 
 ## Introduction
 
