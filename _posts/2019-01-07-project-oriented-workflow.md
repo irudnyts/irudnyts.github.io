@@ -236,7 +236,7 @@ Steps:
     
 ## Outro & acknowledgement
 
-About a year ago I came across a [brilliant post](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) by Jenny Bryan. I was amazed by how elegantly she formalized and summarized many simple tricks that make the life of a data scientist more pleasant. I was so inspired that I could not miss the opportunity to present these ideas in tutorials to students during the fall semester. The idea that I contributed to the process of making projects more conscious was very satisfactory, and based on that tutorial the series of post was born.
+About a year ago I came across a [brilliant post](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) by Jenny Bryan. I was amazed by how elegantly she formalized and summarized many simple tricks that make the life of a data scientist more pleasant. I was so inspired that I could not miss the opportunity to present these ideas in tutorials to students during the fall semester. The idea that I contributed to the process of making projects more conscious was very satisfactory, and based on these tutorials I start the series of posts.
 
 Many ideas and concepts are based on the works of Hadley Wickham and Jenny Bryan. Many thanks! 
 
