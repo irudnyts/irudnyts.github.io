@@ -5,17 +5,17 @@ title: "&#128394; R Coding Style Guide"
 
 ## Introduction
 
-A language is a tool that allows human beings to interact and communicate with each other. The clearer we express ourselves, the better an idea is transferred from our mind to the other. The same applies to programming languages: concise, clear and consistent codes are easier to read and edit. It is especially important, if you have collaborators, who depend on your code. However, even if you don't, keep in mind that at some point in time, you might come back to your code, for example, to fix an error. And if you did not follow consistently your coding style, reviewing your code can take much longer, than you expected. In this context, taking care of your audience means to make your code as readable as possible.
+Language is a tool that allows human beings to interact and communicate with each other. The clearer we express ourselves, the better the idea is transferred from our mind to the other. The same applies to programming languages: concise, clear and consistent codes are easier to read and edit. It is especially important, if you have collaborators, which depend on your code. However, even if you don't, keep in mind that at some point in time, you might come back to your code, for example, to fix an error. And if you did not follow consistently your coding style, reviewing your code can take much longer, than expected. In this context, taking care of your audience means to make your code as readable as possible.
 
 > Good coding style is like using correct punctuation. You can manage without
 > it, but it sure makes things easier to read. 
 > <cite> Hadley Wickham </cite>
 
-There is no such thing as a "correct" coding style, as there is no such thing as the best color. At the end of the day, the coding style is a set of developers' preferences. If you are coding alone, sticking to your coding style and being consistent is more than enough. The story is a bit different if you are working in a team: it is crucial to agree on a convention beforehand and make sure that everyone follows it. 
+There is no such thing as a "correct" coding style, as there is no such thing as the best color. At the end of the day, coding style is a set of developers' preferences. If you are coding alone, sticking to your coding style and being consistent is more than enough. The story is a bit different if you are working in a team: it is crucial to agree on a convention beforehand and make sure that everyone follows it. 
 
 ![](https://irudnyts.github.io/images/posts/2019-01-14-r-coding-style-guide/assignment.jpg)
 
-Even though there is no an official style guide, R is mature and steady enough to have an "unofficial" convention. In this post, you will learn these "unofficial" rules, their deviations, and most common styles.
+Even though there is no official style guide, R is mature and steady enough to have an "unofficial" convention. In this post, you will learn these "unofficial" rules, their deviations, and most common styles.
 
 ## Naming 
 
@@ -54,7 +54,7 @@ The convention actually depends on whether you develop a file for a package, or 
     fit regression.R
     ```
 
-If the file is **a part of the data analysis**, then it makes sense to follow the following recommendations:
+If the file is **a part of data analysis**, then it makes sense to follow the following recommendations:
 
 * File names should be lowercase. There is nothing bad in having capital case names, just bear in mind UNIX systems are case insensitive, meaning that `test.R` and `Test.R` do not differ.
 
@@ -84,7 +84,7 @@ If the file is **a part of the data analysis**, then it makes sense to follow th
     02-plot.R
     ```
 
-If the file is used **in a pacakge**, than slightly different rules should be taken care of:
+If the file is used **in a package**, then slightly different rules should be folowed:
 
 * Mind special names:
 
@@ -165,7 +165,7 @@ Many points of naming variables are similar for naming functions:
     bw.test()
     ```
     
-* Add the underscore (`_`) prefix to a standard evaluation (SE) equivalent of a function (`summrize` vs `sumarize_` ).
+* Add the underscore (`_`) prefix to a standard evaluation (SE) equivalent of a function (`summarize` vs `summarize_` ).
 
 ### Naming S4 classes
 
@@ -223,7 +223,7 @@ It is possible to display the margin in RStudio Source editor:
     1: 10
     ```
 
-* Put a space after a coma: 
+* Put a space after a coma.
 
     ```r
     # Good 
@@ -326,7 +326,7 @@ It is possible to display the margin in RStudio Source editor:
     }
     ```
 
-* Curly braces and new lines can avoided, if a statement after `if` is very short.
+* Curly braces and new lines can be avoided, if a statement after `if` is very short.
 
     ```r
     # Good 
@@ -341,9 +341,9 @@ ALWAYS indent your code!
 
 * There are two common number of spaces for indentation: two (Hadley and others) and four (Bioconductor). My own rule of thumb: I use four spaces indentation for data analyses scripts, and two spaces while developing packages.
 
-* Choose the number of spaces of indentation up-front and stick to it. Never mix different number of spaces in one project.
+* Choose the number of spaces of indentation upfront and stick to it. Never mix different number of spaces in one project.
 
-* To set the number of spaces of the project, go to Tools -> Global options... -> Code -> Editing. Check the following boxes: "Insert spaces for tab" (with "Tab width" equal to chosen number), "Auto-indent code after paste", and "Vertically align arguments in auto-indent".
+* To set the number of spaces in the project, go to Tools -> Global options... -> Code -> Editing. Check the following boxes: "Insert spaces for tab" (with "Tab width" equal to chosen number), "Auto-indent code after paste", and "Vertically align arguments in auto-indent".
 
 ![](https://irudnyts.github.io/images/posts/2019-01-14-r-coding-style-guide/indent.png)
 
@@ -360,14 +360,14 @@ print(paste(i, "is even"))
 
 ### New line
 
-* Very often a function definition does not fit into one line. In this case, excessive arguments should be moved to a new line, starting from the opening parenthesis. 
+* Very often function definition does not fit into one line. In this case, excessive arguments should be moved to a new line, starting with the opening parenthesis. 
 
     ```r
     long_function_name <- function(arg1, arg2, arg3, arg4, 
                                    long_argument_name1 = TRUE)
     ```
     
-* If arguments expand more than into two lines, than each argument should be placed on a separate line.
+* If arguments expand more than into two lines, then each argument should be placed on a separate line.
 
     ```r
     long_function_name <- function(long_argument_name1 = c("value1", "value2"),
@@ -383,7 +383,7 @@ print(paste(i, "is even"))
          main = "rpois(100, lambda = 5)")
     ```
     
-* Otherwise, each argument can go into a separate line, starting from a new line after the opening parenthesis.
+* Otherwise, each argument can go into a separate line, starting with a new line after the opening parenthesis.
 
     ```r
     list(
@@ -410,9 +410,9 @@ print(paste(i, "is even"))
         || some_very_long_name_3 %in% some_very_long_name_4)
     ```
     
-    I know some people who are completely against it. See the next bullet why I believe it is better.
+    I know some people who are completely against it. See the next item why I believe it is better.
     
-* If the statement, which contains operators, expands into several lines, than each line should end with an operator and not start with it. Sometimes, it makes sense to split a formula into meaningful chunks.
+* If the statement, which contains operators, expands into several lines, then each line should end with an operator and not begin with it. Sometimes, it makes sense to split a formula into meaningful chunks.
 
     ```r
     # Good 
@@ -426,7 +426,7 @@ print(paste(i, "is even"))
     
     Not only it is ugly, but also syntactically wrong. In the second case, R will consider these two lines as two distinct statements: the first line will assign the value of `1 / sqrt(2 * pi * d_sigma ^ 2)` to `normal_pdf`, and the second line will throw an error, since `*` does not have the first argument. 
 
-* Each grammar statement of `dplyr` (after `%>%`) and `ggplot2` (after `+`) should start from a new line.
+* Each grammar statement of `dplyr` (after `%>%`) and `ggplot2` (after `+`) should start with a new line.
 
     ```r
     mtcars %>%
@@ -441,7 +441,7 @@ print(paste(i, "is even"))
     
 ## Comments 
 
-* Comment your code. Always. Your collaborators and future-you will be very grateful. Comments starts by `#` followed by space and actual comment. 
+* Comment your code. Always. Your collaborators and future-you will be very grateful. Comments start with `#` followed by space and text of the comment. 
 
     ```r
     # This is a comment. 
@@ -459,7 +459,7 @@ print(paste(i, "is even"))
     i <- 1
     ```
 
-* Short comments can be placed after code preceded by one space, `#`, and then one space.
+* Short comments can be placed on the same line of the code.
 
     ```r
     plot(price, weight) # plot a scatter chart of price and weight
@@ -494,7 +494,7 @@ print(paste(i, "is even"))
     require(dplyr)
     ```
     
-* In a function call, arguments can be specified by position, by complete name, or by partial name. Never specify by partial name and never mix by position and by complete name.
+* In a function call, arguments can be specified by position, complete name, or partial name. Never specify by partial name and never mix by position and complete name.
 
     ```r
     # Good 
@@ -530,7 +530,7 @@ print(paste(i, "is even"))
     save_chart(chart, ..., file, width, height)
     ```
 
-* Good practice is to set default arguments inside the function using `NULL` idiom, and avoid dependence between arguments:
+* Good practice rule is to set default arguments inside the function using `NULL` idiom, and avoid dependence between arguments:
 
     ```r
     # Good
@@ -564,7 +564,7 @@ print(paste(i, "is even"))
 
 * Avoid using `rm(list = ls())`. This statement deletes all objects from the global environment, and gives you an illusion of a fresh R start.
 
-If you have read until this moment, you deserve a prize. There is a magic key combination `Command+Shift+A` that reformats selected code: add spaces and indent it. Do not use it excessively though!
+If you have read until this moment, you deserve a treat. There is a magic key combination `Command+Shift+A` that reformats selected code: add spaces and indents it. Do not use it excessively though!
 
 ## References 
 
