@@ -3,8 +3,6 @@ layout: post
 title: "&#128394; R Coding Style Guide"
 ---
 
-## Introduction
-
 Language is a tool that allows human beings to interact and communicate with each other. The clearer we express ourselves, the better the idea is transferred from our mind to the other. The same applies to programming languages: concise, clear and consistent codes are easier to read and edit. It is especially important, if you have collaborators, which depend on your code. However, even if you don't, keep in mind that at some point in time, you might come back to your code, for example, to fix an error. And if you did not follow consistently your coding style, reviewing your code can take much longer, than expected. In this context, taking care of your audience means to make your code as readable as possible.
 
 > Good coding style is like using correct punctuation. You can manage without
