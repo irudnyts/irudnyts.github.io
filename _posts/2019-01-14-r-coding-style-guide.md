@@ -54,7 +54,7 @@ The convention actually depends on whether you develop a file for a package, or 
 
 If the file is **a part of data analysis**, then it makes sense to follow the following recommendations:
 
-* File names should be lowercase. There is nothing bad in having capital case names, just bear in mind while recent Windows and macOS file systems (NTFS and APFS) in fact are case sensitive, they are also case preserving, meaning that `test.R` and `Test.R` cannot coexist. 
+* File names should be lowercase. There is nothing bad in having capital case names, just bear in mind even though recent Windows and macOS file systems (NTFS and APFS (optional)) are case sensitive, `test.R` and `Test.R` cannot coexist in the same folder. 
 
     ```r
     # Good
