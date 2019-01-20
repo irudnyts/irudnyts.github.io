@@ -9,7 +9,7 @@ permalink: /about/
 ### on-Campus
 
 * Doctor of Philosophy in Actuarial Science <br />
-*University of Lausanne*, 2015-Now
+*University of Lausanne*, 2015-present
 
 * Master of Science in Actuarial Science <br />
 *University of Lausanne*, 2013-2015
@@ -100,6 +100,12 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 ## :chart_with_upwards_trend: Talks 
 
 * On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
+Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), scheduled for 2019 March 28, Berlin
+
+* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
+66th L2 Seminar, scheduled for 2019 January 23, Lyon
+
+* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
 European Actuarial Journal Conference 2018, 2018 September 9-11, Leuven <br />
 [[slides](https://irudnyts.github.io/pdf/eaj18.pdf)]
 
@@ -128,7 +134,7 @@ R in Insurance, 2016 June 11, London <br />
 [[slides](https://irudnyts.github.io/pdf/rinins.pdf)]
 
 * Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis <br />
-Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna <br />
+Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna <br />
 [[slides](https://irudnyts.github.io/pdf/dvfvw.pdf)]
 
 ----
@@ -137,6 +143,9 @@ Jahrestagung Deutscher Verein für Versicherungswissenschaft (DVfVW), 2016 March
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017, Fall 2018
+
+* Data Science for Business Analytics <br />
+Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, scheduled for Spring 2019
 
 * Machine Learning in Business Analytics (exercise sessions/tutorials) <br />
 Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, Fall 2018
@@ -148,7 +157,7 @@ Teaching Assistant to Samuel Orso, University of Lausanne, Master level, Fall 20
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
 
 * Intro to R (as a part of Computational Tools for Actuaries) <br />
-University of Lausanne, Master level, Fall 2016, Fall 2017 <br />
+University of Lausanne, Master level, Fall 2016, Fall 2017, Fall 2018 <br />
 [[slides](http://htmlpreview.github.io/?https://github.com/irudnyts/introR/blob/master/slides/introR_formal.html#1)]
 
 * Web-scale Analytics (lectures/exercise sessions) <br />
