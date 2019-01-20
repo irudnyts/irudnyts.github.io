@@ -54,7 +54,7 @@ The convention actually depends on whether you develop a file for a package, or 
 
 If the file is **a part of data analysis**, then it makes sense to follow the following recommendations:
 
-* File names should be lowercase. There is nothing bad in having capital case names, just bear in mind UNIX systems are case insensitive, meaning that `test.R` and `Test.R` do not differ.
+* File names should be lowercase. There is nothing bad in having capital case names, just bear in mind while recent Windows and macOS file systems (NTFS and APFS) in fact are case sensitive, they are also case preserving, meaning that `test.R` and `Test.R` cannot coexist. 
 
     ```r
     # Good
@@ -221,7 +221,7 @@ It is possible to display the margin in RStudio Source editor:
     1: 10
     ```
 
-* Put a space after a coma.
+* Put a space after a comma.
 
     ```r
     # Good 
