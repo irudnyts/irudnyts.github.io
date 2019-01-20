@@ -52,9 +52,20 @@ The convention actually depends on whether you develop a file for a package, or 
     fit regression.R
     ```
 
+* File names should use letters from [Basic Latin](https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)), and NOT from [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)).
+
+    ```r
+    # Good 
+    tidy.R
+    
+    # Bad
+    rangé.R
+    ```
+
+
 If the file is **a part of data analysis**, then it makes sense to follow the following recommendations:
 
-* File names should be lowercase. There is nothing bad in having capital case names, just bear in mind even though recent Windows and macOS file systems (NTFS and APFS (optional)) are case sensitive, `test.R` and `Test.R` cannot coexist in the same folder. 
+* There should be no files that differ only by the letter case in the same folder and file names should be lowercase. There is nothing bad in having capital case names, just bear in mind case sensitivity and case preservation of your system. Case sensitivity means `test.R` and `Test.R` can coexist in the same folder. For instace, macOS file system (APFS) is not case sensitive by default. 
 
     ```r
     # Good
