@@ -89,7 +89,7 @@ To connect to a local MySQL one has choose Socket in menu and fill in a username
 
 ## 6. Use MySQL in conjuntion with R
 
-![RMySQL](https://cran.r-project.org/web/packages/RMySQL/index.html) provides a full interface for connecting R to MySQL. There are dozens of tutorials on how to use this package, and one can easily google them. We just want to ensure that everything works smoothly. First off, MySQL Server should be launched (as in Step 3). Then, we install and load the package, and finally, using user/password pair connect to a certain database.
+[RMySQL](https://cran.r-project.org/web/packages/RMySQL/index.html) provides a full interface for connecting R to MySQL. There are dozens of tutorials on how to use this package, and one can easily google them. We just want to ensure that everything works smoothly. First off, MySQL Server should be launched (as in Step 3). Then, we install and load the package, and finally, using user/password pair connect to a certain database.
 
 ```r
 install.packages("RMySQL")
@@ -99,8 +99,8 @@ install.packages("RMySQL")
 library(RMySQL)
 
 con <- dbConnect(MySQL(),
-                 user="root", password="1111",
-                 dbname="test", host="localhost")
+                 user = "root", password = "MyNewPass",
+                 dbname = "test", host = "localhost")
                  
 dbListTables(con)
 # [1] "CalendarMonths"
