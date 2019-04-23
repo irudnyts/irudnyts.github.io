@@ -75,7 +75,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
 *M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
-The paper has been submitted to the \emph{Journal of Risk and Insurance
+The paper has been submitted to the *Journal of Risk and Insurance*.
 
 * A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -106,7 +106,7 @@ The paper has been submitted to the \emph{Journal of Risk and Insurance
 ## :chart_with_upwards_trend: Talks 
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
-23rd International Congress on Insurance: Mathematics and Economics (IME 2019), scheduled for 2019 July 10 - 12, Munich
+23rd International Congress on Insurance: Mathematics and Economics (IME 2019), scheduled for 2019 July 10-12, Munich
 
 * On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
 Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2019 March 28, Berlin
