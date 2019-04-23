@@ -51,10 +51,10 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 ### MOOC
 
 * Intro to Python for Data Science, Intermediate Python for Data Science, Deep Learning in Python, Supervised Learning in R: Regression, Multiple and Logistic Regression, Machine Learning Toolbox <br />
-*DataCamp*, 2017
+*DataCamp*, 2017-2019
 
-* The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis <br />
-*Coursera*, 2014
+* The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data, Exploratory Data Analysis, Regression Models, A Crash Course in Causality: Inferring Causal Effects from Observational Data <br />
+*Coursera*, 2014-2019
 
 ### Workshops and tutorials
 
@@ -66,18 +66,26 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ----
 
-## :memo: Papers 
+## :memo: Projects
 
 ### Working papers
 
-* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
-*M. Fuino, I. Rudnytskyi, J. Wagner*
+* Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland: a Structural Equation Model Approach <br />
+*I. Rudnytskyi, J. Wagner*
 
-* Stochastic Programming for Asset Allocation in Pension Funds <br />
+* On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
+*M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
+The paper has been submitted to the \emph{Journal of Risk and Insurance
+
+* A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
 
 * Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis <br />
 *M. Kreutzer, I. Rudnytskyi, J. Wagner*
+
+### Books
+
+* Chapter on [Web scraping in R](https://smac-group.github.io/ds/web-scraping-in-r.html) in *An Introduction to Statistical Programming Methods with R* book
 
 ----
 
@@ -93,59 +101,46 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 * pkgspell [[github](https://github.com/irudnyts/pkgspell)]
 
-
-
 ----
 
 ## :chart_with_upwards_trend: Talks 
 
-* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
-Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), scheduled for 2019 March 28, Berlin
+* On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
+23rd International Congress on Insurance: Mathematics and Economics (IME 2019), scheduled for 2019 July 10 - 12, Munich
 
 * On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
-66th L2 Seminar, scheduled for 2019 January 23, Lyon
+Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2019 March 28, Berlin
 
 * On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
-European Actuarial Journal Conference 2018, 2018 September 9-11, Leuven <br />
-[[slides](https://irudnyts.github.io/pdf/eaj18.pdf)]
+66th L2 Seminar, 2019 January 23, Lyon
 
-* Key Drivers of Long-Term Care Needs in Europe: An Empirical Study <br />
-Research & Storytelling: A showcase of PhD research at HEC, 2017 December 14, Lausanne <br />
-[[slides](https://irudnyts.github.io/pdf/rs.pdf), [video](https://youtu.be/kLf6SVEMd94)]
+* On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
+European Actuarial Journal Conference 2018, 2018 September 10, Leuven
 
 * Stochastic programming for asset allocation in pension funds <br />
-21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna <br />
-[[slides](https://irudnyts.github.io/pdf/ime.pdf)]
+21st International Congress on Insurance: Mathematics and Economics (IME 2017), 2017 July 5, Vienna
 
 * Stochastic programming for asset allocation in pension funds <br />
-R in Insurance, 2017 June 8, Paris <br />
-[[slides](https://irudnyts.github.io/pdf/rinins17.pdf)]
+R in Insurance, 2017 June 8, Paris
 
 * Impact of Catastrophe Events on Non-life Insurance Companies' Market Valuation – an Event Study Analysis <br />
-3rd European Actuarial Journal (EAJ) Conference, 2016 September 6 – 8, Lyon <br />
-[[slides](https://irudnyts.github.io/pdf/eaj.pdf)]
+3rd European Actuarial Journal (EAJ) Conference, 2016 September 7, Lyon
 
 * estudy2: an R package for the event study in insurance <br />
-satRday #1 Conference, 2016 September 3, Budapest <br />
-[[slides](https://irudnyts.github.io/pdf/satrday.pdf), [video](https://www.youtube.com/watch?v=aWIDa4d60GQ)]
+satRday #1 Conference, 2016 September 3, Budapest
 
 * estudy2: an R package for the event study in insurance <br />
-R in Insurance, 2016 June 11, London <br />
-[[slides](https://irudnyts.github.io/pdf/rinins.pdf)]
+R in Insurance, 2016 June 11, London
 
 * Impact of Catastrophe Events on Insurance Companies' Market Valuation – an Event Study Analysis <br />
-Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 March 10 – 11, Vienna <br />
-[[slides](https://irudnyts.github.io/pdf/dvfvw.pdf)]
+Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 March 11, Vienna
 
 ----
 
 ## :eyeglasses: Teaching 
 
-* Asset and Liability Management for Actuaries (exercise sessions) <br />
-Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017, Fall 2018
-
 * Data Science for Business Analytics <br />
-Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, scheduled for Spring 2019
+Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, Spring 2019
 
 * Machine Learning in Business Analytics (exercise sessions/tutorials) <br />
 Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, Fall 2018
@@ -153,19 +148,14 @@ Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, 
 * Programming Tools in Data Science (exercise sessions/tutorials) <br />
 Teaching Assistant to Samuel Orso, University of Lausanne, Master level, Fall 2018
 
+* Asset and Liability Management for Actuaries (exercise sessions) <br />
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017, Fall 2018
+
 * Simulation Methods in Finance and Insurance (exercise sessions) <br />
-Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017
+Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Spring 2016, Spring 2017, Spring 2018
 
 * Intro to R (as a part of Computational Tools for Actuaries) <br />
-University of Lausanne, Master level, Fall 2016, Fall 2017, Fall 2018 <br />
-[[slides](http://htmlpreview.github.io/?https://github.com/irudnyts/introR/blob/master/slides/introR_formal.html#1)]
+University of Lausanne, Master level, Fall 2016, Fall 2017, Fall 2018
 
 * Web-scale Analytics (lectures/exercise sessions) <br />
 Teaching Assistant to Periklis Andritsos, University of Lausanne, Master level, Fall 2014
-
-----
-
-## :link: Links 
-
-* [R-bloggers](https://www.r-bloggers.com)
-* [R-users](https://www.r-users.com)
