@@ -71,7 +71,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Publications
 
-* [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3):92, 2019.](https://www.mdpi.com/2227-9091/7/3/92)
+* [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3):92, 2019.](https://www.mdpi.com/2227-9091/7/3/92) <br />
 *I. Rudnytskyi, J. Wagner*
 
 ### Working papers
