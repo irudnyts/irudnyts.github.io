@@ -9,7 +9,7 @@ permalink: /about/
 ### on-Campus
 
 * Doctor of Philosophy in Actuarial Science <br />
-*University of Lausanne*, 2015-present
+*University of Lausanne*, 2015-2019
 
 * Master of Science in Actuarial Science <br />
 *University of Lausanne*, 2013-2015
@@ -68,14 +68,17 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ## :memo: Projects
 
-### Working papers
 
-* Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland: a Structural Equation Model Approach <br />
+### Publications
+
+* [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3):92, 2019.](https://www.mdpi.com/2227-9091/7/3/92)
 *I. Rudnytskyi, J. Wagner*
+
+### Working papers
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
 *M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
-The paper has been submitted to the *Journal of Risk and Insurance*.
+The paper has been submitted to the *European Actuarial Journal*.
 
 * A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -106,7 +109,7 @@ The paper has been submitted to the *Journal of Risk and Insurance*.
 ## :chart_with_upwards_trend: Talks 
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
-23rd International Congress on Insurance: Mathematics and Economics (IME 2019), scheduled for 2019 July 10-12, Munich
+23rd International Congress on Insurance: Mathematics and Economics (IME 2019), 2019 July 10, Munich
 
 * On the Socio-demographic and Medical Drivers of Long-Term Care Needs in Europe <br />
 Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2019 March 28, Berlin
@@ -138,6 +141,16 @@ Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 M
 ----
 
 ## :eyeglasses: Teaching 
+
+## Lecturer
+
+* Quantitative Methods for Actuaries <br />
+University of Lausanne, Master level, Fall 2019
+
+* Deep Learning <br />
+University of Lausanne, Master level, scheduled for Spring 2020
+
+### TA
 
 * Data Science for Business Analytics <br />
 Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, Spring 2019
