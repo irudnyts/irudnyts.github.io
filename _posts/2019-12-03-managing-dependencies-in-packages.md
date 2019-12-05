@@ -13,6 +13,8 @@ When developing the package, the standard place to list dependencies (i.e., exte
 
 I was sure that there exists a common workflow to do it. After a minute of extensive research, I found out that CRAN policy explains it quite vaguely. Further, there were three Stackoverflow questions about it (see below in References). The answer that I found was quite satisfactory: Dirk Eddelbuettel proposes to list the package in `Sugests:` and specify the additional repository in special free-form filed `Additional_repositories:`. He also suggests using `drat` package to create CRAN-like R packages repository, which from my view is a bit overkill. So my solution would be to list the name of the package in `Suggests:` and mention the link to its GitHub repo (almost surely the source is stored on GitHub) in `Additional_repositories:`. 
 
+**Update:** As it was kindly pointed out by Sébastien Rochette, `devtools` supports a `Remotes:` field exactly for that purpose. Simply specify the repos in the format `username/reponame` separated by commas (one can also add the type of the source if it is not GitHub, e.g., `gitlab::username/reponame`). And that is it.
+
 That would be the nice end of the story but how would you let know the end-user that you need this package to be pre-installed? The workaround I found is to rise a message from the function, where this dependence is used and ask the user to install it, for example:
 
 ```r
@@ -40,7 +42,7 @@ The problem is that the user should come back to the installation process at the
 }
 ```
 
-To summarize in a nutshell: mention the package name in the field `Suggests:` of `DESCRIPTION`, link to its repo in `Additional_repositories:` (in the same file), and write a simple `.onAttach` function.
+To summarize in a nutshell: mention the package name in the field `Suggests:` of `DESCRIPTION`, link to its repo in `Remotes:` (in the same file), and write a simple `.onAttach()` function (it should be stored in the file `zzz.R`).
 
 ## Shiny demo app 
 
@@ -48,15 +50,18 @@ It is always a cool idea to compliment the package with a Shiny app so that a us
 
 Obviously, (1) we want to ensure that the user has all required packages installed, and (2) avoid using `library()` in package's scripts. The solution is very simple -- specify all Shiny app dependencies in `Imports:` and use the usual `::` to access functions from respective namespaces. 
 
-To sum up all the previous take-home points, I created a `dummypkg` for illustration, which is stored at GitHub repo [`irudnyts\dummypkg`](https://github.com/irudnyts/dummypkg). It contains a barebone example of non-CRAN dependencies, as well as a tiny Shiny app with dependencies. Managing those dependencies is super important since we do not want our packages to like like jack-in-the-boxes.
+To sum up all the previous take-home points, I created a `dummypkg` for illustration, which is stored at GitHub repo [`irudnyts\dummypkg`](https://github.com/irudnyts/dummypkg). It contains a barebone example of non-CRAN dependencies, as well as a tiny Shiny app with dependencies. Managing those dependencies is super important since we do not want our packages to look like jack-in-the-boxes.
 
-Many thanks go to Ana Lucy Bejarano Montalvo who inspired me by asking those questions. 
+Many thanks go to Ana Lucy Bejarano Montalvo who inspired me by asking those questions and Sébastien Rochette for pointing out `Remotes:` filed. 
+
 ## References 
 1. [R packages by Hadley Wickham](http://r-pkgs.had.co.nz)
-2. [Include non-CRAN package in CRAN package](https://stackoverflow.com/questions/33335321/include-non-cran-package-in-cran-package)
-3. [R package building: How to import a function from a package not on CRAN](https://stackoverflow.com/questions/43773066/r-package-building-how-to-import-a-function-from-a-package-not-on-cran)
-4. [How to make R package recommend a package hosted on GitHub?](https://stackoverflow.com/questions/36105257/how-to-make-r-package-recommend-a-package-hosted-on-github?rq=1)
-5. [R package dependencies not installed from Additional_repositories
+2. [Devtools dependencies](https://cran.r-project.org/web/packages/devtools/vignettes/dependencies.html)
+3. [Include non-CRAN package in CRAN package](https://stackoverflow.com/questions/33335321/include-non-cran-package-in-cran-package)
+4. [R package building: How to import a function from a package not on CRAN](https://stackoverflow.com/questions/43773066/r-package-building-how-to-import-a-function-from-a-package-not-on-cran)
+5. [How to make R package recommend a package hosted on GitHub?](https://stackoverflow.com/questions/36105257/how-to-make-r-package-recommend-a-package-hosted-on-github?rq=1)
+6. [R package dependencies not installed from Additional_repositories
 ](https://stackoverflow.com/questions/29419776/r-package-dependencies-not-installed-from-additional-repositories)
-6. [Supplementing your R package with a Shiny app](https://deanattali.com/2015/04/21/r-package-shiny-app/)
-7. [Lego PNG image with transparent background](http://pngimg.com/download/51459)
+7. [Supplementing your R package with a Shiny app](https://deanattali.com/2015/04/21/r-package-shiny-app/)
+8. [Lego PNG image with transparent background](http://pngimg.com/download/51459)
+9. [A Framework for Building Robust Shiny Apps](https://github.com/ThinkR-open/golem)
