@@ -4,6 +4,20 @@ title: About
 permalink: /about/
 ---
 
+## :man_technologist: Experience 
+
+* Lecturer <br />
+*University of Lausanne*, 2019-present
+
+* Graduate Assistant <br />
+*University of Lausanne*, 2015-present
+
+* R developer
+*Education Strategy Consulting, Inc*, 2016-2019
+
+* Teaching Assistant
+*University of Lausanne*, 2014-2015
+
 ## :mortar_board: Education 
 
 ### on-Campus
@@ -96,19 +110,19 @@ The paper has been submitted to the *European Actuarial Journal*.
 
 ### R packages
 
-* estudy2 [[github](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html)]
+* estudy2 [[GitHub repo](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html), [Chapter 8](https://www.amazon.com/Angewandte-Empirische-Methoden-Finance-Accounting/dp/311058624X)]
 
-* ruin [[github](https://github.com/irudnyts/ruin), [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
+* ruin [[GitHub repo](https://github.com/irudnyts/ruin), [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
 
-* udiscr [[github](https://github.com/irudnyts/udiscr)]
+* udiscr [[GitHub repo](https://github.com/irudnyts/udiscr)]
 
-* pkgspell [[github](https://github.com/irudnyts/pkgspell)]
+* pkgspell [[GitHub repo](https://github.com/irudnyts/pkgspell)]
 
 ----
 
 ## :chart_with_upwards_trend: Talks 
 
-* ‘caret’ wrap: a healthy lunch for a data scientist <br />
+* 'caret' wrap: a healthy lunch for a data scientist <br />
 R-lunches, 2019 November 26, Geneva
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
@@ -147,22 +161,25 @@ Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 M
 
 ## Lecturer
 
+* [Deep Learning](https://irudnyts.github.io/deep/) <br />
+University of Lausanne, Master level, Spring 2020
+
 * Quantitative Methods for Actuaries <br />
 University of Lausanne, Master level, Fall 2019
 
-* Deep Learning <br />
-University of Lausanne, Master level, scheduled for Spring 2020
+* [Programming Tools in Data Science](https://ptds.netlify.com) <br />
+University of Lausanne, Master level, Fall 2018
 
 ### TA
 
 * Data Science for Business Analytics <br />
-Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, Spring 2019
+Teaching Assistant to Thibault Vatter, University of Lausanne, Master level, Spring 2019, Spring 2020
 
 * Machine Learning in Business Analytics (exercise sessions/tutorials) <br />
-Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, Fall 2018
+Teaching Assistant to Marc-Olivier Boldi, University of Lausanne, Master level, Fall 2018, Fall 2019
 
 * Programming Tools in Data Science (exercise sessions/tutorials) <br />
-Teaching Assistant to Samuel Orso, University of Lausanne, Master level, Fall 2018
+Teaching Assistant to Samuel Orso, University of Lausanne, Master level, Fall 2018, Fall 2019
 
 * Asset and Liability Management for Actuaries (exercise sessions) <br />
 Teaching Assistant to Jo&euml;l Wagner, University of Lausanne, Master level, Fall 2015, Fall 2016, Fall 2017, Fall 2018
