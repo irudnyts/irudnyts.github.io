@@ -91,7 +91,7 @@ Standard installation procedure assumes, then, install Keras and TensorFlow by `
 ```r
 use_python("/usr/local/bin/python3")
 ```
-to specify a path to Python 3. Restart RStudio. Load `keras` library and get your hands dirty. Voil&agrave;! Unless you screwed up somewhere (which is usually the case for me), everything should work nicely.
+to specify a path to Python 3 (if you are not sure about this path, you can always check it out by executing in Terminal `which python3`). Restart RStudio. Load `keras` library and get your hands dirty. Voil&agrave;! Unless you screwed up somewhere (which is usually the case for me), everything should work nicely.
 
 Sources: [1](http://docs.python-guide.org/en/latest/starting/install3/osx/), [2](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos#step-6-—-creating-a-simple-program), [3](http://www.marinamele.com/2014/07/install-python3-on-mac-os-x-and-use-virtualenv-and-virtualenvwrapper.html), [4](https://www.tensorflow.org/install/install_mac), [5](https://keras.io)
 
