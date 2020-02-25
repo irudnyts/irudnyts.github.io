@@ -12,10 +12,10 @@ permalink: /about/
 * Graduate Assistant <br />
 *University of Lausanne*, 2015-present
 
-* R developer
+* Data Scientist  <br />
 *Education Strategy Consulting, Inc*, 2016-2019
 
-* Teaching Assistant
+* Teaching Assistant <br />
 *University of Lausanne*, 2014-2015
 
 ## :mortar_board: Education 
