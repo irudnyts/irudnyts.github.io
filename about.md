@@ -13,7 +13,7 @@ permalink: /about/
 *University of Lausanne*, 2015-present
 
 * Data Scientist  <br />
-*Education Strategy Consulting, Inc*, 2016-2019
+*Education Strategy Consulting, Inc.*, 2016-2019
 
 * Teaching Assistant <br />
 *University of Lausanne*, 2014-2015
@@ -168,7 +168,7 @@ University of Lausanne, Master level, Spring 2020
 University of Lausanne, Master level, Fall 2019
 
 * [Programming Tools in Data Science](https://ptds.netlify.com) <br />
-University of Lausanne, Master level, Fall 2018
+University of Lausanne, Master level, Fall 2019
 
 ### TA
 
