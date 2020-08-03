@@ -4,13 +4,16 @@ title: About
 permalink: /about/
 ---
 
-## :man_technologist: Experience 
+## :man_technologist: Experience
+
+* Data Science Course Developer and Instructor <br />
+*EPFL Extension School*, 2020-present
 
 * Lecturer <br />
 *University of Lausanne*, 2019-present
 
 * Graduate Assistant <br />
-*University of Lausanne*, 2015-present
+*University of Lausanne*, 2015-2020
 
 * Data Scientist  <br />
 *Education Strategy Consulting, Inc.*, 2016-2019
@@ -18,7 +21,7 @@ permalink: /about/
 * Teaching Assistant <br />
 *University of Lausanne*, 2014-2015
 
-## :mortar_board: Education 
+## :mortar_board: Education
 
 ### on-Campus
 
@@ -62,7 +65,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * International Summer Program <br />
 *Technical University of Dortmund*, 2013
 
-### MOOC
+### MOOCs
 
 * Intro to Python for Data Science, Intermediate Python for Data Science, Deep Learning in Python, Supervised Learning in R: Regression, Multiple and Logistic Regression, Machine Learning Toolbox <br />
 *DataCamp*, 2017-2019
@@ -72,7 +75,7 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Workshops and tutorials
 
-* Mastering the Art of Public Speaking, 2017 December 
+* Mastering the Art of Public Speaking, 2017 December
 
 * Academic English Workshop, 2018 February-March
 
@@ -90,9 +93,9 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Working papers
 
-* On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
+* [On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe](https://link.springer.com/article/10.1007%2Fs13385-020-00242-1) <br />
 *M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
-The paper has been submitted to the *European Actuarial Journal*.
+To appear in the *European Actuarial Journal*
 
 * A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -106,11 +109,11 @@ The paper has been submitted to the *European Actuarial Journal*.
 
 ----
 
-## :computer: Software 
+## :computer: Software
 
 ### R packages
 
-* estudy2 [[GitHub repo](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html), [Chapter 8](https://www.amazon.com/Angewandte-Empirische-Methoden-Finance-Accounting/dp/311058624X)]
+* estudy2 [[GitHub repo](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html), [Chapter 8 in Angewandte empirische Methoden in Finance & Accounting: Umsetzung mit R by Matthias Gehrke](https://www.amazon.com/Angewandte-Empirische-Methoden-Finance-Accounting/dp/311058624X)]
 
 * ruin [[GitHub repo](https://github.com/irudnyts/ruin), [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
 
@@ -120,9 +123,9 @@ The paper has been submitted to the *European Actuarial Journal*.
 
 ----
 
-## :chart_with_upwards_trend: Talks 
+## :chart_with_upwards_trend: Talks
 
-* 'caret' wrap: a healthy lunch for a data scientist <br />
+* '{caret}' wrap: a healthy lunch for a data scientist <br />
 R-lunches, 2019 November 26, Geneva
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
@@ -157,7 +160,7 @@ Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 M
 
 ----
 
-## :eyeglasses: Teaching 
+## :eyeglasses: Teaching
 
 ## Lecturer
 
@@ -165,7 +168,7 @@ Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 M
 University of Lausanne, Master level, Spring 2020
 
 * Quantitative Methods for Actuaries <br />
-University of Lausanne, Master level, Fall 2019
+University of Lausanne, Master level, Fall 2019, Fall 2020
 
 * [Programming Tools in Data Science](https://ptds.netlify.com) <br />
 University of Lausanne, Master level, Fall 2019
