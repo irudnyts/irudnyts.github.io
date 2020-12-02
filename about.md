@@ -125,7 +125,10 @@ To appear in the *European Actuarial Journal*
 
 ## :chart_with_upwards_trend: Talks
 
-* '{caret}' wrap: a healthy lunch for a data scientist <br />
+* Deep Learning with R <br />
+R-lunches, 2020 December 1, Geneva
+
+* `{caret}` wrap: a healthy lunch for a data scientist <br />
 R-lunches, 2019 November 26, Geneva
 
 * On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe <br />
