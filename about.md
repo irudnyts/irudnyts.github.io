@@ -24,6 +24,8 @@ permalink: /about/
 * Teaching Assistant <br />
 *University of Lausanne*, 2014-2015
 
+----
+
 ## :mortar_board: Education
 
 ### on-Campus
