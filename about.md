@@ -6,11 +6,14 @@ permalink: /about/
 
 ## :man_technologist: Experience
 
-* Data Science Course Developer and Instructor <br />
-*EPFL Extension School*, 2020-present
+* Self-employed <br />
+2021-present
 
 * Lecturer <br />
 *University of Lausanne*, 2019-present
+
+* Data Science Course Developer and Instructor <br />
+*EPFL Extension School*, 2020-2021
 
 * Graduate Assistant <br />
 *University of Lausanne*, 2015-2020
@@ -88,14 +91,14 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Publications
 
-* [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3):92, 2019.](https://www.mdpi.com/2227-9091/7/3/92) <br />
+* [On the characteristics of reporting ADL limitations and formal LTC usage across Europe, European Actuarial Journal, 10(2), 557-597, 2020.](https://link.springer.com/article/10.1007/s13385-020-00242-1) <br />
+*M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
+
+
+* [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3), 92, 2019.](https://www.mdpi.com/2227-9091/7/3/92) <br />
 *I. Rudnytskyi, J. Wagner*
 
 ### Working papers
-
-* [On the Characteristics of Reporting ADL Limitations and Formal LTC Usage across Europe](https://link.springer.com/article/10.1007%2Fs13385-020-00242-1) <br />
-*M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
-To appear in the *European Actuarial Journal*
 
 * A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -106,6 +109,10 @@ To appear in the *European Actuarial Journal*
 ### Books
 
 * Chapter on [Web scraping in R](https://smac-group.github.io/ds/web-scraping-in-r.html) in *An Introduction to Statistical Programming Methods with R* book
+
+### MSc Theses
+
+* Applications of deep learning and computer vision in real estate price estimations, Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
 
 ----
 
@@ -125,8 +132,14 @@ To appear in the *European Actuarial Journal*
 
 ## :chart_with_upwards_trend: Talks
 
+* Mother's Little Helper: git/GitHub <br />
+R-lunches, 2020 December 14, Geneva (on-line)
+
+* Do you have a moment to talk about data science? <br />
+TechTalk at [AgileEngine](https://agileengine.com), 2021 March 25, on-line
+
 * Deep Learning with R <br />
-R-lunches, 2020 December 1, Geneva
+R-lunches, 2020 December 1, Geneva (on-line)
 
 * `{caret}` wrap: a healthy lunch for a data scientist <br />
 R-lunches, 2019 November 26, Geneva
@@ -168,7 +181,7 @@ Jahrestagung Deutscher Verein f&uuml;r Versicherungswissenschaft (DVfVW), 2016 M
 ## Lecturer
 
 * [Deep Learning](https://irudnyts.github.io/deep/) <br />
-University of Lausanne, Master level, Spring 2020
+University of Lausanne, Master level, Spring 2020, Spring 2021
 
 * Quantitative Methods for Actuaries <br />
 University of Lausanne, Master level, Fall 2019, Fall 2020
