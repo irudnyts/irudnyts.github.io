@@ -6,7 +6,7 @@ permalink: /about/
 
 ## :man_technologist: Experience
 
-* Data Science Educator and Evangelist <br/ >
+* Data Science Educator and Evangelist <br />
 *Self-employed*, 2022-present
 
 * Lecturer <br />
