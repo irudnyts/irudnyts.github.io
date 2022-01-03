@@ -1,23 +1,25 @@
 ---
 layout: post
-title: "&#128394; R Coding Style Guide"
+title: "&#128394; [archived] R Coding Style Guide"
 ---
 
 Language is a tool that allows human beings to interact and communicate with each other. The clearer we express ourselves, the better the idea is transferred from our mind to the other. The same applies to programming languages: concise, clear and consistent codes are easier to read and edit. It is especially important, if you have collaborators, which depend on your code. However, even if you don't, keep in mind that at some point in time, you might come back to your code, for example, to fix an error. And if you did not follow consistently your coding style, reviewing your code can take much longer, than expected. In this context, taking care of your audience means to make your code as readable as possible.
 
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
+
 > Good coding style is like using correct punctuation. You can manage without
-> it, but it sure makes things easier to read. 
+> it, but it sure makes things easier to read.
 > <cite> Hadley Wickham </cite>
 
-There is no such thing as a "correct" coding style, as there is no such thing as the best color. At the end of the day, coding style is a set of developers' preferences. If you are coding alone, sticking to your coding style and being consistent is more than enough. The story is a bit different if you are working in a team: it is crucial to agree on a convention beforehand and make sure that everyone follows it. 
+There is no such thing as a "correct" coding style, as there is no such thing as the best color. At the end of the day, coding style is a set of developers' preferences. If you are coding alone, sticking to your coding style and being consistent is more than enough. The story is a bit different if you are working in a team: it is crucial to agree on a convention beforehand and make sure that everyone follows it.
 
 ![](https://irudnyts.github.io/images/posts/2019-01-14-r-coding-style-guide/assignment.jpg)
 
 Even though there is no official style guide, R is mature and steady enough to have an "unofficial" convention. In this post, you will learn these "unofficial" rules, their deviations, and most common styles.
 
-## Naming 
+## Naming
 
-### Naming files 
+### Naming files
 
 The convention actually depends on whether you develop a file for a package, or as a part of data analysis process. There are, however, **common rules**:
 
@@ -27,16 +29,16 @@ The convention actually depends on whether you develop a file for a package, or 
     # Good
     read.R
 
-    # Bad 
+    # Bad
     read
     ```
 
 * File names should be meaningful.
 
     ```r
-    # Good 
+    # Good
     model.R
-    
+
     # Bad
     Untitled1.R
     ```
@@ -44,10 +46,10 @@ The convention actually depends on whether you develop a file for a package, or 
 * File names should not contain `/` and spaces. Instead, a dash (`-`) or underscore (`_`) should be used.
 
     ```r
-    # Good 
+    # Good
     fir_regression.R
     fir-regression.R
-    
+
     # Bad
     fit regression.R
     ```
@@ -55,9 +57,9 @@ The convention actually depends on whether you develop a file for a package, or 
 * File names should use letters from [Basic Latin](https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)), and NOT from [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)).
 
     ```r
-    # Good 
+    # Good
     tidy.R
-    
+
     # Bad
     rangé.R
     ```
@@ -65,12 +67,12 @@ The convention actually depends on whether you develop a file for a package, or 
 
 If the file is **a part of data analysis**, then it makes sense to follow the following recommendations:
 
-* There should be no files that differ only by the letter case in the same folder and file names should be lowercase. There is nothing bad in having capital case names, just bear in mind case sensitivity and case preservation of your system. Case sensitivity means `test.R` and `Test.R` can coexist in the same folder. For instace, macOS file system (APFS) is not case sensitive by default. 
+* There should be no files that differ only by the letter case in the same folder and file names should be lowercase. There is nothing bad in having capital case names, just bear in mind case sensitivity and case preservation of your system. Case sensitivity means `test.R` and `Test.R` can coexist in the same folder. For instace, macOS file system (APFS) is not case sensitive by default.
 
     ```r
     # Good
     analyse.R
-    
+
     # Bad
     Analyse.R
     ```
@@ -78,14 +80,14 @@ If the file is **a part of data analysis**, then it makes sense to follow the fo
 * Use meaningful verbs for file names.
 
     ```r
-    # Good 
+    # Good
     validate-vbm.R
-    
+
     # Bad
     regression.R
     ```
-    
-* If files should be run in a particular order, then use ascending names. 
+
+* If files should be run in a particular order, then use ascending names.
 
     ```r
     01-read.R
@@ -100,7 +102,7 @@ If the file is used **in a package**, then slightly different rules should be fo
     - `AllClasses.R` (or `AllClass.R`), a file that stores all S4 classes definitions.
     - `AllGenerics.R` (or `AllGeneric.R`), a file that stores all S4 generic functions.
     - `zzz.R`, a file that contains `.onLoad()` and friends.
- 
+
 * If the file contains only one function, name it by the function name.
 
 * Use `methods-` prefix for S4 class methods.
@@ -110,11 +112,11 @@ If the file is used **in a package**, then slightly different rules should be fo
 * Generally, names should be as short as possible, still meaningful nouns.
 
     ```r
-    # Good 
+    # Good
     fit_rt
     split_1
     imdb_page
-    
+
     # Bad
     fit_regression_tree
     cross_validation_split_one
@@ -124,42 +126,42 @@ If the file is used **in a package**, then slightly different rules should be fo
 * Variable names should be typically lowercase.
 
     ```r
-    # Good 
+    # Good
     event
-    
-    # Bad 
+
+    # Bad
     Event
     ```
-    
+
 * NEVER separate words within the name by `.` (reserved for an S3 dispatch) or use CamelCase (reserved for S4 classes definitions). Instead, use an underscore (`_`).
 
     ```r
-    # Good 
+    # Good
     event_window
-    
-    # Bad 
+
+    # Bad
     event.window
     EventWindow
     ```
-    
-* DO NOT use names of existing function and variables (especially, built-in ones). 
+
+* DO NOT use names of existing function and variables (especially, built-in ones).
 
     ```r
     # Bad
     T <- 10 # T is a shortcut of TRUE in R
     c <- "constant"
     ```
-    
-### Naming functions 
+
+### Naming functions
 
 Many points of naming variables are similar for naming functions:
 
-* Generally, function names should be verbs. 
+* Generally, function names should be verbs.
 
     ```r
     # Good
     add()
-    
+
     # Bad
     addition()
     ```
@@ -167,13 +169,13 @@ Many points of naming variables are similar for naming functions:
 * Use `.` ONLY for dispatching S3 generic.
 
     ```r
-    # Good 
+    # Good
     bw_test()
-    
+
     # Bad
     bw.test()
     ```
-    
+
 * Add the underscore (`_`) prefix to a standard evaluation (SE) equivalent of a function (`summarize` vs `summarize_` ).
 
 ### Naming S4 classes
@@ -182,7 +184,7 @@ Class names should be nouns in CamelCase with initial capital case letter.
 
 ## Syntax
 
-### Line length 
+### Line length
 
 The maximum length of lines is limited to 80 characters (thanks to IBM Punch Card).
 
@@ -199,21 +201,21 @@ It is possible to display the margin in RStudio Source editor:
 * Put spaces around all infix binary operators (`=`, `+`, `*`, `==`, `&&`, `<-`, `%*%`, etc.).
 
     ```r
-    # Good 
+    # Good
     x == y
     a <- a ^ 2 + 1
-    
+
     # Bad
     x==y
     a<-a^2+1
     ```
-    
+
 * Put spaces around "=" in function calls (except for Bioconductor).
 
     ```r
-    # Good 
+    # Good
     mean(x = c(1, NA, 2), na.rm = TRUE)
-    
+
     # Bad
     mean(x=c(1, NA, 2), na.rm=TRUE)
     ```
@@ -221,11 +223,11 @@ It is possible to display the margin in RStudio Source editor:
 * Do NOT place space for subsetting (`$` and `@`), namespace manipulation (`::` and `:::`), and for sequence generation (`:`).
 
     ```r
-    # Good 
+    # Good
     car$cyl
     dplyr::select
     1:10
-    
+
     # Bad
     car $cyl
     dplyr:: select
@@ -235,99 +237,99 @@ It is possible to display the margin in RStudio Source editor:
 * Put a space after a comma.
 
     ```r
-    # Good 
+    # Good
     mtcars[, "cyl"]
     mtcars[1, ]
     mean(x = c(1, NA, 2), na.rm = TRUE)
-    
+
     # Bad
     mtcars[,"cyl"]
     mtcars[1 ,]
     mean(x = c(1, NA, 2),na.rm = TRUE)
     ```
-    
+
 * Use a space before left parentheses, except in a function call.
 
     ```r
-    # Good 
+    # Good
     for (element in element_list)
     if (grade == 5.5)
     sum(1:10)
-    
+
     # Bad
     for(element in element_list)
     if(grade == 5.5)
     sum (1:10)
     ```
-    
+
 * No spacing around code in parenthesis or square brackets.
 
     ```r
-    # Good 
+    # Good
     if (debug) message("debug mode")
     species["tiger", ]
-    
+
     # Bad
     if ( debug ) message("debug mode")
     species[ "tiger" ,]
     ```
-    
-### Curly braces 
+
+### Curly braces
 
 * An opening curly brace should NEVER go on its own line and should always be followed by a new line.
 
     ```r
-    # Good 
+    # Good
     if (is_used) {
         # do something
     }
-    
+
     if (is_used) {
         # do something
     } else {
         # do something else
     }
-    
+
     # Bad
     if (is_used)
     {
         # do something
     }
-    
+
     if (is_used) { # do something }
     else { # do something else }
-    
+
     ```
 
 * A closing curly brace should always go on its own line, unless it’s followed by else.
 
     ```r
-    # Good 
+    # Good
     if (is_used) {
         # do something
     } else {
         # do something else
     }
-    
+
     # Bad
     if (is_used) {
         # do something
     }
     else {
-        # do something else 
+        # do something else
     }
-    
+
     ```
-    
+
 * Always indent the code inside curly braces (see next section).
 
     ```r
-    # Good 
+    # Good
     if (is_used) {
         # do something
         # and then something else
     }
-    
+
     # Bad
     if (is_used) {
     # do something
@@ -338,7 +340,7 @@ It is possible to display the margin in RStudio Source editor:
 * Curly braces and new lines can be avoided, if a statement after `if` is very short.
 
     ```r
-    # Good 
+    # Good
     if (is_used) return(rval)
     ```
 
@@ -369,13 +371,13 @@ print(paste(i, "is even"))
 
 ### New line
 
-* Very often function definition does not fit into one line. In this case, excessive arguments should be moved to a new line, starting with the opening parenthesis. 
+* Very often function definition does not fit into one line. In this case, excessive arguments should be moved to a new line, starting with the opening parenthesis.
 
     ```r
-    long_function_name <- function(arg1, arg2, arg3, arg4, 
+    long_function_name <- function(arg1, arg2, arg3, arg4,
                                    long_argument_name1 = TRUE)
     ```
-    
+
 * If arguments expand more than into two lines, then each argument should be placed on a separate line.
 
     ```r
@@ -386,12 +388,12 @@ print(paste(i, "is even"))
     ```
 
 * The same applies to a function call: excessive arguments should be indented where the closing parenthesis is located, if only two lines are sufficient.
-    
+
     ```r
-    plot(table(rpois(100, 5)), type = "h", col = "red", lwd = 10, 
+    plot(table(rpois(100, 5)), type = "h", col = "red", lwd = 10,
          main = "rpois(100, lambda = 5)")
     ```
-    
+
 * Otherwise, each argument can go into a separate line, starting with a new line after the opening parenthesis.
 
     ```r
@@ -412,57 +414,57 @@ print(paste(i, "is even"))
     if (some_very_long_name_1 == 1 &&
         some_very_long_name_2 == 1 ||
         some_very_long_name_3 %in% some_very_long_name_4)
-        
+
     # Bad
     if (some_very_long_name_1 == 1
         && some_very_long_name_2 == 1
         || some_very_long_name_3 %in% some_very_long_name_4)
     ```
-    
+
     I know some people who are completely against it. See the next item why I believe it is better.
-    
+
 * If the statement, which contains operators, expands into several lines, then each line should end with an operator and not begin with it. Sometimes, it makes sense to split a formula into meaningful chunks.
 
     ```r
-    # Good 
+    # Good
     normal_pdf <- 1 / sqrt(2 * pi * d_sigma ^ 2) *
         exp(-(x - d_mean) ^ 2 / 2 / s ^ 2)
-    
+
     # Bad
     normal_pdf <- 1 / sqrt(2 * pi * d_sigma ^ 2)
         * exp(-(x - d_mean) ^ 2 / 2 / d_sigma ^ 2)
     ```
-    
-    Not only it is ugly, but also syntactically wrong. In the second case, R will consider these two lines as two distinct statements: the first line will assign the value of `1 / sqrt(2 * pi * d_sigma ^ 2)` to `normal_pdf`, and the second line will throw an error, since `*` does not have the first argument. 
+
+    Not only it is ugly, but also syntactically wrong. In the second case, R will consider these two lines as two distinct statements: the first line will assign the value of `1 / sqrt(2 * pi * d_sigma ^ 2)` to `normal_pdf`, and the second line will throw an error, since `*` does not have the first argument.
 
 * Each grammar statement of `dplyr` (after `%>%`) and `ggplot2` (after `+`) should start with a new line.
 
     ```r
     mtcars %>%
-        filter(cyl == 4) %>% 
-        group_by(am) %>% 
+        filter(cyl == 4) %>%
+        group_by(am) %>%
         summarize(avg_mpg = mean(mpg))
-        
-    ggplot(mtcars) + 
-        geom_point(aes(x = mpg, y = qsec, color = factor(am))) + 
+
+    ggplot(mtcars) +
+        geom_point(aes(x = mpg, y = qsec, color = factor(am))) +
         geom_line(aes(x = mpg, y = qsec, color = factor(am)))
     ```
-    
-## Comments 
 
-* Comment your code. Always. Your collaborators and future-you will be very grateful. Comments start with `#` followed by space and text of the comment. 
+## Comments
+
+* Comment your code. Always. Your collaborators and future-you will be very grateful. Comments start with `#` followed by space and text of the comment.
 
     ```r
-    # This is a comment. 
+    # This is a comment.
     ```
-    
+
 * Comments should explain the why, not the what. Comments should not replicate the code by a plain langue, but rather explain the overall intention of the command.
-    
+
     ```r
     # Good
     # define iterator
     i <- 1
-    
+
     # Bad
     # set i to 1
     i <- 1
@@ -473,7 +475,7 @@ print(paste(i, "is even"))
     ```r
     plot(price, weight) # plot a scatter chart of price and weight
     ```
-    
+
 * To comment/uncomment selected chunk, use `Command+Shift+C`.
 
 * Use `roxygen2` comments for a package development (i.e., `#'`) to comment functions.
@@ -483,10 +485,10 @@ print(paste(i, "is even"))
     ```r
     # Read data
     #---------------------------------------------------------------------------
-    
+
     # Tidy data
     #---------------------------------------------------------------------------
-    
+
     ```
 
 
@@ -498,18 +500,18 @@ print(paste(i, "is even"))
     ```r
     # Good
     library("dplyr")
-    
+
     # Bad
     require(dplyr)
     ```
-    
+
 * In a function call, arguments can be specified by position, complete name, or partial name. Never specify by partial name and never mix by position and complete name.
 
     ```r
-    # Good 
+    # Good
     mean(x, na.rm = TRUE)
     rnorm(10, 0.2, 0.3)
-    
+
     # Bad
     mean(x, na = TRUE)
     rnorm(mean = 0.2, 10, 0.3)
@@ -522,7 +524,7 @@ print(paste(i, "is even"))
     ```r
     # Good
     raise_to_power(x, power = 2.7)
-    
+
     # Bad
     raise_to_power(power = 2.7, x)
     ```
@@ -533,7 +535,7 @@ print(paste(i, "is even"))
     # Good
     standardize(..., scale = TRUE, center = TRUE)
     save_chart(chart, file, width, height, ...)
-    
+
     # Bad
     standardize(scale = TRUE, ..., center = TRUE)
     save_chart(chart, ..., file, width, height)
@@ -547,7 +549,7 @@ print(paste(i, "is even"))
         if (is.null(bins)) bins <- nclass.Sturges(x)
         ...
     }
-    
+
     # Bad
     histogram <- function(x, bins = nclass.Sturges(x)) {
         ...
@@ -558,24 +560,24 @@ print(paste(i, "is even"))
 
 * While developing a package, specify the namespace of each used function, except if it is from `base` package.
 
-* Do NOT put more than one statement (command) per line. Do NOT use semicolon as termination of the command. 
+* Do NOT put more than one statement (command) per line. Do NOT use semicolon as termination of the command.
 
     ```
     # Good
     x <- 1
     x <- x + 1
-    
-    # Bad 
+
+    # Bad
     x <- 1; x <- x + 1
     ```
-    
+
 * Avoid using `setwd("/Users/irudnyts/path/that/only/I/have")`. Almost surely your collaborators will have different paths, which makes the project not portable. Instead, use `here::here()` function from `here()` package.
 
 * Avoid using `rm(list = ls())`. This statement deletes all objects from the global environment, and gives you an illusion of a fresh R start.
 
 If you have read until this moment, you deserve a treat. There is a magic key combination `Command+Shift+A` that reformats selected code: add spaces and indents it. Do not use it excessively though!
 
-## References 
+## References
 
 * [Advanced R](http://adv-r.had.co.nz/Style.html)
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)

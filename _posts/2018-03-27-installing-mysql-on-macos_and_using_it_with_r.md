@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#128190; Installing MySQL on MacOS (and using it with R)"
+title: "&#128190; [archived] Installing MySQL on MacOS (and using it with R)"
 ---
 
-A couple of days ago I was asked to install MySQL on MacOS 10.13, and I was surprised that it was not a one-click installation, as in case of R. Unfortunately, even for me a documentation was a bit confusing, and I think it might be useful to have a guide of the installation process. 
+A couple of days ago I was asked to install MySQL on MacOS 10.13, and I was surprised that it was not a one-click installation, as in case of R. Unfortunately, even for me a documentation was a bit confusing, and I think it might be useful to have a guide of the installation process.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 ## 1. Download .dmg file and install MySQL
 
@@ -64,7 +66,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> 
+mysql>
 ```
 
 To change the password we simply call this command, where "MyNewPass" as you already guessed is a new password:
@@ -73,7 +75,7 @@ To change the password we simply call this command, where "MyNewPass" as you alr
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
 ```
 
-And then quit MySQL: 
+And then quit MySQL:
 
 ```sql
 QUIT
@@ -83,7 +85,7 @@ QUIT
 
 I find Sequel Pro a quite useful and beautiful IDE for MySQL. To install it one has to download [a .dmg file](https://sequelpro.com/download#auto-start), open it, and drag & drop "Sequel Pro.app" to applications' folder.
 
-To connect to a local MySQL one has choose Socket in menu and fill in a username (default "root") and the password that we changes in the previous step. 
+To connect to a local MySQL one has choose Socket in menu and fill in a username (default "root") and the password that we changes in the previous step.
 
 ![](https://irudnyts.github.io/images/posts/2018-03-27-installing-mysql-on-macos/sql_pro.png)
 
@@ -101,7 +103,7 @@ library(RMySQL)
 con <- dbConnect(MySQL(),
                  user = "root", password = "MyNewPass",
                  dbname = "test", host = "localhost")
-                 
+
 dbListTables(con)
 # [1] "CalendarMonths"
 

@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#128200; Simulating Poisson process (part 1)"
+title: "&#128200; [archived] Simulating Poisson process (part 1)"
 ---
 
 A couple of weeks ago a colleague of mine asked me for a help to estimate Gerber-Shiu function by Monte-Carlo methods. The function is used in ruin theory for risk processes. One can think about this function as of equialence to a moment generating function. That is if the function is known, it is easy to derive a certain measurments of interest, for instance, a ruin probability. My colleague wants to estimate this function for an extenssion of [Cram&eacute;r–Lundberg model](https://en.wikipedia.org/wiki/Ruin_theory) that includes positive jumps (capital injections). From the first glance it seems as a trivial task, but when I started approaching it, this problem turned out to be not so easy to solve.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 To estimate Gerber-Shiu function a large number of paths should be simulated. That's why I firstly started with a function that simulates a path of the process. Basically, the random part of the model consists of two independent Poisson processes. There are three ways to simulate a Poisson process. The first method assumes simulating interarrival jumps' times by Exponential distribution. The second method is to simulate the number of jumps in the given time period by Poisson distribution, and then the time of jumps by Uniform random variables. The third method requires a certain grid. Typically, only the former two methods are used.
 
@@ -16,27 +18,27 @@ The mentioned above two methods of Poisson process simulation are widely covered
 This algorithm exploits the fact that interarrival times are exponentially distributed. We simulate the arrival times until the maximum time horizon is achieved.
 
 ```r
-sim_pp1 <- function(t, rate) { 
-    
+sim_pp1 <- function(t, rate) {
+
     path <- matrix(0, nrow = 1, ncol = 2)
-    
+
     jumps_time <- rexp(1, rate)
-    
+
     while(jumps_time[length(jumps_time)] < t) {
-        
+
         jump <- matrix(c(jumps_time[length(jumps_time)], path[nrow(path), 2],
                          jumps_time[length(jumps_time)], path[nrow(path), 2]  + 1),
                        nrow = 2, ncol = 2, byrow = TRUE)
-        
+
         path <- rbind(path, jump)
-        
+
         jumps_time <- c(jumps_time,
                         jumps_time[length(jumps_time)] + rexp(1, rate))
     }
-    
+
     path <- rbind(path,
                   c(t, path[nrow(path), 2]))
-    
+
     list(path, jumps_time)
 }
 ```
@@ -47,28 +49,28 @@ This method simulates the number of jumps by Possion random variable with the ra
 
 ```r
 sim_pp2 <- function(t, rate) {
-    
+
     path <- matrix(0, nrow = 1, ncol = 2)
-    
+
     jumps_number <- rpois(1, lambda = rate * t)
     jumps_time <- runif(n = jumps_number, min = 0, max = t) %>% sort()
-    
+
     for(j in seq_along(jumps_time)) {
         jump <- matrix(c(jumps_time[j], path[nrow(path), 2],
                          jumps_time[j], path[nrow(path), 2]  + 1),
                        nrow = 2, ncol = 2, byrow = TRUE)
         path <- rbind(path, jump)
     }
-    
+
     path <- rbind(path,
                   c(t, path[nrow(path), 2]))
-    
+
     list(path, jumps_time)
-    
+
 }
 ```
 
-### Validation 
+### Validation
 
 Now, let's check a couple of thigs, such as mean and vairance of interarrival times and their histogram for both methods.
 
@@ -89,7 +91,7 @@ data.frame(it = diff(path1[[2]])) %>%
     ggplot() +
     geom_histogram(aes(it, y = ..density..)) +
     stat_function(fun = dexp) +
-    theme_bw() + 
+    theme_bw() +
     theme(text = element_text(size = 24))
 ```
 ![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-1/h1.png)
@@ -106,7 +108,7 @@ data.frame(it = diff(path2[[2]])) %>%
     ggplot() +
     geom_histogram(aes(it, y = ..density..)) +
     stat_function(fun = dexp) +
-    theme_bw() + 
+    theme_bw() +
     theme(text = element_text(size = 24))
 ```
 
@@ -140,15 +142,15 @@ means2 <- sapply(1:n,
 rbind(data.frame(n = 1:n, mean = means1, method = "1"),
     data.frame(n = 1:n, mean = means2, method = "2")) %>%
     ggplot() +
-    geom_line(aes(x = n, y = mean, color = method)) + 
+    geom_line(aes(x = n, y = mean, color = method)) +
     geom_hline(yintercept = rate * t) +
-    theme_bw() + 
+    theme_bw() +
     theme(text = element_text(size = 24))
 ```
 
 ![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-1/c1.png)
 
-Indeed, visually the estimation of expected value convergence approximately with the same speed. However, I had problems with probabilities, and below I performed the same procedure but for the probability of a path to be below ten. 
+Indeed, visually the estimation of expected value convergence approximately with the same speed. However, I had problems with probabilities, and below I performed the same procedure but for the probability of a path to be below ten.
 
 ```r
 paths1 <- replicate(n = 2000, expr = sim_pp1(10, 1), simplify = FALSE)
@@ -168,9 +170,9 @@ probs2 <- sapply(1:2000,
 rbind(data.frame(n = 1:n, prob = probs1, method = "1"),
       data.frame(n = 1:n, prob = probs2, method = "2")) %>%
     ggplot() +
-    geom_line(aes(x = n, y = prob, color = method)) + 
+    geom_line(aes(x = n, y = prob, color = method)) +
     geom_hline(yintercept = ppois(q = 10, lambda = t * rate)) +
-    theme_bw() + 
+    theme_bw() +
     theme(text = element_text(size = 24))
 ```
 ![](https://irudnyts.github.io/images/posts/2018-03-09-simulating-poisson-process-part-1/c2.png)

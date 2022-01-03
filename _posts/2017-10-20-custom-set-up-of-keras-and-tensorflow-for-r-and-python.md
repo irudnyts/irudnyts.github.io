@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "&#128013; Custom set up of keras and TensorFlow for R and Python"
+title: "&#128013; [archived] Custom set up of keras and TensorFlow for R and Python"
 ---
 
 About a month ago RStudio [published on CRAN](https://blog.rstudio.com/2017/09/05/keras-for-r/) a nice package `keras`. This package is an interface to a famous library `keras`, a high-level neural networks API written in Python for using TensorFlow, CNTK, or Theano. In this post, the focus is on TensorFlow, as default backend engine developed by Google.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 ![](https://irudnyts.github.io/images/posts/2017-10-20-custom-set-up-of-keras-and-tensorflow-for-r-and-python/r_python.png)
 
 Even though RStudio is not the first who developed such an interface (see [kerasR](https://cran.r-project.org/web/packages/kerasR/index.html)), they usually build robust and stable tools and software. Official [documentation](https://keras.rstudio.com) shows a pretty straight-forward way how to install and use the package. However, the installation procedure assumes to use Python 2.7 (default Python on macOS). As long as I also use Python and prefer to use 3.6 I decided to write a little guide for installation all the data science tools related to Python.
 
-I assume that the user has a macOS system and preinstalled `gcc` (GNU Compiler Collection). During its first start RStudio propose to install `gcc`. To check if it is installed simply type in terminal 
+I assume that the user has a macOS system and preinstalled `gcc` (GNU Compiler Collection). During its first start RStudio propose to install `gcc`. To check if it is installed simply type in terminal
 
 ```shell
 gcc --version
@@ -18,7 +20,7 @@ gcc --version
 which should return a version or `command not found` otherwise. No other prerequisites are needed.
 
 ## 1. Install Python 3
-First, a package manager [Homebrew](https://brew.sh/) :beer: should be installed. No worries if you are not very familiar what's that. Simply execute this command in Terminal: 
+First, a package manager [Homebrew](https://brew.sh/) :beer: should be installed. No worries if you are not very familiar what's that. Simply execute this command in Terminal:
 
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -30,12 +32,12 @@ Then, we need to place Homebrew directory at the top of `PATH` environment varia
 nano ~/.bash_profile
 ```
 
-and paste this line `export PATH=/usr/local/bin:$PATH`. Close and open Terminal or execute 
+and paste this line `export PATH=/usr/local/bin:$PATH`. Close and open Terminal or execute
 
 ```shell
 source ~/.bash_profile
 ```
-to make these changes active. Finally, actually install Python 3 by: 
+to make these changes active. Finally, actually install Python 3 by:
 
 ```shell
 brew install python3
@@ -50,7 +52,7 @@ which should return a version of Python. Nice thing that Homebrew installs `pip3
 
 ## 2. Install TensorFlow
 
-I personally prefer to install TensorFlow with "native" pip approach instead of virtualenv, since I do not have many projects relying on different packages' versions. Thus, to install TensorFlow it's enough to 
+I personally prefer to install TensorFlow with "native" pip approach instead of virtualenv, since I do not have many projects relying on different packages' versions. Thus, to install TensorFlow it's enough to
 
 ```shell
 pip3 install tensorflow
@@ -64,7 +66,7 @@ It is also as simple as installing TensorFlow:
 pip3 install keras
 ```
 
-should do the trick. 
+should do the trick.
 
 ## 3.1. Bonus: Install Rodeo IDE
 
@@ -86,7 +88,7 @@ There should not be any problems to install the package by a standard way from C
 install.packages("keras")
 ```
 
-Standard installation procedure assumes, then, install Keras and TensorFlow by `install_keras()`. However, we have already installed these guys in conjunction with Python 3. Instead, we use alternative way of installation suggested by [this page](https://tensorflow.rstudio.com/tools/installation.html), i.e. locate TensorFlow and Python. Type 
+Standard installation procedure assumes, then, install Keras and TensorFlow by `install_keras()`. However, we have already installed these guys in conjunction with Python 3. Instead, we use alternative way of installation suggested by [this page](https://tensorflow.rstudio.com/tools/installation.html), i.e. locate TensorFlow and Python. Type
 
 ```r
 use_python("/usr/local/bin/python3")

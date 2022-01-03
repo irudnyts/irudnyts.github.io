@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#127968; Dortmund real estate market analysis&#58; GLM and GAM"
+title: "&#127968; [archived] Dortmund real estate market analysis&#58; GLM and GAM"
 ---
 
-This post is dedicated to model prices of real estate by an area and a number of rooms using generalized linear model (GLM) and generalized additive model (GAM). Previous [post](https://irudnyts.github.io/5-minutes-data-science-Dortmund-real-estate-market-analysis-obtaining-and-tidying-data/) shows how data was obtained, while in the other [post](https://irudnyts.github.io/Dortmund-real-estate-market-analysis-linear-regression-models/) the linear model is fitted to the data. 
+This post is dedicated to model prices of real estate by an area and a number of rooms using generalized linear model (GLM) and generalized additive model (GAM). Previous [post](https://irudnyts.github.io/5-minutes-data-science-Dortmund-real-estate-market-analysis-obtaining-and-tidying-data/) shows how data was obtained, while in the other [post](https://irudnyts.github.io/Dortmund-real-estate-market-analysis-linear-regression-models/) the linear model is fitted to the data.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 Prices of real estates are not normally distributed, i.e. the distribution is skewed and positive. This fact was the motivation to transform the outcome variable. The alternative approach is to calibrate so-called generalized linear models, which allows the dependent variable to have other than normal distributions from [exponential family](https://en.wikipedia.org/wiki/Exponential_family).
 
@@ -31,7 +33,7 @@ m <- mean(property_dens$price)
 v <- var(property_dens$price)
 
 gamma_param <- fitdistr(x = property_dens$price, densfun = "gamma")[[1]]
-invgauss_param <- fitdistr(x = property_dens$price, densfun = dinvgauss, 
+invgauss_param <- fitdistr(x = property_dens$price, densfun = dinvgauss,
                            start = list(mean = m, shape = m ^ 3 / v))[[1]]
 
 property_dens <- property_dens %>%
@@ -43,7 +45,7 @@ property_dens <- property_dens %>%
         key = distr, value = dens, gamma, invgauss
     )
 
-ggplot(property, aes(x = price)) + 
+ggplot(property, aes(x = price)) +
     geom_density() +
     geom_line(data = property_dens,
               aes(x = price, y = dens, colour = distr))
@@ -65,12 +67,12 @@ rmse_glm <- function(model, data = property, outcome = "price") {
 Furthermore, as in the linear regression post, we want to include several interactions terms and find the optimal combination. We define different `formulas` and fit gamma and IG GLM. We use log link function instead of the canonical ones (inverse and inverse squared for gamma and IG, respectively). First, only log link and identity link functions yield allow the simple interpretation. Second, for gamma distribution the estimates did not converge.
 
 ```r
-formulas <- list(price ~ area, 
+formulas <- list(price ~ area,
                  price ~ area + rooms,
                  price ~ area + rooms + I(area * rooms),
                  price ~ area + rooms + I(area * rooms) + I(area / rooms),
                  price ~ area + rooms + I(area * rooms) + I(rooms / area),
-                 price ~ area + rooms + I(area * rooms) + I(area / rooms) + 
+                 price ~ area + rooms + I(area * rooms) + I(area / rooms) +
                      I(rooms / area)
                  )
 
@@ -80,7 +82,7 @@ ig_models <- lapply(formulas, glm, data = property,
                     family = inverse.gaussian(link = "log"))
 ```
 
-We extract AIC and RMSE from gamma GLM: 
+We extract AIC and RMSE from gamma GLM:
 
 ```r
 sapply(gamma_models, function(x) x$aic)
@@ -169,7 +171,4 @@ cv_rmse(folds = folds,
 ```
 The model with Gamma distribution returns higher out-of-sample RMSE than IG. Furthermore, for Gamma out-of-sample RMSE is considerably larger than in-sample, which a signal of overfitting risk. IG model in- and out-of-sample RMSE are comparable. This fact and my personal gut feeling are in favor of IG GAM. But more importantly, GAM IG shows substantially lower RMSE than all other previous models.
 
-As summary, GLM are not always better than simple linear regression, even if the distribution of outcome variable is non-normal. In our particular case GAM significantly improves RMSE. 
-
-
-
+As summary, GLM are not always better than simple linear regression, even if the distribution of outcome variable is non-normal. In our particular case GAM significantly improves RMSE.

@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#x1f331; Setting a seed in R, when using parallel simulation"
+title: "&#x1f331; [archived] Setting a seed in R, when using parallel simulation"
 ---
 
 Generally speaking, if the code does any simulations, it is a good practice to set a seed to make the code reproducible. Setting a seed ensures that the same (pseudo-)random numbers will be generated each time the script is executed. Surprisingly, I found really few posts dedicated to any convention, best practice, or routine of setting a seed in R. Further, when using multiple cores (parallelisation) for simulations, things can get slightly more complicated.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 ## Seeds in R
 
@@ -50,7 +52,7 @@ The object `.Random.seed` lives in the global environment, and therefore, should
 
 ```r
 reproducible_runif <- function(seed = NULL) {
-    
+
     if(is.null(seed)) {
         seed <- .Random.seed
     } else {
@@ -58,13 +60,13 @@ reproducible_runif <- function(seed = NULL) {
         # mind the double arrow to assign in the parent enviroment or
         assign(x = ".Random.seed", value = seed, envir = .GlobalEnv)
     }
-    
+
     return(list(x = runif(1), seed = seed))
-    
+
 }
 ```
 
-Then, this function will return a random number, that can be reproduced: 
+Then, this function will return a random number, that can be reproduced:
 
 ```r
 r1 <- reproducible_runif()
@@ -81,13 +83,13 @@ r2$x # exactly the same as for r1
 # > [1] 0.4215304
 ```
 
-References: 
+References:
 
 - [1](http://r.789695.n4.nabble.com/Best-way-to-reset-random-seed-when-using-set-seed-in-a-function-td918769.html)
 - [2](http://r.789695.n4.nabble.com/How-to-properly-re-set-a-saved-seed-I-ve-got-the-answer-but-no-explanation-td4270483.html)
 - [3](https://www.uni-muenster.de/ZIV.BennoSueselbeck/s-html/helpfiles/set.seed.html)
 
-## Seeds for parallel 
+## Seeds for parallel
 
 The story is slightly different when using multiple cores (parallel execution). In this post I use a base package `parallel` and macOS, but the concept is pretty much the same for other packages and non-unix systems. The idea here to run independent simulations on each core.
 
@@ -131,20 +133,20 @@ rng1
 #   [7] 0.17057359 0.83029494 0.37063552 0.24445617
 ```
 
-Elements now are different, and `"L'Ecuyer-CMRG"` uses `nextRNGStream()` to generate a next "uncorrelated" seed. The pseudo code (taken from `vignette("parallel")`) explains this concept: 
+Elements now are different, and `"L'Ecuyer-CMRG"` uses `nextRNGStream()` to generate a next "uncorrelated" seed. The pseudo code (taken from `vignette("parallel")`) explains this concept:
 
 ```r
 # > RNGkind("L'Ecuyer-CMRG")
-# > set.seed(2002) # something 
-# > M <- 16 ## start M workers 
+# > set.seed(2002) # something
+# > M <- 16 ## start M workers
 # > s <- .Random.seed
 # > for (i in 1:M) {
 # +     s <- nextRNGStream(s)
-# +     # send s to worker i as .Random.seed 
+# +     # send s to worker i as .Random.seed
 # + }
 ```
 
-Let's run the same expression one more time: 
+Let's run the same expression one more time:
 
 ```r
 rng2 <- unlist(

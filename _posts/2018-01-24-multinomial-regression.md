@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "&#128202; Multinomial regression in R"
+title: "&#128202; [archived] Multinomial regression in R"
 ---
 
 In my current project on [Long-term care](https://www.youtube.com/watch?v=kLf6SVEMd94) at some point we were required to use a regression model with multinomial responses. I was very surprised that in contrast to well-covered binomial GLM for binary response case, multinomial case is poorly described. Surely, there are half-dozen packages overlapping each other, however, there is no sound tutorial or vignette. Hopefully, my post will improve the current state.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 We can distinguish two types of multinominal responses, namely nominal and ordinal. For nominal response a variable can possess a value from predefined finite set and these values are not ordered. For instance a variable `color` can be either `green` or `blue` or `green`. In machine learning the problem is often referred to as a classification. In contrast to nominal case, for ordinal repose variable the set of values has the relative ordering. For example, a variable `size` can be `small < middle < large`. Furthermore, depending on a link function we can have logit or probit models.
 
 ## Nominal response models
 
-According to Agresti (2002) we can the problem can be formulated by two similar approaches: through baseline-category logits or multivariate GLM. In general, these two approaches are equivalent with identical maximum-likelihood estimates, the only thing which is different is the formula representation. 
+According to Agresti (2002) we can the problem can be formulated by two similar approaches: through baseline-category logits or multivariate GLM. In general, these two approaches are equivalent with identical maximum-likelihood estimates, the only thing which is different is the formula representation.
 
 ### Baseline-category logits (multinomial logit model)
 
@@ -19,7 +21,7 @@ Let $p_j = \mathbb{P}(Y = j \mid \boldsymbol{x})$ is a probability of dependent 
 
 $$\log \frac{p_j}{p_J} = \alpha_j + \boldsymbol{\beta}'_j \boldsymbol{x}, \quad j = 1, ..., J - 1,$$
 
-describing the effects of explanatory $\boldsymbol{x}$ on logits of odds between a level $j$ and baseline level. Of course, using these $J-1$ equations and the second axiom it's possible to come back to probabilities (which is a nice exercise, by the way): 
+describing the effects of explanatory $\boldsymbol{x}$ on logits of odds between a level $j$ and baseline level. Of course, using these $J-1$ equations and the second axiom it's possible to come back to probabilities (which is a nice exercise, by the way):
 
 $$ p_j = \frac{\exp(\alpha_j + \boldsymbol{\beta}'_j \boldsymbol{x})}{1 + \sum_{h = 1}^{J-1}\exp(\alpha_h + \boldsymbol{\beta}'_h \boldsymbol{x})}$$
 
@@ -98,7 +100,7 @@ The package `vgam` deals exactly with cases of multivariate GLM and GAM. Let's c
 
 ```r
 library(VGAM)
-fit_vgam <- vglm(mstatus ~ age, multinomial(refLevel = 1), 
+fit_vgam <- vglm(mstatus ~ age, multinomial(refLevel = 1),
                  data = marital.nz)
 matrix(fit_vgam@coefficients, ncol = 2)
 #           [,1]         [,2]

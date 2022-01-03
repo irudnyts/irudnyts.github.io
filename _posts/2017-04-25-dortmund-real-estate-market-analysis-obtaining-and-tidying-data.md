@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#128190; Dortmund real estate market analysis&#58; obtaining and tidying data"
+title: "&#128190; [archived] Dortmund real estate market analysis&#58; obtaining and tidying data"
 ---
 
 Back in 2013 I spent two amazing months of my life in Dortmund. Taking into account that a number of my friends who moved (are moving) to Germany is increasing, I thought it would be nice to get an insight of the [last imperfect market](http://www.bbc.com/news/business-34531638) of real estate in Dortmund.
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 ![](https://irudnyts.github.io/images/posts/2017-04-25-dortmund-real-estate-market-analysis-obtaining-and-tidying-data/monopoly.png)
 
@@ -39,37 +41,37 @@ The `rvest` package was designed to work in conjunction with `magrittr` package,
 
 ```r
 while(length(urls) > 0) {
-    
+
     link <- urls[1]
-    
+
     print(link)
     immo <- read_html(link)
-    
-    price <- immo %>% 
+
+    price <- immo %>%
         html_nodes(".result-list-entry__primary-criterion:nth-child(1) .font-line-xs") %>%
         html_text()
-    
-    area <- immo %>% 
+
+    area <- immo %>%
         html_nodes(".result-list-entry__primary-criterion:nth-child(2) .font-line-xs") %>%
         html_text()
-    
-    rooms <- immo %>% 
+
+    rooms <- immo %>%
         html_nodes(".result-list-entry__primary-criterion:nth-child(3) .font-line-xs") %>%
         html_text()
-    
-    # add <- immo %>% 
+
+    # add <- immo %>%
     #     html_nodes(".margin-bottom-xs") %>%
     #     html_text()
-    
+
     address <- immo %>%
         html_nodes("#listings .link-underline") %>%
         html_text()
-    
+
     if(equal_lengths(price, area, rooms, address)) {
-        property <- rbind(property, 
+        property <- rbind(property,
                           data.frame(price, area, rooms, address))
         urls <- urls[-1]
-        
+
     }
 }
 ```
@@ -77,9 +79,9 @@ while(length(urls) > 0) {
 Having collected all the required data, we need to tidy it and coerce to appropriate formats. For numeric data things are quite simple. Desired characters, `price` and `area`, contain in the end units (e.g. euro currency sign or square meter signs). We get rid of them using built-in function `gsub`. Further, we need to drop `.` as thousands separator, and replace `,` with `.` for a decimal point (including `rooms` variable). Finally, we can convert characters to numerics.
 
 ```r
-property$price <- property$price %>% 
+property$price <- property$price %>%
     gsub(pattern = " \u20AC", replacement = "", fixed = TRUE) %>%
-    gsub(pattern = ".", replacement = "", fixed = TRUE) %>% 
+    gsub(pattern = ".", replacement = "", fixed = TRUE) %>%
     gsub(pattern = ",", replacement = ".", fixed = TRUE) %>%
     as.numeric()
 
@@ -94,12 +96,12 @@ property$rooms <- property$rooms %>%
 ```
 
 
-With addresses it's a little bit trickier. We will focus on the district treating it as categorical variable for further regression models. However, not all entries has the nice and full address. Some of them contain only the district and city name. First off, we extract the district from full address observations, and then extract the district from the rest of entries: 
+With addresses it's a little bit trickier. We will focus on the district treating it as categorical variable for further regression models. However, not all entries has the nice and full address. Some of them contain only the district and city name. First off, we extract the district from full address observations, and then extract the district from the rest of entries:
 
 ```r
 property$part <- str_match(string = property$address,
                            pattern = "(?<=, )(.+?),")[, 2]
-property$part[is.na(property$part)] <- 
+property$part[is.na(property$part)] <-
     gsub(pattern = ", Dortmund", "", property$address[is.na(property$part)])
 ```
 

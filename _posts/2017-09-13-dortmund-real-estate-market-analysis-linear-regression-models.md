@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "&#127866; Dortmund real estate market analysis&#58; linear regression models"
+title: "&#127866; [archived] Dortmund real estate market analysis&#58; linear regression models"
 ---
 
 In this post we use various linear regression models to describe the real estate market in Dortmund. The process of tidying and obtaining data can be found in [previous post](https://irudnyts.github.io/5-minutes-data-science-Dortmund-real-estate-market-analysis-obtaining-and-tidying-data/), while the data can be downloaded from [gist](https://gist.github.com/irudnyts/ec2a2af812d7b23b26294b01181d8791).
+
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
 
 The data contains `price`s, `area`s, number of `rooms`, `address`es and city `part`s of 888 ads. In this post we use only covariates `area` and `rooms` to predict the value of `price`. Of course to build a comprehensive model, one should also include factorized variable `part`. Due to the vast number of factors (74), for the time being we omit this variable.
 
@@ -28,34 +30,34 @@ Call:
 lm(formula = price ~ area + rooms, data = property)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--739.98  -94.91  -15.26   74.98  807.05 
+    Min      1Q  Median      3Q     Max
+-739.98  -94.91  -15.26   74.98  807.05
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -47.4067    17.0399  -2.782  0.00552 ** 
+(Intercept) -47.4067    17.0399  -2.782  0.00552 **
 area         10.7375     0.2304  46.608  < 2e-16 ***
 rooms       -67.3781     8.0927  -8.326 3.16e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 150.5 on 885 degrees of freedom
-Multiple R-squared:  0.7855,	Adjusted R-squared:  0.785 
+Multiple R-squared:  0.7855,	Adjusted R-squared:  0.785
 F-statistic:  1620 on 2 and 885 DF,  p-value: < 2.2e-16
 ```
 
 All coefficients are significant. The intercept tells not much in this case: what's the price of the apartment with no rooms and 0-area? The positive value of `area` coefficient is the price of additional square meter keeping all other variables (actually only the number of rooms) constant. It's interesting to see the negative sign of `rooms` coefficient. The interpretation is as follows: given, for instance, an apartment of 50 square meters, one-room apartment would cost to rent 67 euros more expensive than two-rooms apartment. Surprisingly, it goes along with intuition: apartments with larger rooms have higher rent, and we will exploit this fact later on. This model explains around 78% of the price variance. Let's see if we can improve our predictions using other linear regression models that are the simplest models can be used. We try to extract from them everything we can.
 
-## Model selection 
+## Model selection
 
 What variables should be included in the model? The standard procedure in R `step()` is an implementation of stepwise regression. This technique is heavily [criticized](http://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf) in recent years. For instance, it is well-known, the more predictors are included in the model, the higher $R^2$. Furthermore, it make no sense to apply stepwise regression if one has only two regressor, like in our case. We focus on ANOVA and AIC tests, but first we explore the relation between covariates:
 
 ```r
 cor(property$area, property$rooms)
 # 0.6877519
-ggplot(data = property) + 
+ggplot(data = property) +
     geom_point(aes(rooms, area)) +
-    geom_smooth(aes(rooms, area), method = "loess", se = FALSE, colour = "red") + 
+    geom_smooth(aes(rooms, area), method = "loess", se = FALSE, colour = "red") +
     theme_bw() +
     theme(text = element_text(size = 24))
 ```
@@ -64,7 +66,7 @@ ggplot(data = property) +
 
 Variables `area` and `rooms` are positively correlated (which is not a big surprise), but definitely have non-linear relation. Now we must investigate if `price` can be predicted better by only one of these variables. Also it is necessary to check if the interaction (`area * rooms`) term is needed. Remember it was mentioned in the beginning, that it is reasonable to assume that the area per room might be relevant? Thus, we include this variable (`area / rooms`) as well. Then, why not include the opposite ratio (`rooms / area`)? We calibrate ten models with different sets of regressors and compare RMSE (root mean square error), $R^2$, AIC, and run ANOVA test.
 
-```r 
+```r
 models <- list(
     lm(price ~ area, property),
     lm(price ~ rooms, property),
@@ -122,7 +124,7 @@ ref_model <- lm(price ~ area + rooms + I(rooms / area),
                 property)
 
 ggplot(data = data.frame(n = 1:888, r = ref_model$residuals)) +
-    geom_point(aes(n, r)) + 
+    geom_point(aes(n, r)) +
     theme_bw() +
     theme(text = element_text(size = 24))
 ```
@@ -133,17 +135,17 @@ Everything looks quite smooth except two points with largest residuals, which ar
 
 ```r
 sort(abs(ref_model$residuals), decreasing = TRUE)[1:5]
-#       52      141      126      563      843 
+#       52      141      126      563      843
 # 893.6243 735.4020 587.2990 558.2192 534.7874
 ```
 It is also possible to compare these points with points of largest `hatvalues` and `cooks.distance`. The former measures the leverage, and the later measures overall change in the coefficients when the point is not used for estimation:
 
 ```r
 sort(hatvalues(ref_model), decreasing = TRUE)[1:5]
-#        590         52         62        761        747 
+#        590         52         62        761        747
 # 0.10401959 0.09626561 0.06630276 0.06340936 0.05365715
 sort(cooks.distance(ref_model), decreasing = TRUE)[1:5]
-#         52        141        126        746        811 
+#         52        141        126        746        811
 # 1.07497787 0.25812160 0.13949108 0.04843232 0.04469382
 ```
 Two points (52 and 141) appear to be with largest residuals and in top five points with largest Cook's distances. Also observation #52 has second largest hat-value. Further investigation shows that these two observations have largest `area` and `rooms`.
@@ -160,7 +162,7 @@ grid.arrange(
         theme_bw() +
         theme(text = element_text(size = 24)),
     ggplot(data = property) +
-        geom_point(aes(rooms, price, colour = is_outlier)) + 
+        geom_point(aes(rooms, price, colour = is_outlier)) +
         theme_bw() +
         theme(text = element_text(size = 24)),
     ncol = 2
@@ -188,7 +190,7 @@ coef(unb_model); coef(ref_model)
 # (Intercept)          area         rooms I(rooms/area)  
 #  -300.01637      13.88343    -159.22218    6929.05469  
 # (Intercept)          area         rooms I(rooms/area)  
-#  -263.14824      13.38995    -147.71802    6109.04617 
+#  -263.14824      13.38995    -147.71802    6109.04617
 sapply(list(unb_model, ref_model),
        function(x) summary(x)$r.squared)
 # [1] 0.7919386 0.7929940
@@ -201,19 +203,19 @@ sapply(list(unb_model, ref_model), rmse, data = property[!property$is_outlier, ]
 The multiple linear regression model assumes the normality of the error terms, therefore, assuming normality of the dependent variable. Obviously prices are not normal, since they are only positive values and the distribution is skewed. In this case, typically `log` transformation is applied to the dependent variable.
 
 ```r
-property$norm <- dnorm(property$price, 
-                       mean = mean(property$price), 
+property$norm <- dnorm(property$price,
+                       mean = mean(property$price),
                        sd = sd(property$price))
-property$norm_log <- dnorm(log(property$price), 
-                           mean = mean(log(property$price)), 
+property$norm_log <- dnorm(log(property$price),
+                           mean = mean(log(property$price)),
                            sd = sd(log(property$price)))
 
 grid.arrange(
     ggplot(data = property) + geom_density(aes(price)) +
         geom_line(aes(price, norm), col = "red") + theme_bw() +
         theme(text = element_text(size = 24)),
-    ggplot(data = property) + geom_density(aes(log(price))) + 
-        geom_line(aes(log(price), norm_log), col = "red") + theme_bw() + 
+    ggplot(data = property) + geom_density(aes(log(price))) +
+        geom_line(aes(log(price), norm_log), col = "red") + theme_bw() +
         theme(text = element_text(size = 24)),
     ncol = 2
 )
@@ -252,7 +254,7 @@ sapply(log_models, AIC) %>% round(digits = 2)
 # [1]  -74.97  863.54  -92.04 -152.66  -99.50 -101.16 -151.01 -154.48 -102.42
 # [10] -152.54
 
-anova(log_models[[1]], log_models[[3]], log_models[[4]], log_models[[7]], 
+anova(log_models[[1]], log_models[[3]], log_models[[4]], log_models[[7]],
       log_models[[8]], log_models[[10]])
 ```
 ```r
@@ -263,7 +265,7 @@ Model 2: log(price) ~ area + rooms
 Model 3: log(price) ~ area + rooms + I(area * rooms)
 Model 4: log(price) ~ area + rooms + I(area * rooms) + I(area/rooms)
 Model 5: log(price) ~ area + rooms + I(area * rooms) + I(rooms/area)
-Model 6: log(price) ~ area + rooms + I(rooms/area) + I(area * rooms) + 
+Model 6: log(price) ~ area + rooms + I(rooms/area) + I(area * rooms) +
     I(area/rooms)
   Res.Df    RSS Df Sum of Sq       F    Pr(>F)    
 1    886 47.461                                   
@@ -290,9 +292,9 @@ c(((predict(ref_model) - property$price) / property$price) ^ 2 %>%
 # [1] 0.2410944 0.2222028
 ```
 
-The log-transformed model returns higher RMSE when compared to the initial reference model, and a bit better RMSRE. In general, log-transformed model is preferred one, since it never returns negative values, even though it has larger RMSE. 
+The log-transformed model returns higher RMSE when compared to the initial reference model, and a bit better RMSRE. In general, log-transformed model is preferred one, since it never returns negative values, even though it has larger RMSE.
 
-## Cross-validation 
+## Cross-validation
 
 Finally, two models (reference and log-transformed) should be validated (tested on overfitting). For this we use k-fold cross validation techniques:
 
@@ -314,7 +316,7 @@ for(fold in folds) {
                       formula = log(price) ~ area + rooms + I(area * rooms))
     property[fold$app, "log_pred"] <- exp(predict(log_model,
                                                  property[fold$app, ]))
-    
+
 }
 
 c((property$price - property$simple_pred) ^ 2 %>% mean() %>% sqrt(),
@@ -330,4 +332,3 @@ c(((property$price - property$simple_pred) / property$price) ^ 2 %>%
 It seems that the reference model is not overfitted, since the out-of-sample RMSE is very close to in-sample one (`147.6181` and `148.2719`, respectively). The same concerns to RMSRE (`0.2410944` and `0.2436167`). However, log-transformed model has slightly larger RMSE on test data (`198.9451` against `171.7737`), and more or less similar RMSRE (`0.2301364` and `0.2222028`).
 
 Depending on which measure (RMSE or RMSRE) is used, one or another model is preferred. Of course, one can argue that for the reference model it's easier to interpret coefficients. However, the log-transformed model returns only non-negative prices, which makes sense in the given context. In further posts, we will utilize the power of GLM, GAM, and tree-based methods.
-

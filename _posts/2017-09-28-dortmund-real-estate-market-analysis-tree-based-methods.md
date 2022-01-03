@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "&#127795; Dortmund real estate market analysis&#58; tree-based methods"
+title: "&#127795; [archived] Dortmund real estate market analysis&#58; tree-based methods"
 ---
 
 In pervious posts traditional regression models were fitted to real estate data. In this post tree-based models, namely random forests and gradient boosting, are trained to predict prices of the rent. These methods typically outperform traditional regression models yielding smaller errors. Furthermore, tree-based methods are much more robust to overfitting, which makes them superior in terms of prediction. However, the main disadvantage (and the reason why there is no love in insurance industry) is difficulties with interpretability.
 
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
+
 ## Random forests
 
 Originally random forests are implemented in `randomForest` package. There is also a faster implementation in `ranger` package, which is used further. As usual, we start with some preliminary code to clean out the memory, load packages and data.
- 
+
 ```r
 packages <- c("ggplot2", "magrittr", "vtreat", "ranger", "xgboost", "caret")
 sapply(packages, library, character.only = TRUE, logical.return = TRUE)
@@ -32,7 +34,7 @@ predicted <- predict(rf, property)
 # [1] 93.07542
 ```
 
-Random forests model outperform all traditional regression models in previous posts in terms of in-sample RMSE. Let's now cross-validate model by looking at out-of-sample RMSE: 
+Random forests model outperform all traditional regression models in previous posts in terms of in-sample RMSE. Let's now cross-validate model by looking at out-of-sample RMSE:
 
 ```r
 property$pred_rf <- NULL
@@ -55,7 +57,7 @@ The out-of-sample RMSE is comparable with one returned by linear model, but larg
 
 ## Gradient boosting
 
-This methods iteratively optimize the RMSE (or other accuracy measure) on training data. Thus, gradient boosting is more exposed to overfit. In order to get the optimal 'nrounds' (the maximum number of iterations) we need to use cross-validation technique, implemented in `xgb.cv`, which also calculates out-of-sample RMSE. The number of folds we keep equals to $3$, to be consistent with pervious analysis. The learning rate parameter is set to be $0.1$, a little bit less than default ($0.3$), implying robustness to overfit, but also slower speed. 
+This methods iteratively optimize the RMSE (or other accuracy measure) on training data. Thus, gradient boosting is more exposed to overfit. In order to get the optimal 'nrounds' (the maximum number of iterations) we need to use cross-validation technique, implemented in `xgb.cv`, which also calculates out-of-sample RMSE. The number of folds we keep equals to $3$, to be consistent with pervious analysis. The learning rate parameter is set to be $0.1$, a little bit less than default ($0.3$), implying robustness to overfit, but also slower speed.
 
 ```r
 xg <- xgb.cv(data = as.matrix(property[, 2:3]),
@@ -105,9 +107,9 @@ for(fold in folds) {
 
 Unfortunately, XGboost model does not achieve smaller RMSE than previous models.
 
-As summary, tree based methods are not always better solution for prediction. As we see, the out-of-sample RMSE is similar to one for linear model. At the same time, tree-based methods lose precious interpretability. 
-
-  
+As summary, tree based methods are not always better solution for prediction. As we see, the out-of-sample RMSE is similar to one for linear model. At the same time, tree-based methods lose precious interpretability.
 
 
-Note: Both packages have built-in cross-validation functions. However, for proper comparison one has to train models on the same training data set applying, then, to the same test set. 
+
+
+Note: Both packages have built-in cross-validation functions. However, for proper comparison one has to train models on the same training data set applying, then, to the same test set.

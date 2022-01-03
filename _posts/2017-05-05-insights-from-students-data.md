@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "&#127891; Insights from students data"
+title: "&#127891; [archived] Insights from students data"
 ---
 
 Recently (well, a month ago) I had a discussion with a friend of mine about the modern tools and approaches in education. He is currently involed to the edX platform startup, and given that I am assistant at the university, we had several points to discuss.
 
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
+
 Perhaps the key point of the discussion was how to analyse the students' data. Currently educational platforms, such as moodle for instance, has terabites of data. However, it's a challange to extract insights from it. As long as I have an access to the moodle data of our courses, I made a brief investigation what could be drawn from such a piece of data (unfortunately, due to the data protection policy of our university I cannot share it).
 
-The first data set is the moodle's logfile, i.e. the time and other information of students' logins and other activities/actions. The second one is the midterm grades. 
+The first data set is the moodle's logfile, i.e. the time and other information of students' logins and other activities/actions. The second one is the midterm grades.
 
 First, we load the data to the global enviroment. Variables `exercises`, `before_exercises`, and `midterm` contain dates of excercise sessions, when such exercises were published in moodle and the date of midterm, respectively. The column `Time` stores data as character, which is transformed to `POSIXct` format. Also, it is useful to store the dates (without the time) in a separate column. Furthermore, we focus only on the semester time period, not on Christmas break nor exam period. The semester ends on December 23.
 
@@ -44,7 +46,7 @@ smr <- data.frame(date = unique(log_alm$date), n_logins = NA)
 for(date in unique(log_alm$date)) {
     smr[smr$date == date, "n_logins"] <- length(unique(log_alm[log_alm$date == date,
                                                                 "user.full.name"]))
-    
+
 }
 
 smr$class <- "no_class"
@@ -72,7 +74,7 @@ The plot is a bit more illustrative that the previous one:
 * First two exercies sessions show the same frequency, while we see the drop in the third one. Typically it is due to the overload during the midterm semester period.
 
 
-Perhaps the line chart might be also useful to see the trend: 
+Perhaps the line chart might be also useful to see the trend:
 
 ```r
 ggplot(data = smr, mapping = aes(x = date, y = n_logins)) +
@@ -103,7 +105,7 @@ info <- info[complete.cases(info), ]
 info <- info[info$grade != 0, ]
 ```
 
-Let's run the regression, to see whether or not number of logins drive the midterm grade (we account only on those student, who have written midterm, i.e. with non-zero grades): 
+Let's run the regression, to see whether or not number of logins drive the midterm grade (we account only on those student, who have written midterm, i.e. with non-zero grades):
 
 ```r
 model <- lm(info, formula = grade ~ logins)
@@ -112,12 +114,12 @@ summary(model)
 
 ```r
 Call:
-lm(formula = grade.midterm ~ logins, data = info[info$grade.midterm != 
+lm(formula = grade.midterm ~ logins, data = info[info$grade.midterm !=
     0, ])
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--2.9317 -0.3541  0.2658  0.5813  1.5943 
+    Min      1Q  Median      3Q     Max
+-2.9317 -0.3541  0.2658  0.5813  1.5943
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
@@ -127,7 +129,7 @@ logins      0.005691   0.006966   0.817    0.424
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 1.096 on 20 degrees of freedom
-Multiple R-squared:  0.0323,	Adjusted R-squared:  -0.01608 
+Multiple R-squared:  0.0323,	Adjusted R-squared:  -0.01608
 F-statistic: 0.6676 on 1 and 20 DF,  p-value: 0.4235
 ```
 
@@ -164,10 +166,10 @@ ggplot(data = info,
 
 This chart looks nicer. Indeed, students are devided into three groups, namely: low (low number of logins and grades, middle number of logins and grades, high number of logins and grades).
 
-Why all these are useful? Well, that's why: 
+Why all these are useful? Well, that's why:
 
 * By looking at frequecny, it's possible to judge which topics are difficult, or for instance, the overload of students, or even of the interest. This is a really true feedback.
 
-* Grouping students allows identifying those, who need an extra help and those who are a little bit more interested in the topic. 
+* Grouping students allows identifying those, who need an extra help and those who are a little bit more interested in the topic.
 
 The source file is available at my [gist](https://gist.github.com/irudnyts/53b25b8405ac3fb2289e20eb15d17860).

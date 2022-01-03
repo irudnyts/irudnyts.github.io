@@ -1,19 +1,21 @@
 ---
 layout: post
-title: "&#128193; Project-oriented workflow"
+title: "&#128193; [archived] Project-oriented workflow"
 ---
 
 Be honest with yourself, how many times have you wanted to restart an on-going project from scratch throwing away the current folder? Or how many times have you had to rename files and adjust folder structure to make your project simple and clear? Not to mention, all these thousands of versions of your scripts that are dangling around in your mail box. Tired of this? Then, get on board and read my comments on how to make your project *reproducible*, *portable*, and *self-contained*.
 
+> **Disclaimer:** This post is outdated and was archived for back compatibility: please use with care! This post does not reflect the author's current point of view and might deviate from the current best practices.
+
 ## Introduction
 
-We start by working up some intuition about these three key aspects rather than trying to grasp explicit technical definitions. In data science context, *reproducibility* means that the whole analysis can be recreated (or repeated) from scratch: executing scripts based on raw data must yield exactly the same results. It means, for instance, that if the analysis involves generating random numbers, then one has to set a seed (an initial state of a random generator) to obtain the same random split each time. Ideally, everyone should also have an access to data and software to replicate your analysis (it is not always the case, since data can be private), but this is already a domain of open science. 
+We start by working up some intuition about these three key aspects rather than trying to grasp explicit technical definitions. In data science context, *reproducibility* means that the whole analysis can be recreated (or repeated) from scratch: executing scripts based on raw data must yield exactly the same results. It means, for instance, that if the analysis involves generating random numbers, then one has to set a seed (an initial state of a random generator) to obtain the same random split each time. Ideally, everyone should also have an access to data and software to replicate your analysis (it is not always the case, since data can be private), but this is already a domain of open science.
 
-*Portability* means that regardless of the operating system or a computer, given a minimal prerequisites, the project should work. For instance, if the project uses a particular package that works only on Windows, then it is not portable. The project is also not considered portable, if it utilizes a particular computer settings, such as absolute paths instead of relative to your project folder (e.g., when reading the data or saving plots to files). Normally, you should be able to run the code on your collaborator's machine without changing any lines in the scripts. 
+*Portability* means that regardless of the operating system or a computer, given a minimal prerequisites, the project should work. For instance, if the project uses a particular package that works only on Windows, then it is not portable. The project is also not considered portable, if it utilizes a particular computer settings, such as absolute paths instead of relative to your project folder (e.g., when reading the data or saving plots to files). Normally, you should be able to run the code on your collaborator's machine without changing any lines in the scripts.
 
 We call a project *self-contained*, when you have everything you need at hand (i.e., in the folder of your project) and your project does not affect anything it did not create. It is a bad idea to use a function that has been defined in the other of your projects. Not only anyone else who does not have the second project will suffer, but yourself, when your current project will be used on the other machine. Furthermore, if you need, for instance, to save processed data, then it should be saved separately, and not overwrite raw data. There is another term that has a similar meaning -- *isolated*, which is related to dependencies of the project. This topic is extensively covered in the section on **packrat** dependency management system.  
 
-This post is an attempt to summarize the use of "sexy" tools and techniques to improve above-mentioned aspects of project significantly. Of course, one can immediately feel that these aspects are interrelated. As a consequence, techniques and practices we consider further improve several elements at a time, rather than focusing on a particular one. For instance, using consistent folder structure will make your project reproducible and portable, while properly managed dependencies will ensure that the project is self-contained and portable. That is why further content is organized by focusing on tools rather than on stand-alone aspects. But do not get fooled, it is not a yet another git / RStudio tutorial. There are dozens of tutorials, and I do not try to compete with them. Instead, I want to give an overview of useful things based entirely on my experience. 
+This post is an attempt to summarize the use of "sexy" tools and techniques to improve above-mentioned aspects of project significantly. Of course, one can immediately feel that these aspects are interrelated. As a consequence, techniques and practices we consider further improve several elements at a time, rather than focusing on a particular one. For instance, using consistent folder structure will make your project reproducible and portable, while properly managed dependencies will ensure that the project is self-contained and portable. That is why further content is organized by focusing on tools rather than on stand-alone aspects. But do not get fooled, it is not a yet another git / RStudio tutorial. There are dozens of tutorials, and I do not try to compete with them. Instead, I want to give an overview of useful things based entirely on my experience.
 
 Now, you might ask yourself: why it is such a big deal? Well, first off, it gives more credibility to the research, because it can be verified and validated by a third party ( your peers). Furthermore, keeping the flow of analysis reproducible, portable and self-contained makes easier to proceed and to extend the project. At first glance, it might look like you spend more time organizing your project than doing actual analysis. However, in the long run you will save much more time that you can anticipate.
 
@@ -104,58 +106,58 @@ Several R packages, namely [`ProjectTemplate`](http://projecttemplate.net/archit
 
 Finally, some scientists believe that all R projects should be in a shape of a package. Indeed, one can store data in `\data`, R scripts in `\R`, documentation in `\man`, and the paper in `\vignette`. The nice thing about it is that anyone familiar with an R package structure can immediately grasp where each type of file is located. On the other hand, the structure of R packages is tailored to serve its purpose -- make a coherent *tool* for data scientists and not to produce a data product: there is no distinction between function definitions and applications, no proper place for reports, and finally there is no place for other script languages that you can use (e.g, Bash, Python, etc.).
 
-## Content of R files 
+## Content of R files
 
 While there are no rules on how to organize your R code, there are several dos and dont's that most of the time are not taught explicitly. I list them below in no particular order:
 
 - Do not use the function `install.packages()` inside your scripts. You are not supposed to (re)install packages each time you run your files. By default it is assumed that all packages that are used by a script are already installed. If you use `packrat`, packages will be installed automatically from bundles.
 
     If there are many packages to install and you do not use `packrat`, I suggest to create a file `configure.R`, that will install all packages:
-    
+
     ```r
     pkgs <- c("ggplot2", "plyr")
     install.packages(pkgs)
     ```
-    
+
     The snippet above profits from the fact that `install.packages()` is a vectorized function. Anyway, most times, `install.packages()` is supposed to be called from the console, not the script.
 
 - Do not use the function `require()`, unless it is a conscious choice. In contrast to `library()`, `require()` does not throw an error (only a warning) if the package is not installed.
 
-- Use a character representation of the package name. 
+- Use a character representation of the package name.
 
     ```r
-    # Good 
+    # Good
     library("ggplot2")
-    
+
     # Bad
     library(ggplot2)
     ```
-    
+
 - Load *only* those packages that are actually used in the script. Load packages at the beginning of the script.
 
 - Do not use `rm(list = ls())` that erase your global environment. First, it could accidentally delete accidentally an important long-time-to-build object. Second, it gives the illusion of the fresh start of R.
 
-- Do not use `setwd("/Users/irudnyts/path/that/only/I/have")`. It is very unlikely that someone except you will have the same path to the project. Instead, use a package `here` and relative paths. The package `here` automatically recognizes the path to the project, and starts from there: 
+- Do not use `setwd("/Users/irudnyts/path/that/only/I/have")`. It is very unlikely that someone except you will have the same path to the project. Instead, use a package `here` and relative paths. The package `here` automatically recognizes the path to the project, and starts from there:
 
     ```r
     # Good
     library("here")
-    
+
     cars <- read.csv(file = here("data", "raw", "cars.csv"))
-    
+
     # Bad
     setwd("/Users/irudnyts/path/that/only/I/have/data/raw")
     cars <- read.csv(file = "cars.csv")
     ```
-    
-- If your script involves random generation, then set a seed by `set.seed()` function to get the same random split each time: 
+
+- If your script involves random generation, then set a seed by `set.seed()` function to get the same random split each time:
 
     ```r
-    # Good 
+    # Good
     set.seed(1991)
     x <- rnorm(100)
-    
-    # Bad 
+
+    # Bad
     x <- rnorm(100)
     ```
 
@@ -168,7 +170,7 @@ While there are no rules on how to organize your R code, there are several dos a
         x
     }
     df[] <- lapply(df, fix_missing)
-    
+
     # Bad
     df$a[df$a == -99] <- NA
     df$b[df$b == -99] <- NA
@@ -180,7 +182,7 @@ While there are no rules on how to organize your R code, there are several dos a
 
 - Separate function definitions from their applications. I typically keep a file `util.R`, where all my functions are defined.
 
-- Use `saveRDS()` instead of `save()`: 
+- Use `saveRDS()` instead of `save()`:
 
 > - `save()` saves the objects and their names together in the same file; `saveRDS()` only saves the value of a single object (its name is dropped).
 > - `load()` loads the file saved by `save()`, and creates the objects with the saved names silently (if you happen to have objects in your current environment with the same names, these objects will be overridden); `readRDS()` only loads the value, and you have to assign the value to a variable.
@@ -203,14 +205,14 @@ Steps:
 
     - Navigate to File -> New project...
     - Select New Directory
-    - Select New project 
+    - Select New project
     - Insert your picked name into Directory name
     - Check Create a git repository and Use packrat with this project
-    
+
    This creates a folder with the name of the project, initializes a git repo, generates an `.Rproj` file, initializes `packrat`, and creates `.gitignore` file.
-   
+
 3. Configure `packrat` as described above.
-   
+
 4. Populate folders with files. Typically, at the beginning, it is only `data/raw`.
 
 5. Create a `README.md` file.
@@ -224,23 +226,23 @@ Steps:
     - Fill in `Repository name` with the same name as your project.
     - Fill in `Description` with one line that briefly explains the intent of the project and ends with full stop.
     - Hit `Create repository`.
-    
-9. Connect your local repo to your GitHub repo by 
-    
+
+9. Connect your local repo to your GitHub repo by
+
     ```shell
     git remote add origin git@github.com:irudnyts/beer.git
     git push -u origin master
     ```
-    
+
     Refresh the page in your browser to ensure that changes appear at GitHub repo.
-    
+
 ## Outro & acknowledgement
 
 About a year ago I came across a [brilliant post](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) by Jenny Bryan. I was amazed by how elegantly she formalized and summarized many simple tricks that make the life of a data scientist more pleasant. I was so inspired that I could not miss the opportunity to present these ideas in tutorials to students during the fall semester. The idea that I contributed to the process of making projects more conscious was very satisfactory, and based on these tutorials I start the series of posts.
 
-Many ideas and concepts are based on the works of Hadley Wickham and Jenny Bryan. Many thanks! 
+Many ideas and concepts are based on the works of Hadley Wickham and Jenny Bryan. Many thanks!
 
-## References 
+## References
 
 - [Happy Git and GitHub for the useR](http://happygitwithr.com)
 - [R packages](http://r-pkgs.had.co.nz/)
