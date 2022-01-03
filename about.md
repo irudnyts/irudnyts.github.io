@@ -6,8 +6,8 @@ permalink: /about/
 
 ## :man_technologist: Experience
 
-* Self-employed <br />
-2021-present
+* Data Science Educator and Evangelist <br/ >
+*Self-employed*, 2022-present
 
 * Lecturer <br />
 *University of Lausanne*, 2019-present
@@ -112,9 +112,10 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 * Chapter on [Web scraping in R](https://smac-group.github.io/ds/web-scraping-in-r.html) in *An Introduction to Statistical Programming Methods with R* book
 
-### MSc Theses
+### Supervised theses
 
-* Applications of deep learning and computer vision in real estate price estimations, Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
+* Applications of deep learning and computer vision in real estate price estimations <br />
+Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
 
 ----
 
