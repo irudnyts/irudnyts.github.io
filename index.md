@@ -116,6 +116,11 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 * Applications of deep learning and computer vision in real estate price estimations <br />
 Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
 
+### Side projects
+
+* Customer churn prediction <br />
+**Assura**
+
 ----
 
 ## :computer: Software
