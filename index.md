@@ -8,11 +8,11 @@ title: About
 * Data Science Educator and Evangelist <br />
 *Self-employed*, 2022-present
 
-* Lecturer <br />
-*University of Lausanne*, 2019-present
-
 * Data Science Course Developer and Instructor <br />
 *EPFL Extension School*, 2020-2021
+
+* Lecturer <br />
+*University of Lausanne*, 2019-2021
 
 * Graduate Assistant <br />
 *University of Lausanne*, 2015-2020
@@ -53,7 +53,6 @@ Insurance Analytics, a Primer <br />
 The winner of the Pricing Game <br />
 *University of Lausanne*, 2018
 
-
 * International Summer School of the Swiss Association of Actuaries <br />
 Insurance Management: Trends, Challenges and Solutions <br />
 *University of Lausanne*, 2017
@@ -92,14 +91,16 @@ Reinsurance: Actuarial and Statistical Aspects <br />
 
 ### Publications
 
-* [On the characteristics of reporting ADL limitations and formal LTC usage across Europe, European Actuarial Journal, 10(2), 557-597, 2020.](https://link.springer.com/article/10.1007/s13385-020-00242-1) <br />
-*M. Fuino, I. Rudnytskyi, J. Wagner* <br/>
+* [Improving Real Estate Rental Estimations with Visual Data, Big Data and Cognitive Computing, 6(3), 96, 2022.](https://www.mdpi.com/2504-2289/6/3/96) <br />
+*I. Azizi, I. Rudnytskyi*
 
+* [On the characteristics of reporting ADL limitations and formal LTC usage across Europe, European Actuarial Journal, 10(2), 557-597, 2020.](https://link.springer.com/article/10.1007/s13385-020-00242-1) <br />
+*M. Fuino, I. Rudnytskyi, J. Wagner*
 
 * [Drivers of Old-Age Dependence and Long-Term Care Usage in Switzerland--A Structural Equation Model Approach, Risks, 7(3), 92, 2019.](https://www.mdpi.com/2227-9091/7/3/92) <br />
 *I. Rudnytskyi, J. Wagner*
 
-### Working papers
+### Unpublished research papers
 
 * A Note on Stochastic Programming for the Asset Allocation in Swiss Pension Funds <br />
 *I. Rudnytskyi, J. Wagner*
@@ -127,6 +128,8 @@ Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
 
 ### R packages
 
+* openai [[GitHub repo](https://github.com/irudnyts/openai), [CRAN](https://cran.r-project.org/web/packages/openai/index.html)]
+
 * estudy2 [[GitHub repo](https://github.com/irudnyts/estudy2), [CRAN](https://cran.r-project.org/web/packages/estudy2/index.html), [Chapter 8 in Angewandte empirische Methoden in Finance & Accounting: Umsetzung mit R by Matthias Gehrke](https://www.amazon.com/Angewandte-Empirische-Methoden-Finance-Accounting/dp/311058624X)]
 
 * ruin [[GitHub repo](https://github.com/irudnyts/ruin), [CRAN](https://cran.r-project.org/web/packages/ruin/index.html)]
@@ -139,8 +142,14 @@ Academic Master thesis of [Ilia Azizi](https://iliaazizi.netlify.app)
 
 ## :chart_with_upwards_trend: Talks
 
+* How NOT to screw up teaching R <br />
+Berlin R User Group, 2022 August 18, Berlin
+
+* Democratic introduction to deep learning <br />
+Seminar at Department of Operations, UNIL, 2022 May 17, Lausanne
+
 * Mother's Little Helper: git/GitHub <br />
-R-lunches, 2020 December 14, Geneva (on-line)
+R-lunches, 2021 December 14, Geneva (on-line)
 
 * Do you have a moment to talk about data science? <br />
 TechTalk at [AgileEngine](https://agileengine.com), 2021 March 25, on-line
