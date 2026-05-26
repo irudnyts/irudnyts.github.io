@@ -5,8 +5,11 @@ title: About
 
 ## :man_technologist: Experience
 
-* Data Science Educator and Evangelist <br />
-*Self-employed*, 2022-present
+* Co-Founder<br />
+*Stealth Startup*, 2024-Present
+
+* Founder, AI Educator <br />
+*trye.io*, 2022-2024
 
 * Data Science Course Developer and Instructor <br />
 *EPFL Extension School*, 2020-2021
